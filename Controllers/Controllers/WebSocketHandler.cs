@@ -93,4 +93,4 @@ namespace Presentation.Controllers
             await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
         }
     }
-}
+
