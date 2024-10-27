@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "dgSpecHash": "hNbm6Q5AnJn4W5Vc9gEIizOLWGaplj0JCqO0rBrwj62U215A1bTwcmMxy99NdQwxffLLnop7LrA7fwbYMLFYdA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystem\\Presentation.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "'C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystemApplication\\MonitoringControlSystemApplication.csproj' projesi bulunamadı. Proje başvurusunun geçerli olup olmadığını ve proje dosyasının mevcut olup olmadığını denetleyin.",
+      "libraryId": "C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystemApplication\\MonitoringControlSystemApplication.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "'C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystemInfrastructure\\MonitoringControlSystemInfrastructure.csproj' projesi bulunamadı. Proje başvurusunun geçerli olup olmadığını ve proje dosyasının mevcut olup olmadığını denetleyin.",
+      "libraryId": "C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystemInfrastructure\\MonitoringControlSystemInfrastructure.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "'C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystem.Domain\\MonitoringControlSystemDomain.csproj' projesi bulunamadı. Proje başvurusunun geçerli olup olmadığını ve proje dosyasının mevcut olup olmadığını denetleyin.",
+      "libraryId": "C:\\Users\\harun\\source\\repos\\MonitoringControlSystem\\MonitoringControlSystem.Domain\\MonitoringControlSystemDomain.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
