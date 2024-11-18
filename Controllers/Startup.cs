@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Presentation
 {
@@ -22,6 +23,20 @@ namespace Presentation
         {
             services.AddSingleton<ISnmpService, SnmpService>(); // SNMP servisi ekleniyor
             services.AddTransient<WebSocketHandler>(); // WebSocketHandler eklendi
+
+            services.AddControllers(); // Controller'larý ekledik
+            services.AddCors(); // CORS desteði eklendi (eðer gerekliyse)
+
+            // Swagger hizmetini ekleyin
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Snmp Communication",
+                    Version = "v1",
+                    Description = "A simple example ASP.NET Core Web API"
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandler webSocketHandler)
@@ -29,12 +44,32 @@ namespace Presentation
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                // Swagger arayüzünü etkinleþtir
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Snmp Communication");
+                    c.RoutePrefix = string.Empty;
+                });
             }
 
             app.UseWebSockets();
-            app.Use(async (context, next) =>
+
+            app.UseRouting();
+
+            // CORS middleware'i ekleyin (eðer CORS kullanýyorsanýz)
+            app.UseCors(builder =>
             {
-                if (context.Request.Path == "/ws")
+                builder.AllowAnyOrigin()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers(); // Controller'larý ekledik
+                endpoints.Map("/ws", async context =>
                 {
                     if (context.WebSockets.IsWebSocketRequest)
                     {
@@ -45,14 +80,17 @@ namespace Presentation
                     {
                         context.Response.StatusCode = 400;
                     }
-                }
-                else
-                {
-                    await next();
-                }
+                });
             });
 
+            app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
+
 }

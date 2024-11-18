@@ -9,7 +9,7 @@ namespace Infrastructure.Services
 {
     public class SnmpService : ISnmpService
     {
-        private readonly int _snmpPort = 5002;
+        private readonly int _snmpPort = 161; // SNMP port numarası
         private bool _isRunning;
 
         public async Task StartContinuousCommunicationAsync(
@@ -20,30 +20,38 @@ namespace Infrastructure.Services
         {
             _isRunning = true;
 
-            // SimpleSnmp nesnesi community olmadan çalışacak şekilde ayarlandı.
-           SimpleSnmp snmpClient = new SimpleSnmp(ipAddress, "public") // Varsayılan topluluk dizgesi olarak "public"
-            {
-                Timeout = 2000 // Yanıt süresi (2 saniye)
-            };
+            // SNMP hedef ayarları
+            UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), _snmpPort, 1000, 1);
 
             while (_isRunning && !cancellationToken.IsCancellationRequested)
             {
                 try
                 {
-                    // SNMP sürümünü ver1 veya ver2 olarak deneyin.
-                    var result = snmpClient.Get(SnmpVersion.Ver1, oidList.ToArray());
-
-                    if (result != null)
+                    Pdu pdu = new Pdu(PduType.Get);
+                    foreach (string oid in oidList)
                     {
-                        foreach (var kvp in result)
+                        pdu.VbList.Add(oid); // İlgili OID'leri ekleyin
+                    }
+
+                    // SNMP istemcisi oluştur
+                    AgentParameters agentParams = new AgentParameters(new OctetString("public")) // Community değerini burada ayarlayın
+                    {
+                        Version = SnmpVersion.Ver2 // SNMP sürümünü ayarlayın
+                    };
+
+                    SnmpV2Packet response = (SnmpV2Packet)target.Request(pdu, agentParams);
+
+                    if (response != null && response.Pdu.ErrorStatus == 0)
+                    {
+                        foreach (Vb vb in response.Pdu.VbList)
                         {
-                            onMessageReceived?.Invoke($"OID {kvp.Key}: {kvp.Value}");
+                            onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value}");
                         }
                     }
                     else
                     {
                         onMessageReceived?.Invoke("Simülatörden veri alınamadı. OID'leri ve simülatör ayarlarını kontrol edin.");
-                        Console.WriteLine("SNMP sonucu null döndü. OID'leri veya IP adresini doğrulayın.");
+                        Console.WriteLine("SNMP sonucu null veya hata durumu döndü. OID'leri veya IP adresini doğrulayın.");
                     }
                 }
                 catch (Exception ex)
@@ -52,8 +60,10 @@ namespace Infrastructure.Services
                     Console.WriteLine($"SNMP sorgusu sırasında hata oluştu: {ex}");
                 }
 
-                await Task.Delay(5000); // 5 saniyelik bekleme süresi
+                await Task.Delay(500); // 5 saniyelik bekleme süresi
             }
+
+            target.Close(); // Hedefi kapat
         }
 
         public void StopContinuousCommunication()

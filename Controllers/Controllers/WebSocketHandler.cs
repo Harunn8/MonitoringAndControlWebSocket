@@ -25,13 +25,14 @@ namespace Presentation.Controllers
         {
             var buffer = new byte[1024 * 4];
             WebSocketReceiveResult result;
-
+            
             do
             {
                 result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
                 var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
                 var command = JsonConvert.DeserializeObject<WebSocketCommand>(message);
+
 
                 switch (command.Action)
                 {
@@ -56,20 +57,21 @@ namespace Presentation.Controllers
         {
             if (parameters.TryGetValue("ipAddress", out var ipAddress))
             {
-                // Dinlenecek OID’leri tanımlayın veya dışarıdan parametre olarak alın
-                var oidList = new List<string> { "deneme",
-                                                 "deneme1",
-                                                 "deneme2",
-                                                 "deneme3",
-                                                 "deneme4",
-                                                 "deneme5",
-                                                 "deneme6"
-                                                }; 
+              
+                //var oidList = new List<string> { ".1.3.6.1.4.1.18837.3.3.2.4.0",
+                //                                 ".1.3.6.1.4.1.18837.3.3.2.5.0",
+                //                                 ".1.3.6.1.4.1.18837.3.3.2.6.0",
+                //                                 ".1.3.6.1.4.1.18837.3.3.2.7.0",
+                //                                 ".1.3.6.1.4.1.18837.3.3.2.2.0"
+                //                                };
+
+                var oidList = new List<string> { ".1.3.6.1.4.1.49034.1.8.2.2.4.0" };
 
                 _snmpService.StartContinuousCommunicationAsync(ipAddress, oidList, async (data) =>
                 {
                     if (webSocket.State == WebSocketState.Open)
                     {
+                       
                         await SendMessage(webSocket, data);
                     }
                 }, cancellationToken);
@@ -93,4 +95,4 @@ namespace Presentation.Controllers
             await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
         }
     }
-
+}

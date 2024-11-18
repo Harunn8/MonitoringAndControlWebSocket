@@ -10,3 +10,16 @@ C:\Users\harun\source\repos\MonitoringControlSystem\Interfaces\obj\Debug\net5.0\
 C:\Users\harun\source\repos\MonitoringControlSystem\Interfaces\obj\Debug\net5.0\Interfaces.pdb
 C:\Users\harun\source\repos\MonitoringControlSystem\Interfaces\obj\Debug\net5.0\ref\Interfaces.dll
 C:\Users\harun\source\repos\MonitoringControlSystem\Interfaces\obj\Debug\net5.0\Interfaces.csproj.AssemblyReference.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\bin\Debug\net5.0\Interfaces.deps.json
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\bin\Debug\net5.0\Interfaces.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\bin\Debug\net5.0\Interfaces.pdb
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.csproj.AssemblyReference.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.AssemblyInfoInputs.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.AssemblyInfo.cs
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.sourcelink.json
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\refint\Interfaces.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\Interfaces.pdb
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Interfaces\obj\Debug\net5.0\ref\Interfaces.dll

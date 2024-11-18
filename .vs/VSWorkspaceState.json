@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\MonitoringControlSystem",
-    "\\MonitoringControlSystem\\Controllers"
+    ""
   ],
-  "SelectedNode": "\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
   "PreviewInSolutionExplorer": false
 }

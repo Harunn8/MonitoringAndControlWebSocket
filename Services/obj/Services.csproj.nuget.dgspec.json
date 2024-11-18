@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj": {}
+    "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
+    "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
         "projectName": "Interfaces",
-        "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
-        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\obj\\",
+        "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
+        "packagesPath": "C:\\Users\\harun.kirtay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\harun.kirtay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,21 +83,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj": {
+    "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\obj\\",
+        "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\harun.kirtay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\harun.kirtay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,14 +109,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
-                "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj"
+              "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj"
               }
             }
           }
@@ -160,21 +170,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj": {
+    "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\obj\\",
+        "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\harun.kirtay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\harun.kirtay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -182,17 +196,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
-                "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj"
+              "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj"
               },
-              "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj"
+              "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj"
               }
             }
           }
@@ -245,7 +260,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
