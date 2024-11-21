@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="JWT" Version="10.1.1" />
+    <PackageReference Include="MongoDB.Bson" Version="2.11.5" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.11.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SnmpSharpNet" Version="0.9.6" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />

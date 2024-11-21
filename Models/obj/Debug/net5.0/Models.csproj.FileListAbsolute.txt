@@ -29,3 +29,6 @@ C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\obj\Debu
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\obj\Debug\net5.0\refint\Models.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\obj\Debug\net5.0\Models.pdb
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\obj\Debug\net5.0\ref\Models.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\bin\Debug\net5.0\snappy32.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\bin\Debug\net5.0\snappy64.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Models\bin\Debug\net5.0\libzstd.dll

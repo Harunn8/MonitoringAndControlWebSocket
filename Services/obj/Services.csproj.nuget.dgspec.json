@@ -141,6 +141,14 @@
               "target": "Package",
               "version": "[10.1.1, )"
             },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.11.5, )"
+            },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.11.5, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -230,6 +238,10 @@
             "JWT": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.11.5, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

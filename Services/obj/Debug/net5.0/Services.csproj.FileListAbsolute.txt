@@ -33,3 +33,6 @@ C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\obj\De
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\obj\Debug\net5.0\refint\Services.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\obj\Debug\net5.0\Services.pdb
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\obj\Debug\net5.0\ref\Services.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\bin\Debug\net5.0\snappy32.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\bin\Debug\net5.0\snappy64.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Services\bin\Debug\net5.0\libzstd.dll

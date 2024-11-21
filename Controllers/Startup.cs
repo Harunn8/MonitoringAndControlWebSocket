@@ -7,6 +7,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using MongoDB.Driver;
+using System.ComponentModel.DataAnnotations;
+using Services;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Bson.Serialization;
 
 namespace Presentation
 {
@@ -15,6 +24,8 @@ namespace Presentation
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
         }
 
         public IConfiguration Configuration { get; }
@@ -27,6 +38,27 @@ namespace Presentation
             services.AddControllers(); // Controller'larý ekledik
             services.AddCors(); // CORS desteði eklendi (eðer gerekliyse)
 
+            var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
+            var database = mongoClient.GetDatabase("DeviceDB");
+
+            services.AddSingleton(database);
+            services.AddScoped<DeviceService>();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
             // Swagger hizmetini ekleyin
             services.AddSwaggerGen(c =>
             {
@@ -37,6 +69,7 @@ namespace Presentation
                     Description = "A simple example ASP.NET Core Web API"
                 });
             });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandler webSocketHandler)
@@ -82,6 +115,8 @@ namespace Presentation
                     }
                 });
             });
+
+
 
             app.UseHttpsRedirection();
             app.UseRouting();

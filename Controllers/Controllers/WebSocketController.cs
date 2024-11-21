@@ -21,17 +21,17 @@ namespace Presentation.Controllers
             _webSocketHandler = webSocketHandler;
         }
 
-        [HttpGet("start")]
+        [HttpPost("start")]
         public async Task<IActionResult> StartWebSocket()
         {
             if (HttpContext.WebSockets.IsWebSocketRequest)
             {
                 var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
 
-                string ipAddress = "10.0.20.111";
+                string ipAddress = "10.0.90.230";
 
                 // İzlemek istediğiniz SNMP OID'lerini belirleyin
-                List<string> oids = new List<string> { ".1.3.6.1.4.1.49034.1.8.2.2.4.0" };
+                List<string> oids = new List<string> { ".1.3.6.1.4.1.3442.101.1.1045.2.10.1.0"};
 
                 await _snmpService.StartContinuousCommunicationAsync(
                     ipAddress, oids,

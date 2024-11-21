@@ -9,7 +9,7 @@ namespace Infrastructure.Services
 {
     public class SnmpService : ISnmpService
     {
-        private readonly int _snmpPort = 161; // SNMP port numarası
+        private readonly int _snmpPort = 5005; // SNMP port numarası
         private bool _isRunning;
 
         public async Task StartContinuousCommunicationAsync(
