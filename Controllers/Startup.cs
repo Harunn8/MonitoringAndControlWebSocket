@@ -16,6 +16,8 @@ using Services;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
+using Interfaces;
+using Models;
 
 namespace Presentation
 {
@@ -32,18 +34,21 @@ namespace Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ISnmpService, SnmpService>(); // SNMP servisi ekleniyor
-            services.AddTransient<WebSocketHandler>(); // WebSocketHandler eklendi
+            // Servis Baðýmlýlýklarýný Kaydet
+            services.AddSingleton<ISnmpService, SnmpService>(); // SNMP servisi
+            services.AddTransient<WebSocketHandler>(); // WebSocketHandler
 
-            services.AddControllers(); // Controller'larý ekledik
-            services.AddCors(); // CORS desteði eklendi (eðer gerekliyse)
+            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IUserService, UserService>();
 
+            // MongoDB Baðlantýsý
             var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
             var database = mongoClient.GetDatabase("DeviceDB");
 
             services.AddSingleton(database);
             services.AddScoped<DeviceService>();
 
+            // JWT Authentication
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -59,7 +64,11 @@ namespace Presentation
                 };
             });
 
-            // Swagger hizmetini ekleyin
+            // Controller ve CORS Desteði
+            services.AddControllers();
+            services.AddCors();
+
+            // Swagger Ayarlarý
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -68,8 +77,33 @@ namespace Presentation
                     Version = "v1",
                     Description = "A simple example ASP.NET Core Web API"
                 });
-            });
 
+                // Swagger için JWT Authentication tanýmý
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header. Example: \"Bearer {token}\""
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandler webSocketHandler)
@@ -87,11 +121,19 @@ namespace Presentation
                 });
             }
 
+            // HTTPS Zorunluluðu
+            app.UseHttpsRedirection();
+
+            // Statik Dosyalar (Ýsteðe Baðlý)
+            app.UseStaticFiles();
+
+            // WebSocket Middleware
             app.UseWebSockets();
 
+            // Routing Middleware
             app.UseRouting();
 
-            // CORS middleware'i ekleyin (eðer CORS kullanýyorsanýz)
+            // CORS Middleware
             app.UseCors(builder =>
             {
                 builder.AllowAnyOrigin()
@@ -99,9 +141,14 @@ namespace Presentation
                        .AllowAnyMethod();
             });
 
+            // Authentication ve Authorization Middleware'leri
+            app.UseAuthentication(); // Authentication önce gelir
+            app.UseAuthorization();  // Authorization sonra gelir
+
+            // Endpoint Middleware
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); // Controller'larý ekledik
+                endpoints.MapControllers(); // API Controller'larýný haritalandýr
                 endpoints.Map("/ws", async context =>
                 {
                     if (context.WebSockets.IsWebSocketRequest)
@@ -115,17 +162,6 @@ namespace Presentation
                     }
                 });
             });
-
-
-
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
         }
     }
-
 }
