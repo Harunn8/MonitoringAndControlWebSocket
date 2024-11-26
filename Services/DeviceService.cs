@@ -43,5 +43,10 @@ namespace Services
         {
             await _device.DeleteOneAsync(id);
         }
+
+        public async Task<Device> GetDeviceByIp(string ipAddress)
+        {
+            return await _device.Find(device => device.IpAddress == ipAddress).FirstOrDefaultAsync();
+        }
     }
 }

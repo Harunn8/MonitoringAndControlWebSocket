@@ -9,6 +9,7 @@ namespace Application.Interfaces
     {
         Task StartContinuousCommunicationAsync(
             string ipAddress,
+            int port,
             List<string> oidList,        // OID listesi parametresi eklendi
             Action<string> onMessageReceived,
             CancellationToken cancellationToken);

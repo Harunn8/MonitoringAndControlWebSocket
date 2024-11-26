@@ -1,4 +1,4 @@
-using Application.Interfaces;
+ï»¿using Application.Interfaces;
 using Presentation.Controllers;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
@@ -16,7 +16,7 @@ using Services;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
-using Interfaces;
+using Application.Interfaces;
 using Models;
 
 namespace Presentation
@@ -27,6 +27,7 @@ namespace Presentation
         {
             Configuration = configuration;
 
+            // GUID iÃ§in BSON Serializer ayarÄ±
             BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
         }
 
@@ -34,14 +35,11 @@ namespace Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Servis Baðýmlýlýklarýný Kaydet
-            services.AddSingleton<ISnmpService, SnmpService>(); // SNMP servisi
-            services.AddTransient<WebSocketHandler>(); // WebSocketHandler
+            // Servis BaÄŸÄ±mlÄ±lÄ±klarÄ±nÄ± Kaydet
+            services.AddSingleton<ISnmpService, SnmpService>();
+            services.AddTransient<WebSocketHandler>();
 
-            services.AddSingleton<IUserRepository, UserRepository>();
-            services.AddSingleton<IUserService, UserService>();
-
-            // MongoDB Baðlantýsý
+            // MongoDB BaÄŸlantÄ±sÄ±
             var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
             var database = mongoClient.GetDatabase("DeviceDB");
 
@@ -64,11 +62,21 @@ namespace Presentation
                 };
             });
 
-            // Controller ve CORS Desteði
+            // Controller ve CORS DesteÄŸi
             services.AddControllers();
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigins",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000") // Ä°zin verilen kaynak
+                            .AllowAnyHeader() // Herhangi bir baÅŸlÄ±ÄŸa izin ver
+                            .AllowAnyMethod() // Herhangi bir HTTP metoduna izin ver
+                            .AllowCredentials();
+                    });
+            });
 
-            // Swagger Ayarlarý
+            // Swagger AyarlarÄ±
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -78,7 +86,7 @@ namespace Presentation
                     Description = "A simple example ASP.NET Core Web API"
                 });
 
-                // Swagger için JWT Authentication tanýmý
+                // Swagger iÃ§in JWT Authentication tanÄ±mÄ±
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -112,7 +120,7 @@ namespace Presentation
             {
                 app.UseDeveloperExceptionPage();
 
-                // Swagger arayüzünü etkinleþtir
+                // Swagger arayÃ¼zÃ¼nÃ¼ etkinleÅŸtir
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
@@ -121,10 +129,7 @@ namespace Presentation
                 });
             }
 
-            // HTTPS Zorunluluðu
-            app.UseHttpsRedirection();
-
-            // Statik Dosyalar (Ýsteðe Baðlý)
+            // Statik Dosyalar (Ä°steÄŸe BaÄŸlÄ±)
             app.UseStaticFiles();
 
             // WebSocket Middleware
@@ -134,21 +139,16 @@ namespace Presentation
             app.UseRouting();
 
             // CORS Middleware
-            app.UseCors(builder =>
-            {
-                builder.AllowAnyOrigin()
-                       .AllowAnyHeader()
-                       .AllowAnyMethod();
-            });
+            app.UseCors("AllowSpecificOrigins");
 
             // Authentication ve Authorization Middleware'leri
-            app.UseAuthentication(); // Authentication önce gelir
-            app.UseAuthorization();  // Authorization sonra gelir
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             // Endpoint Middleware
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); // API Controller'larýný haritalandýr
+                endpoints.MapControllers();
                 endpoints.Map("/ws", async context =>
                 {
                     if (context.WebSockets.IsWebSocketRequest)

@@ -8,6 +8,8 @@ using Application.Interfaces;
 using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Infrastructure.Services;
+using Services;
 
 namespace Presentation.Controllers
 {
@@ -15,10 +17,13 @@ namespace Presentation.Controllers
     {
         private readonly ISnmpService _snmpService;
         private CancellationTokenSource _cancellationTokenSource;
+        private readonly DeviceService _deviceService;
 
-        public WebSocketHandler(ISnmpService snmpService)
+
+        public WebSocketHandler(ISnmpService snmpService, DeviceService deviceService)
         {
             _snmpService = snmpService ?? throw new ArgumentNullException(nameof(snmpService));
+            _deviceService = deviceService;
         }
 
         public async Task HandleAsync(HttpContext context, WebSocket webSocket)
@@ -94,16 +99,18 @@ namespace Presentation.Controllers
                 return;
             }
 
-            var oidList = new List<string>
+            var result = _deviceService.GetDeviceByIp(ipAddress).Result;
+            if (result == null)
             {
-                ".1.3.6.1.4.1.18837.3.3.2.4.0",
-                ".1.3.6.1.4.1.18837.3.3.2.5.0",
-                ".1.3.6.1.4.1.18837.3.3.2.6.0"
-            };
+                return;
+            }
+
+
+            var oidList = result.OidList;
 
             try
             {
-                _snmpService.StartContinuousCommunicationAsync(ipAddress, oidList, async (data) =>
+                _snmpService.StartContinuousCommunicationAsync(ipAddress,result.Port, oidList, async (data) =>
                 {
                     if (webSocket.State == WebSocketState.Open)
                     {

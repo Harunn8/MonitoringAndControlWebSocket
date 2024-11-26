@@ -8,20 +8,21 @@ using SnmpSharpNet;
 namespace Infrastructure.Services
 {
     public class SnmpService : ISnmpService
-    {
-        private readonly int _snmpPort = 5005; // SNMP port numarası
+    { 
         private bool _isRunning;
 
         public async Task StartContinuousCommunicationAsync(
             string ipAddress,
+            int port,
             List<string> oidList,
             Action<string> onMessageReceived,
             CancellationToken cancellationToken)
         {
             _isRunning = true;
 
+
             // SNMP hedef ayarları
-            UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), _snmpPort, 1000, 1);
+            UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), port, 1000, 1);
 
             while (_isRunning && !cancellationToken.IsCancellationRequested)
             {
