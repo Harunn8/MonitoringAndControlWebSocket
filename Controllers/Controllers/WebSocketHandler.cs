@@ -114,6 +114,10 @@ namespace Presentation.Controllers
                 {
                     if (webSocket.State == WebSocketState.Open)
                     {
+                        var jsonMessage = JsonConvert.SerializeObject(new
+                        {
+                            
+                        });
                         await SendMessage(webSocket, data);
                     }
                 }, cancellationToken);
