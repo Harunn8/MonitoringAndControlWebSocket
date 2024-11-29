@@ -69,7 +69,7 @@ namespace Presentation
                 options.AddPolicy("AllowSpecificOrigins",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000") // İzin verilen kaynak
+                        builder.WithOrigins("http://localhost:3000","http://10.0.20.69:3000") // İzin verilen kaynak
                             .AllowAnyHeader() // Herhangi bir başlığa izin ver
                             .AllowAnyMethod() // Herhangi bir HTTP metoduna izin ver
                             .AllowCredentials();
