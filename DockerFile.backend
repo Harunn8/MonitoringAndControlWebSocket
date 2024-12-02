@@ -2,8 +2,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
 
-# Çözüm dosyasını ve bağımlılıkları kopyala
-COPY MonitoringControlSystem.sln ./
+# Projeleri kopyala ve bağımlılıkları yükle
+COPY *.sln ./
 COPY Controllers/Controllers.csproj ./Controllers/
 COPY Interfaces/Interfaces.csproj ./Interfaces/
 COPY Models/Models.csproj ./Models/
@@ -13,10 +13,10 @@ COPY MonitoringControlSystemApplication/MonitoringControlSystemApplication.cspro
 COPY MonitoringControlSystemInfrastructure/MonitoringControlSystemInfrastructure.csproj ./MonitoringControlSystemInfrastructure/
 COPY Services/Services.csproj ./Services/
 
-# Bağımlılıkları yükle
+# Restore işlemi
 RUN dotnet restore
 
-# Kaynak kodları kopyala ve build et
+# Kaynak kodları kopyala ve derle
 COPY . .
 WORKDIR /app/MonitoringControlSystem
 RUN dotnet publish -c Release -o /app/publish
@@ -25,6 +25,4 @@ RUN dotnet publish -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
-
-# Uygulama çalıştırma
 ENTRYPOINT ["dotnet", "MonitoringControlSystem.dll"]
