@@ -116,8 +116,7 @@
               "RelativeToolTip": "Controllers\\Controllers\\DeviceController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T16:22:13.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T16:22:13.247Z"
             },
             {
               "$type": "Document",
@@ -189,8 +188,7 @@
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAIwDkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T16:24:01.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T16:24:01.958Z"
             },
             {
               "$type": "Document",
@@ -214,8 +212,7 @@
               "RelativeToolTip": "Controllers\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAADhAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-31T16:02:47.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T16:02:47.874Z"
             },
             {
               "$type": "Document",
@@ -227,8 +224,7 @@
               "RelativeToolTip": "Controllers\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-31T16:02:34.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T16:02:34.661Z"
             },
             {
               "$type": "Document",
@@ -240,8 +236,7 @@
               "RelativeToolTip": "Controllers\\Startup.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAgwFkAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T15:46:20.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T15:46:20.445Z"
             },
             {
               "$type": "Document",
@@ -278,8 +273,7 @@
               "RelativeToolTip": "Services\\SnmpService.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAgwCEAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T15:49:35.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T15:49:35.574Z"
             }
           ]
         }
