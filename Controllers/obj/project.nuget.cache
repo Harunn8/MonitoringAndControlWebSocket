@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xq21nMLm2Ek=",
+  "dgSpecHash": "3n6RBKYKbOs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers.csproj",
+  "projectFilePath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\harun.kirtay\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\harun.kirtay\\.nuget\\packages\\jwt\\10.1.1\\jwt.10.1.1.nupkg.sha512",

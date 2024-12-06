@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Controllers\\Controllers\\WebSocketHandlerTcp.cs",
               "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerTcp.cs",
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketHandlerTcp.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowEoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwEoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T15:10:07.363Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "Services\\TcpService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACcAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T15:04:00.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T15:04:00.514Z"
             },
             {
               "$type": "Document",
@@ -72,21 +71,19 @@
               "RelativeToolTip": "Services\\SnmpService.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:50.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:56:50.243Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "WebSocketHandlerSnmp.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
+              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
               "RelativeDocumentMoniker": "Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
+              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:48.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:56:48.808Z"
             }
           ]
         }
