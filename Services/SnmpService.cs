@@ -20,8 +20,6 @@ namespace Infrastructure.Services
         {
             _isRunning = true;
 
-
-            // SNMP hedef ayarları
             UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), port, 1000, 1);
 
             while (_isRunning && !cancellationToken.IsCancellationRequested)
@@ -31,13 +29,12 @@ namespace Infrastructure.Services
                     Pdu pdu = new Pdu(PduType.Get);
                     foreach (string oid in oidList)
                     {
-                        pdu.VbList.Add(oid); // İlgili OID'leri ekleyin
+                        pdu.VbList.Add(oid);
                     }
 
-                    // SNMP istemcisi oluştur
-                    AgentParameters agentParams = new AgentParameters(new OctetString("public")) // Community değerini burada ayarlayın
+                    AgentParameters agentParams = new AgentParameters(new OctetString("public"))
                     {
-                        Version = SnmpVersion.Ver2 // SNMP sürümünü ayarlayın
+                        Version = SnmpVersion.Ver2
                     };
 
                     SnmpV2Packet response = (SnmpV2Packet)target.Request(pdu, agentParams);
@@ -61,10 +58,10 @@ namespace Infrastructure.Services
                     Console.WriteLine($"SNMP sorgusu sırasında hata oluştu: {ex}");
                 }
 
-                await Task.Delay(500); // 5 saniyelik bekleme süresi
+                await Task.Delay(500);
             }
 
-            target.Close(); // Hedefi kapat
+            target.Close();
         }
 
         public void StopContinuousCommunication()

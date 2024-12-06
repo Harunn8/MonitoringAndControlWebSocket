@@ -37,7 +37,7 @@ namespace Presentation
         {
             // Servis Bağımlılıklarını Kaydet
             services.AddSingleton<ISnmpService, SnmpService>();
-            services.AddTransient<WebSocketHandler>();
+            services.AddTransient<WebSocketHandlerSnmp>();
 
             // MongoDB Bağlantısı
             var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
@@ -45,6 +45,8 @@ namespace Presentation
 
             services.AddSingleton(database);
             services.AddScoped<DeviceService>();
+            services.AddScoped<DeviceDataService>();
+            services.AddScoped<SnmpParserService>();
 
             // JWT Authentication
             services.AddAuthentication(options =>
@@ -114,7 +116,7 @@ namespace Presentation
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandler webSocketHandler)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandlerSnmp webSocketHandler)
         {
             if (env.IsDevelopment())
             {

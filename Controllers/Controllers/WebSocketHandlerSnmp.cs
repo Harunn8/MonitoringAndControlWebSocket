@@ -8,19 +8,18 @@ using Application.Interfaces;
 using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using Infrastructure.Services;
 using Services;
 
 namespace Presentation.Controllers
 {
-    public class WebSocketHandler
+    public class WebSocketHandlerSnmp
     {
         private readonly ISnmpService _snmpService;
         private CancellationTokenSource _cancellationTokenSource;
         private readonly DeviceService _deviceService;
 
 
-        public WebSocketHandler(ISnmpService snmpService, DeviceService deviceService)
+        public WebSocketHandlerSnmp(ISnmpService snmpService, DeviceService deviceService)
         {
             _snmpService = snmpService ?? throw new ArgumentNullException(nameof(snmpService));
             _deviceService = deviceService;
@@ -44,7 +43,7 @@ namespace Presentation.Controllers
 
                     if (result.MessageType == WebSocketMessageType.Close)
                     {
-                        break; // WebSocket kapatıldıysa çık
+                        break;
                     }
 
                     var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
@@ -61,7 +60,6 @@ namespace Presentation.Controllers
                         continue;
                     }
 
-                    // Komutları işleme
                     switch (command.Action.ToLower())
                     {
                         case "startcommunication":
@@ -81,7 +79,6 @@ namespace Presentation.Controllers
 
                 } while (!result.CloseStatus.HasValue);
 
-                // WebSocket kapatılma durumu
                 await webSocket.CloseAsync(result.CloseStatus.Value, result.CloseStatusDescription, CancellationToken.None);
             }
             catch (Exception ex)

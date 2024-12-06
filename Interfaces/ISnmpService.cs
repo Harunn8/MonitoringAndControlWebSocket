@@ -10,7 +10,7 @@ namespace Application.Interfaces
         Task StartContinuousCommunicationAsync(
             string ipAddress,
             int port,
-            List<string> oidList,        // OID listesi parametresi eklendi
+            List<string> oidList,
             Action<string> onMessageReceived,
             CancellationToken cancellationToken);
 

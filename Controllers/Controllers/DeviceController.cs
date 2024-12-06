@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Domain.Models;
-using MongoDB.Driver;
 using Models;
 using System.Threading.Tasks;
 using Services;

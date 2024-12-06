@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using Domain.Models;
 using Models;
-using MongoDB.Bson;
 
 namespace Services
 {
