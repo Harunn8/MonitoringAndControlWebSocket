@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {}
+    "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {}
   },
   "projects": {
-    "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
+    "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
         "projectName": "Interfaces",
-        "projectPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
+        "projectPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
         "packagesPath": "C:\\Users\\harun.kirtay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\obj\\",
+        "outputPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
