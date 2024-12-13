@@ -17,7 +17,7 @@ namespace Models
         public string Oid { get; set; }
 
         [BsonElement("Value")]
-        public double Value { get; set; }
+        public string Value { get; set; }
 
         [BsonElement("date")]
         public DateTime TimeStamp { get; set; }

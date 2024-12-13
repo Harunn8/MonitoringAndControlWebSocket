@@ -31,7 +31,7 @@ namespace Services
         }
 
         // Operasyon sırasında kullanılmayacak
-        public async Task AddDeviceData(string deviceId, string oid, double value)
+        public async Task AddDeviceData(string deviceId, string oid, string value)
         {
             var deviceData = new DeviceData
             {

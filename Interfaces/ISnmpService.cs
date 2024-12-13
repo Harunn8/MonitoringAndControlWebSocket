@@ -15,5 +15,7 @@ namespace Application.Interfaces
             CancellationToken cancellationToken);
 
         void StopContinuousCommunication();
+
+        Task SendSnmpSetCommandAsync(string ipAddress, int port, string oid, string value);
     }
 }

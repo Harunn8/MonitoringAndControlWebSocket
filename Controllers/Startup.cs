@@ -18,6 +18,7 @@ using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
 using Application.Interfaces;
 using Models;
+using Controllers.Controllers;
 
 namespace Presentation
 {
@@ -38,6 +39,7 @@ namespace Presentation
             // Servis Bağımlılıklarını Kaydet
             services.AddSingleton<ISnmpService, SnmpService>();
             services.AddTransient<WebSocketHandlerSnmp>();
+            services.AddTransient<WebSocketHandlerTcp>();
 
             // MongoDB Bağlantısı
             var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
@@ -47,6 +49,7 @@ namespace Presentation
             services.AddScoped<DeviceService>();
             services.AddScoped<DeviceDataService>();
             services.AddScoped<SnmpParserService>();
+            services.AddScoped<TcpService>();
 
             // JWT Authentication
             services.AddAuthentication(options =>

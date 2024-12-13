@@ -35,7 +35,7 @@ namespace Services
             {
                 DeviceId = deviceId,
                 Oid = oid,
-                Value = value,
+                Value = value.ToString(),
                 TimeStamp = DateTime.Now
             };
         }

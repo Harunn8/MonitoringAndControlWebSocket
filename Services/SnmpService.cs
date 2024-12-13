@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Interfaces;
+using Models;
 using SnmpSharpNet;
 
 namespace Infrastructure.Services
 {
     public class SnmpService : ISnmpService
-    { 
+    {
         private bool _isRunning;
 
         public async Task StartContinuousCommunicationAsync(
@@ -43,7 +44,7 @@ namespace Infrastructure.Services
                     {
                         foreach (Vb vb in response.Pdu.VbList)
                         {
-                            onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value}");
+                            onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value} ");
                         }
                     }
                     else
@@ -67,6 +68,23 @@ namespace Infrastructure.Services
         public void StopContinuousCommunication()
         {
             _isRunning = false;
+        }
+
+        public async Task SendSnmpSetCommandAsync(string ipAddress, int port, string oid, string value)
+        {
+            try
+            {
+                Pdu pdu = new Pdu(PduType.Set);
+                pdu.VbList.Add(new Vb(new Oid(oid), new OctetString("private")));
+
+                //AgentParameters agentParams = new AgentParameters(
+
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }
