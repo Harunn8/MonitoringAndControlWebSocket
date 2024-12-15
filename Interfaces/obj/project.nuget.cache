@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bejqMSk9+aY=",
+  "dgSpecHash": "LV3a16FVJ1U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
+  "projectFilePath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\harun.kirtay\\.nuget\\packages\\jwt\\10.1.1\\jwt.10.1.1.nupkg.sha512",
     "C:\\Users\\harun.kirtay\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
