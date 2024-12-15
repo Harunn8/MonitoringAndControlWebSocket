@@ -28,34 +28,10 @@
               "RelativeDocumentMoniker": "MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
               "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
               "RelativeToolTip": "MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T12:38:03.282Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "572691bd-a40c-4ed3-8c6b-0b62047978ab",
-        "Display": 1,
-        "X": 202,
-        "Y": 737,
-        "Width": 970,
-        "Height": 1045,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "WhenOpened": "2024-10-27T12:38:03.282Z",
+              "EditorCaption": ""
             }
           ]
         }

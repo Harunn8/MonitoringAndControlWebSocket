@@ -90,8 +90,7 @@
               "RelativeToolTip": "Interfaces\\ISnmpService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:51:07.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T14:51:07.813Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "Controllers\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-13T12:49:20.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T12:49:20.569Z"
             },
             {
               "$type": "Document",
@@ -128,8 +126,7 @@
               "RelativeToolTip": "Controllers\\Startup.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAQwC0AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:46:48.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T15:46:48.101Z"
             },
             {
               "$type": "Document",
@@ -153,8 +150,7 @@
               "RelativeToolTip": "Services\\DeviceService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:00:29.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T15:00:29.737Z"
             },
             {
               "$type": "Document",
@@ -190,8 +186,7 @@
               "RelativeToolTip": "Controllers\\Controllers\\TcpDeviceController.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAcwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:52:04.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T15:52:04.269Z"
             },
             {
               "$type": "Document",
@@ -227,8 +222,7 @@
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketHandlerTcp.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAgwBkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T15:10:07.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T15:10:07.363Z"
             },
             {
               "$type": "Document",
@@ -240,8 +234,7 @@
               "RelativeToolTip": "Services\\TcpService.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAwwDMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T15:04:00.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T15:04:00.514Z"
             },
             {
               "$type": "Document",
@@ -266,8 +259,7 @@
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAowG0AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:48.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:56:48.808Z"
             }
           ]
         },
