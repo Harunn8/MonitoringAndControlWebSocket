@@ -1,0 +1,13 @@
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\bin\Debug\net5.0\MCSMqttBus.deps.json
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\bin\Debug\net5.0\MCSMqttBus.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\bin\Debug\net5.0\MCSMqttBus.pdb
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.csproj.AssemblyReference.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.AssemblyInfoInputs.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.AssemblyInfo.cs
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.csproj.CoreCompileInputs.cache
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.sourcelink.json
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\refint\MCSMqttBus.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\MCSMqttBus.pdb
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\MCSMqttBus\obj\Debug\net5.0\ref\MCSMqttBus.dll

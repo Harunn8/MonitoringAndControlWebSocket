@@ -18,7 +18,6 @@ namespace Presentation.Controllers
         private CancellationTokenSource _cancellationTokenSource;
         private readonly DeviceService _deviceService;
 
-
         public WebSocketHandlerSnmp(ISnmpService snmpService, DeviceService deviceService)
         {
             _snmpService = snmpService ?? throw new ArgumentNullException(nameof(snmpService));
@@ -40,6 +39,7 @@ namespace Presentation.Controllers
                 do
                 {
                     result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                    Console.WriteLine("Web Socket was open");
 
                     if (result.MessageType == WebSocketMessageType.Close)
                     {

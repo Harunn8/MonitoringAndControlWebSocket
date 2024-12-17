@@ -11,14 +11,21 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using MongoDB.Driver;
-using System.ComponentModel.DataAnnotations;
 using Services;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
-using Application.Interfaces;
-using Models;
 using Controllers.Controllers;
+using Serilog;
+using MQTTnet.Client.Options;
+using MQTTnet.Client;
+using MCSMqttBus.Connection.Base;
+using MCSMqttBus.Connection;
+using System;
+using MCSMqttBus.Producer;
+using MQTTnet;
+using System.IO;
+using System.Net.Http;
 
 namespace Presentation
 {
@@ -37,13 +44,22 @@ namespace Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             // Servis Bağımlılıklarını Kaydet
+            Log.Information("Program started");
+            Console.WriteLine("Program started");
             services.AddSingleton<ISnmpService, SnmpService>();
             services.AddTransient<WebSocketHandlerSnmp>();
             services.AddTransient<WebSocketHandlerTcp>();
+            Console.WriteLine("Web Socket preparing...");
+            
 
             // MongoDB Bağlantısı
+
+            Log.Information("MongoDB conneciton preparing is started");
+            Console.WriteLine("MongoDB conneciton preparing is started");
             var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
             var database = mongoClient.GetDatabase("DeviceDB");
+            Log.Information("MongoDB connection was establish");
+            Console.WriteLine("MongoDB connection was establish");
 
             services.AddSingleton(database);
             services.AddScoped<DeviceService>();
