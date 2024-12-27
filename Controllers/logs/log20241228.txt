@@ -1,0 +1,25 @@
+2024-12-28 00:05:23.035 +03:00 [INF] Logger is configured and started
+2024-12-28 00:05:23.071 +03:00 [INF] Mqtt Connection preparing...
+2024-12-28 00:05:23.085 +03:00 [INF] Web Socket preparing...
+2024-12-28 00:05:23.086 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-28 00:05:23.086 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-28 00:05:23.101 +03:00 [INF] MongoDB connection was establish
+2024-12-28 00:05:29.966 +03:00 [INF] Program started
+2024-12-28 00:05:30.231 +03:00 [INF] Successfully connected to MQTT server
+2024-12-28 00:12:00.038 +03:00 [INF] Logger is configured and started
+2024-12-28 00:12:00.071 +03:00 [INF] Mqtt Connection preparing...
+2024-12-28 00:12:00.085 +03:00 [INF] Web Socket preparing...
+2024-12-28 00:12:00.085 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-28 00:12:00.086 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-28 00:12:00.100 +03:00 [INF] MongoDB connection was establish
+2024-12-28 00:12:00.101 +03:00 [INF] Program started
+2024-12-28 00:12:00.364 +03:00 [INF] Successfully connected to MQTT server
+2024-12-28 00:13:51.829 +03:00 [INF] Logger is configured and started
+2024-12-28 00:13:51.866 +03:00 [INF] Mqtt Connection preparing...
+2024-12-28 00:13:51.886 +03:00 [INF] Web Socket preparing...
+2024-12-28 00:13:51.886 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-28 00:13:51.887 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-28 00:13:51.906 +03:00 [INF] MongoDB connection was establish
+2024-12-28 00:13:51.906 +03:00 [INF] Program started
+2024-12-28 00:13:52.255 +03:00 [INF] Successfully connected to MQTT server
+2024-12-28 00:13:52.657 +03:00 [INF] Database was empty, 'Seed Service' was run
