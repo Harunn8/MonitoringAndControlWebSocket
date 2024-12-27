@@ -6,11 +6,11 @@ using MCSMqttBus.Connection.Base;
 
 namespace MCSMqttBus.Producer
 {
-    public class Mqttproducer
+    public class MqttProducer
     {
         private readonly IMqttConnection _connection;
 
-        public Mqttproducer(IMqttConnection mqttConnection)
+        public MqttProducer(IMqttConnection mqttConnection)
         {
             _connection = mqttConnection;
         }

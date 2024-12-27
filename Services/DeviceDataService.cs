@@ -12,7 +12,7 @@ namespace Services
 
         public DeviceDataService(IMongoDatabase database)
         {
-            _deviceData = database.GetCollection<DeviceData>("DeviceData");
+            _deviceData = database.GetCollection<DeviceData>("Device");
         }
 
         public async Task<List<DeviceData>> GetDeviceDataAsync()

@@ -74,7 +74,6 @@ C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\MQTTnet.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\Serilog.FullNetFx.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\Serilog.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\SharpCompress.dll
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\SnmpSharpNet.dll
@@ -118,3 +117,5 @@ C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\obj
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\obj\Debug\net5.0\Controllers.pdb
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\obj\Debug\net5.0\Controllers.genruntimeconfig.cache
 C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\obj\Debug\net5.0\ref\Controllers.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\Serilog.Sinks.Console.dll
+C:\Users\harun.kirtay\Source\Repos\MonitoringAndControlWebSocket\Controllers\bin\Debug\net5.0\Serilog.Sinks.File.dll

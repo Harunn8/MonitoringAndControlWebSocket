@@ -1,0 +1,264 @@
+2024-12-27 14:36:03.202 +03:00 [INF] Logger is configured and started
+2024-12-27 14:36:03.261 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:36:03.608 +03:00 [INF] MongoDB connection was establish
+2024-12-27 14:36:03.612 +03:00 [INF] Program started
+2024-12-27 14:40:47.481 +03:00 [INF] Logger is configured and started
+2024-12-27 14:40:47.510 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 14:40:47.532 +03:00 [ERR] Web Socket preparing...
+2024-12-27 14:40:47.532 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:40:47.533 +03:00 [ERR] MongoDB conneciton preparing is started
+2024-12-27 14:40:47.788 +03:00 [INF] MongoDB connection was establish
+2024-12-27 14:40:47.788 +03:00 [INF] Program started
+2024-12-27 14:40:50.122 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 14:40:50.167 +03:00 [ERR] Failed to established MQTT connection: One or more errors occurred. (No connection could be made because the target machine actively refused it.)
+2024-12-27 14:41:06.024 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 14:41:43.015 +03:00 [INF] Logger is configured and started
+2024-12-27 14:41:43.043 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 14:41:43.060 +03:00 [INF] Web Socket preparing...
+2024-12-27 14:41:43.061 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:41:43.062 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:41:43.277 +03:00 [INF] MongoDB connection was establish
+2024-12-27 14:41:43.279 +03:00 [INF] Program started
+2024-12-27 14:41:45.566 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 14:41:45.600 +03:00 [ERR] Failed to established MQTT connection: One or more errors occurred. (No connection could be made because the target machine actively refused it.)
+2024-12-27 14:42:15.489 +03:00 [INF] Logger is configured and started
+2024-12-27 14:42:15.518 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 14:42:15.539 +03:00 [INF] Web Socket preparing...
+2024-12-27 14:42:15.540 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:42:15.540 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:42:15.829 +03:00 [INF] MongoDB connection was establish
+2024-12-27 14:42:15.834 +03:00 [INF] Program started
+2024-12-27 14:42:35.503 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 14:57:55.186 +03:00 [INF] Logger is configured and started
+2024-12-27 14:57:55.214 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 14:57:55.234 +03:00 [INF] Web Socket preparing...
+2024-12-27 14:57:55.235 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:57:55.236 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 14:57:55.462 +03:00 [INF] MongoDB connection was establish
+2024-12-27 14:57:55.463 +03:00 [INF] Program started
+2024-12-27 14:58:04.194 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 14:58:04.214 +03:00 [ERR] Failed to established MQTT connection: One or more errors occurred. (No connection could be made because the target machine actively refused it.)
+2024-12-27 14:58:39.399 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 15:00:16.869 +03:00 [INF] Logger is configured and started
+2024-12-27 15:00:16.896 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:00:16.912 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:00:16.912 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:00:16.913 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:00:17.123 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:00:17.126 +03:00 [INF] Program started
+2024-12-27 15:00:19.550 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:00:30.115 +03:00 [INF] Logger is configured and started
+2024-12-27 15:00:30.143 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:00:30.160 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:00:30.160 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:00:30.160 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:00:30.440 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:00:30.444 +03:00 [INF] Program started
+2024-12-27 15:00:33.948 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:18:42.999 +03:00 [INF] Web Socket was open
+2024-12-27 15:18:43.082 +03:00 [ERR] Error in WebSocket communication: The character '' is not allowed in topics.
+2024-12-27 15:18:43.084 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:30:07.089 +03:00 [INF] Logger is configured and started
+2024-12-27 15:30:07.123 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:30:07.147 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:30:07.148 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:30:07.149 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:30:07.405 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:30:07.407 +03:00 [INF] Program started
+2024-12-27 15:30:20.135 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:31:59.010 +03:00 [INF] Web Socket was open
+2024-12-27 15:31:59.090 +03:00 [ERR] Error in WebSocket communication: The character '' is not allowed in topics.
+2024-12-27 15:31:59.095 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:31:59.815 +03:00 [INF] Web Socket was open
+2024-12-27 15:31:59.854 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:31:59.855 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:32:00.789 +03:00 [INF] Web Socket was open
+2024-12-27 15:32:00.816 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:32:00.818 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:34:28.822 +03:00 [INF] Web Socket was open
+2024-12-27 15:34:28.850 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:35:08.324 +03:00 [INF] Web Socket was open
+2024-12-27 15:35:08.356 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:36:40.706 +03:00 [INF] Logger is configured and started
+2024-12-27 15:36:40.733 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:36:40.750 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:36:40.752 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:36:40.753 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:36:40.964 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:36:40.974 +03:00 [INF] Program started
+2024-12-27 15:36:41.229 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:36:49.824 +03:00 [INF] Web Socket was open
+2024-12-27 15:36:49.900 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:36:49.903 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:36:52.686 +03:00 [INF] Web Socket was open
+2024-12-27 15:36:52.720 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:36:52.722 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:37:13.845 +03:00 [INF] Web Socket was open
+2024-12-27 15:37:13.870 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:37:22.956 +03:00 [INF] Web Socket was open
+2024-12-27 15:37:22.981 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:38:11.436 +03:00 [INF] Logger is configured and started
+2024-12-27 15:38:11.463 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:38:11.479 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:38:11.482 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:38:11.484 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:38:11.697 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:38:11.701 +03:00 [INF] Program started
+2024-12-27 15:38:11.968 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:38:29.718 +03:00 [INF] Web Socket was open
+2024-12-27 15:38:29.780 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:38:29.782 +03:00 [WRN] WebSocket is not open. Unable to send message.
+2024-12-27 15:38:35.203 +03:00 [INF] Web Socket was open
+2024-12-27 15:38:35.246 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:38:46.243 +03:00 [INF] Web Socket was open
+2024-12-27 15:38:46.271 +03:00 [ERR] Error in WebSocket communication: The character '#' is not allowed in topics.
+2024-12-27 15:39:55.676 +03:00 [INF] Logger is configured and started
+2024-12-27 15:39:55.703 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:39:55.719 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:39:55.719 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:39:55.720 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:39:55.950 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:39:55.951 +03:00 [INF] Program started
+2024-12-27 15:39:56.218 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:40:11.730 +03:00 [INF] Web Socket was open
+2024-12-27 15:44:37.298 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:39.443 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:40.503 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:41.042 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:41.734 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:42.210 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:45.855 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:47.179 +03:00 [INF] Web Socket was open
+2024-12-27 15:45:49.247 +03:00 [INF] Web Socket was open
+2024-12-27 15:47:01.456 +03:00 [INF] Logger is configured and started
+2024-12-27 15:47:01.499 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:47:01.536 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:47:01.537 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:47:01.538 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:47:01.771 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:47:01.773 +03:00 [INF] Program started
+2024-12-27 15:47:02.076 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:47:38.806 +03:00 [INF] Web Socket was open
+2024-12-27 15:49:54.100 +03:00 [INF] Logger is configured and started
+2024-12-27 15:49:54.127 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:49:54.143 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:49:54.144 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:49:54.145 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:49:54.352 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:49:54.361 +03:00 [INF] Program started
+2024-12-27 15:49:54.603 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:50:54.529 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 15:51:51.762 +03:00 [INF] Web Socket was open
+2024-12-27 15:53:58.573 +03:00 [INF] Logger is configured and started
+2024-12-27 15:53:58.603 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 15:53:58.620 +03:00 [INF] Web Socket preparing...
+2024-12-27 15:53:58.621 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:53:58.622 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 15:53:58.844 +03:00 [INF] MongoDB connection was establish
+2024-12-27 15:53:58.845 +03:00 [INF] Program started
+2024-12-27 15:53:59.174 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 15:54:05.079 +03:00 [INF] Web Socket was open
+2024-12-27 15:54:06.368 +03:00 [INF] Web Socket was open
+2024-12-27 15:54:13.221 +03:00 [INF] Web Socket was open
+2024-12-27 16:11:13.595 +03:00 [INF] Logger is configured and started
+2024-12-27 16:11:13.626 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 16:11:13.659 +03:00 [INF] Web Socket preparing...
+2024-12-27 16:11:13.661 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 16:11:13.662 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 16:11:13.948 +03:00 [INF] MongoDB connection was establish
+2024-12-27 16:11:13.949 +03:00 [INF] Program started
+2024-12-27 16:11:14.271 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 16:11:21.930 +03:00 [INF] Logger is configured and started
+2024-12-27 16:11:21.967 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 16:11:21.987 +03:00 [INF] Web Socket preparing...
+2024-12-27 16:11:21.989 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 16:11:21.990 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 16:11:22.246 +03:00 [INF] MongoDB connection was establish
+2024-12-27 16:11:22.247 +03:00 [INF] Program started
+2024-12-27 16:11:22.551 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 16:11:30.730 +03:00 [INF] Web Socket was open
+2024-12-27 17:23:19.511 +03:00 [INF] Logger is configured and started
+2024-12-27 17:23:19.540 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:23:19.561 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:23:19.565 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:23:19.568 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:23:19.809 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:23:19.813 +03:00 [INF] Program started
+2024-12-27 17:24:06.149 +03:00 [INF] Logger is configured and started
+2024-12-27 17:24:06.177 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:24:06.199 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:24:06.200 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:24:06.201 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:24:06.443 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:24:06.454 +03:00 [INF] Program started
+2024-12-27 17:30:58.016 +03:00 [INF] Logger is configured and started
+2024-12-27 17:30:58.048 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:30:58.069 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:30:58.070 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:30:58.071 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:30:58.304 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:30:58.305 +03:00 [INF] Program started
+2024-12-27 17:32:08.833 +03:00 [INF] Logger is configured and started
+2024-12-27 17:32:08.861 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:32:08.879 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:32:08.880 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:32:08.881 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:32:08.898 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:32:08.899 +03:00 [INF] Program started
+2024-12-27 17:34:05.579 +03:00 [INF] Logger is configured and started
+2024-12-27 17:34:05.610 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:34:05.629 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:34:05.630 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:34:05.631 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:34:05.650 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:34:05.651 +03:00 [INF] Program started
+2024-12-27 17:34:32.470 +03:00 [INF] Logger is configured and started
+2024-12-27 17:34:32.499 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:34:32.526 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:34:32.528 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:34:32.529 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:34:32.547 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:34:32.548 +03:00 [INF] Program started
+2024-12-27 17:34:32.881 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 17:36:25.630 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 17:38:32.800 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-27 17:40:46.789 +03:00 [INF] Logger is configured and started
+2024-12-27 17:40:46.822 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 17:40:46.845 +03:00 [INF] Web Socket preparing...
+2024-12-27 17:40:46.867 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:40:46.875 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 17:40:46.891 +03:00 [INF] MongoDB connection was establish
+2024-12-27 17:40:46.906 +03:00 [INF] Program started
+2024-12-27 17:40:47.234 +03:00 [INF] Successfully connected to MQTT server
+2024-12-27 17:41:11.099 +03:00 [INF] Web Socket was open
+2024-12-27 17:41:12.076 +03:00 [INF] Web Socket was open
+2024-12-27 17:41:14.462 +03:00 [INF] Web Socket was open
+2024-12-27 18:31:39.477 +03:00 [INF] Logger is configured and started
+2024-12-27 18:31:39.517 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 18:31:39.605 +03:00 [INF] Web Socket preparing...
+2024-12-27 18:31:39.606 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:31:39.607 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:31:39.625 +03:00 [INF] MongoDB connection was establish
+2024-12-27 18:31:39.628 +03:00 [INF] Program started
+2024-12-27 18:32:41.171 +03:00 [INF] Logger is configured and started
+2024-12-27 18:32:41.198 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 18:32:41.213 +03:00 [INF] Web Socket preparing...
+2024-12-27 18:32:41.214 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:32:41.215 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:32:41.230 +03:00 [INF] MongoDB connection was establish
+2024-12-27 18:32:41.231 +03:00 [INF] Program started
+2024-12-27 18:32:56.326 +03:00 [INF] Logger is configured and started
+2024-12-27 18:32:56.368 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 18:32:56.388 +03:00 [INF] Web Socket preparing...
+2024-12-27 18:32:56.393 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:32:56.394 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:32:56.417 +03:00 [INF] MongoDB connection was establish
+2024-12-27 18:32:56.418 +03:00 [INF] Program started
+2024-12-27 18:33:30.345 +03:00 [INF] Logger is configured and started
+2024-12-27 18:33:30.372 +03:00 [INF] Mqtt Connection preparing...
+2024-12-27 18:33:30.390 +03:00 [INF] Web Socket preparing...
+2024-12-27 18:33:30.391 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:33:30.392 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-27 18:33:30.413 +03:00 [INF] MongoDB connection was establish
+2024-12-27 18:33:30.413 +03:00 [INF] Program started
+2024-12-27 18:33:30.708 +03:00 [INF] Successfully connected to MQTT server
