@@ -1,48 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Microsoft.Extensions.Configuration;
-using System;
+using Services;
+using System.Threading.Tasks;
+using Infrastructure.Services;
 
-namespace Controllers.Controllers
+namespace YourNamespace.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     public class LoginController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
+        private readonly LoginService _loginService;
 
-        public LoginController(IConfiguration configuration)
+        public LoginController(LoginService loginService)
         {
-            _configuration = configuration;
+            _loginService = loginService;
         }
 
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] LoginRequest request)
+        public async Task<IActionResult> Authenticate([FromBody] LoginRequest request)
         {
-            if (request.Username == "root" && request.Password == "1")
+            var isValidUser = await _loginService.ValidateUser(request.Username, request.Password);
+
+            if (isValidUser)
             {
-                var token = GenerateJwtToken(request.Username);
+                var token = _loginService.GenerateJwtToken(request.Username);
                 return Ok(new { Token = token });
             }
 
             return Unauthorized("Invalid username or password");
-        }
-
-        private string GenerateJwtToken(string username)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, username) }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
         }
     }
 

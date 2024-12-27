@@ -9,6 +9,8 @@ using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Services;
+using MCSMqttBus.Producer;
+using Serilog;
 
 namespace Presentation.Controllers
 {
@@ -17,11 +19,13 @@ namespace Presentation.Controllers
         private readonly ISnmpService _snmpService;
         private CancellationTokenSource _cancellationTokenSource;
         private readonly DeviceService _deviceService;
+        private readonly MqttProducer _mqttProducer;
 
-        public WebSocketHandlerSnmp(ISnmpService snmpService, DeviceService deviceService)
+        public WebSocketHandlerSnmp(ISnmpService snmpService, DeviceService deviceService, MqttProducer mqttProducer)
         {
             _snmpService = snmpService ?? throw new ArgumentNullException(nameof(snmpService));
             _deviceService = deviceService;
+            _mqttProducer = mqttProducer;
         }
 
         public async Task HandleAsync(HttpContext context, WebSocket webSocket)
@@ -39,7 +43,8 @@ namespace Presentation.Controllers
                 do
                 {
                     result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                    Console.WriteLine("Web Socket was open");
+                    Log.Information("Web Socket was open");
+                    _mqttProducer.PublishMessage("telemetry", $"Web Socket was open" ,MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
 
                     if (result.MessageType == WebSocketMessageType.Close)
                     {
@@ -65,11 +70,13 @@ namespace Presentation.Controllers
                         case "startcommunication":
                             _cancellationTokenSource = new CancellationTokenSource();
                             StartCommunication(command.Parameters, webSocket, _cancellationTokenSource.Token);
+                            _mqttProducer.PublishMessage("telemetry", $"Communication Started", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
                             break;
 
                         case "stopcommunication":
                             StopCommunication();
                             await SendMessage(webSocket, "Communication stopped.");
+                            _mqttProducer.PublishMessage("telemetry", $"Communication Stopped", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
                             break;
 
                         default:
@@ -83,7 +90,7 @@ namespace Presentation.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in WebSocket communication: {ex.Message}");
+                Log.Error($"Error in WebSocket communication: {ex.Message}");
                 await SendMessage(webSocket, $"An error occurred: {ex.Message}");
             }
         }
@@ -121,7 +128,7 @@ namespace Presentation.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error starting communication: {ex.Message}");
+                Log.Error($"Error starting communication: {ex.Message}");
                 SendMessage(webSocket, $"Error starting communication: {ex.Message}").Wait();
             }
         }
@@ -138,7 +145,7 @@ namespace Presentation.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error stopping communication: {ex.Message}");
+                Log.Error($"Error stopping communication: {ex.Message}");
             }
         }
 
@@ -146,7 +153,7 @@ namespace Presentation.Controllers
         {
             if (webSocket.State != WebSocketState.Open)
             {
-                Console.WriteLine("WebSocket is not open. Unable to send message.");
+                Log.Warning("WebSocket is not open. Unable to send message.");
                 return;
             }
 
@@ -157,7 +164,7 @@ namespace Presentation.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error sending message: {ex.Message}");
+                Log.Error($"Error sending message: {ex.Message}");
             }
         }
     }

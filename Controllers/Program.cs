@@ -11,7 +11,6 @@ namespace Presentation
         public static void Main(string[] args)
         {
             Log.Information("Program is preparing...");
-            Console.WriteLine("Program is preparing...");
             CreateHostBuilder(args).Build().Run();
         }
 

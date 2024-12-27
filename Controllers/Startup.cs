@@ -26,6 +26,8 @@ using MCSMqttBus.Producer;
 using MQTTnet;
 using System.IO;
 using System.Net.Http;
+using Domain.Models;
+using Models;
 
 namespace Presentation
 {
@@ -43,29 +45,56 @@ namespace Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Information()
+            .WriteTo.Console() // Konsola yazdırmak için
+            .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day) // Dosyaya yazdırmak için
+            .CreateLogger();
+
+            Log.Information("Logger is configured and started");
+
+            Log.Information("Mqtt Connection preparing...");
+
+            var mqttOptions = new MqttClientOptionsBuilder()
+                .WithClientId("telemetry")
+                .WithTcpServer("127.0.0.1",1883)
+                .WithCleanSession()
+                .Build();
+
+            services.AddSingleton<IMqttClient>(_ => new MqttFactory().CreateMqttClient());
+            services.AddSingleton<IMqttConnection>(_ => new MqttConneciton(mqttOptions, new MqttFactory().CreateMqttClient()));
+            services.AddSingleton<MqttProducer>();
+
             // Servis Bağımlılıklarını Kaydet
-            Log.Information("Program started");
-            Console.WriteLine("Program started");
             services.AddSingleton<ISnmpService, SnmpService>();
             services.AddTransient<WebSocketHandlerSnmp>();
             services.AddTransient<WebSocketHandlerTcp>();
-            Console.WriteLine("Web Socket preparing...");
+            Log.Information("Web Socket preparing...");
             
 
             // MongoDB Bağlantısı
 
             Log.Information("MongoDB conneciton preparing is started");
-            Console.WriteLine("MongoDB conneciton preparing is started");
-            var mongoClient = new MongoClient(Configuration.GetConnectionString("MongoDb"));
-            var database = mongoClient.GetDatabase("DeviceDB");
+            Log.Information("MongoDB conneciton preparing is started");
+            var mongoDbSettings = Configuration.GetSection("MongoDbSettings").Get<MongoDBSettings>();
+            services.AddSingleton<IMongoClient>(sp =>
+            {
+                var settings = Configuration["ConnectionStrings:MongoDb"];
+                return new MongoClient(settings);
+            });
+            services.AddSingleton(sp =>
+            {
+                var mongoClient = sp.GetRequiredService<IMongoClient>();
+                return mongoClient.GetDatabase(mongoDbSettings.DatabaseName);
+            });
             Log.Information("MongoDB connection was establish");
-            Console.WriteLine("MongoDB connection was establish");
+            Log.Information("Program started");
 
-            services.AddSingleton(database);
             services.AddScoped<DeviceService>();
-            services.AddScoped<DeviceDataService>();
             services.AddScoped<SnmpParserService>();
             services.AddScoped<TcpService>();
+            services.AddScoped<UserService>();
+            services.AddScoped<LoginService>();
 
             // JWT Authentication
             services.AddAuthentication(options =>
