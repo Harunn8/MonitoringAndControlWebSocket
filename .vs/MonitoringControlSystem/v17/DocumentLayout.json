@@ -130,15 +130,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 2065,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
@@ -150,8 +146,7 @@
               "RelativeToolTip": "Controllers\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-27T20:58:35.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T20:58:35.472Z"
             },
             {
               "$type": "Document",
@@ -163,8 +158,7 @@
               "RelativeToolTip": "Services\\ContextSeedService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T20:52:01.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T20:52:01.441Z"
             },
             {
               "$type": "Document",
@@ -224,8 +218,7 @@
               "RelativeToolTip": "Services\\LoginService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T12:55:17.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T12:55:17.356Z"
             },
             {
               "$type": "Document",
@@ -273,8 +266,7 @@
               "RelativeToolTip": "Services\\UserService.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAEwBwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T11:31:14.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T11:31:14.863Z"
             },
             {
               "$type": "Document",
@@ -358,8 +350,7 @@
               "RelativeToolTip": "Controllers\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-13T12:49:20.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T12:49:20.569Z"
             },
             {
               "$type": "Document",
@@ -492,8 +483,7 @@
               "RelativeToolTip": "Services\\TcpService.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAewEEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T15:04:00.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T15:04:00.514Z"
             },
             {
               "$type": "Document",
@@ -506,6 +496,10 @@
               "ViewState": "AgIAAFwAAAAAAAAAAAAvwHAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T14:56:48.808Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         },
