@@ -877,10 +877,7 @@
           "System.IdentityModel.Tokens.Jwt": "8.1.2"
         },
         "runtime": {
-          "Interfaces.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Interfaces.dll": {}
         }
       },
       "MCSMqttBus/1.0.0": {
@@ -889,10 +886,7 @@
           "Serilog": "1.4.128"
         },
         "runtime": {
-          "MCSMqttBus.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "MCSMqttBus.dll": {}
         }
       },
       "Models/1.0.0": {
@@ -907,10 +901,7 @@
           "System.IdentityModel.Tokens.Jwt": "8.1.2"
         },
         "runtime": {
-          "Models.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Models.dll": {}
         }
       }
     }

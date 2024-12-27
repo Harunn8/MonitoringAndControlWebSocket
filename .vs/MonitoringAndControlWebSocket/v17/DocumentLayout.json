@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\",
+  "WorkspaceRootPath": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MonitoringControlSystem\\Controllers\\WebSocketHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,12 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 2065,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
@@ -28,13 +24,18 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "WebSocketHandler.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
               "RelativeDocumentMoniker": "MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
               "RelativeToolTip": "MonitoringControlSystem\\Controllers\\WebSocketHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T12:38:03.282Z"
+              "WhenOpened": "2024-10-27T12:38:03.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         },

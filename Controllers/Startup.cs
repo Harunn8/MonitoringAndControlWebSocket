@@ -21,12 +21,8 @@ using MQTTnet.Client.Options;
 using MQTTnet.Client;
 using MCSMqttBus.Connection.Base;
 using MCSMqttBus.Connection;
-using System;
 using MCSMqttBus.Producer;
 using MQTTnet;
-using System.IO;
-using System.Net.Http;
-using Domain.Models;
 using Models;
 
 namespace Presentation
@@ -37,7 +33,6 @@ namespace Presentation
         {
             Configuration = configuration;
 
-            // GUID için BSON Serializer ayarı
             BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
         }
 
@@ -47,8 +42,8 @@ namespace Presentation
         {
             Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Information()
-            .WriteTo.Console() // Konsola yazdırmak için
-            .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day) // Dosyaya yazdırmak için
+            .WriteTo.Console()
+            .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
             Log.Information("Logger is configured and started");
@@ -65,15 +60,11 @@ namespace Presentation
             services.AddSingleton<IMqttConnection>(_ => new MqttConneciton(mqttOptions, new MqttFactory().CreateMqttClient()));
             services.AddSingleton<MqttProducer>();
 
-            // Servis Bağımlılıklarını Kaydet
             services.AddSingleton<ISnmpService, SnmpService>();
             services.AddTransient<WebSocketHandlerSnmp>();
             services.AddTransient<WebSocketHandlerTcp>();
             Log.Information("Web Socket preparing...");
             
-
-            // MongoDB Bağlantısı
-
             Log.Information("MongoDB conneciton preparing is started");
             Log.Information("MongoDB conneciton preparing is started");
             var mongoDbSettings = Configuration.GetSection("MongoDbSettings").Get<MongoDBSettings>();
@@ -88,6 +79,7 @@ namespace Presentation
                 return mongoClient.GetDatabase(mongoDbSettings.DatabaseName);
             });
             Log.Information("MongoDB connection was establish");
+            services.AddScoped<ContextSeedService>();
             Log.Information("Program started");
 
             services.AddScoped<DeviceService>();
@@ -95,8 +87,8 @@ namespace Presentation
             services.AddScoped<TcpService>();
             services.AddScoped<UserService>();
             services.AddScoped<LoginService>();
+            services.AddScoped<DeviceDataService>();
 
-            // JWT Authentication
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -112,21 +104,19 @@ namespace Presentation
                 };
             });
 
-            // Controller ve CORS Desteği
             services.AddControllers();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigins",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000","http://10.0.20.69:3000") // İzin verilen kaynak
-                            .AllowAnyHeader() // Herhangi bir başlığa izin ver
-                            .AllowAnyMethod() // Herhangi bir HTTP metoduna izin ver
+                        builder.WithOrigins("http://localhost:3000","http://10.0.20.69:3000")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
                             .AllowCredentials();
                     });
             });
 
-            // Swagger Ayarları
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -136,7 +126,6 @@ namespace Presentation
                     Description = "A simple example ASP.NET Core Web API"
                 });
 
-                // Swagger için JWT Authentication tanımı
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -170,7 +159,6 @@ namespace Presentation
             {
                 app.UseDeveloperExceptionPage();
 
-                // Swagger arayüzünü etkinleştir
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
@@ -179,23 +167,26 @@ namespace Presentation
                 });
             }
 
-            // Statik Dosyalar (İsteğe Bağlı)
             app.UseStaticFiles();
 
-            // WebSocket Middleware
             app.UseWebSockets();
 
-            // Routing Middleware
             app.UseRouting();
 
-            // CORS Middleware
             app.UseCors("AllowSpecificOrigins");
 
-            // Authentication ve Authorization Middleware'leri
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Endpoint Middleware
+            using(var scope = app.ApplicationServices.CreateScope()) 
+            {
+                var seedService = scope.ServiceProvider.GetRequiredService<ContextSeedService>();
+                seedService.UserSeedAsync().Wait();
+                seedService.DeviceSeedAsync().Wait();
+                Log.Information("Database was empty, 'Seed Service' was run");
+                 
+            }
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

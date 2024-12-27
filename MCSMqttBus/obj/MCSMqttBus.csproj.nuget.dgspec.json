@@ -1,32 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj": {}
+    "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj": {}
   },
   "projects": {
-    "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj": {
+    "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj",
+        "projectUniqueName": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj",
         "projectName": "MCSMqttBus",
-        "projectPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj",
-        "packagesPath": "C:\\Users\\harun.kirtay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\obj\\",
+        "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj",
+        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\harun.kirtay\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,8 +39,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net5.0": {
@@ -76,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
