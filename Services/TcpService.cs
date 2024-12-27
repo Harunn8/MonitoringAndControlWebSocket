@@ -7,6 +7,8 @@ using System.Net.Sockets;
 using System.Threading;
 using MongoDB.Driver;
 using Models;
+using MCSMqttBus.Producer;
+using Serilog;
 
 namespace Services
 {
@@ -14,11 +16,13 @@ namespace Services
     {
         private readonly IMongoCollection<TcpDevice> _tcpDevice;
         private CancellationTokenSource _cancellationTokenSource;
+        private readonly MqttProducer _mqttProducer;
 
-        public TcpService(IMongoDatabase database)
+        public TcpService(IMongoDatabase database, MqttProducer mqttProducer)
         {
             _tcpDevice = database.GetCollection<TcpDevice>("TcpDevice");
             _cancellationTokenSource = new CancellationTokenSource();
+            _mqttProducer = mqttProducer;
         }
 
         public async Task<List<TcpDevice>> GetTcpDeviceAsync()
@@ -58,7 +62,8 @@ namespace Services
                 using var client = new TcpClient();
                 await client.ConnectAsync(ipAddress, port);
 
-                Console.WriteLine($"Connected to TCP Device at {ipAddress}:{port}");
+                Log.Information($"Connected to TCP Device at {ipAddress}:{port}");
+                _mqttProducer.PublishMessage("telemetry", $"Connected to Tcp Device: {ipAddress}:{port}", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
 
                 using var stream = client.GetStream();
 
@@ -78,7 +83,8 @@ namespace Services
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Error during TCP communication: {e.Message}");
+                Log.Error($"Error during TCP communication: {e.Message}");
+                _mqttProducer.PublishMessage("telemetry", $"Error during TCP communication: {e.Message}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
             }
         }
 
@@ -92,14 +98,14 @@ namespace Services
                 if (client != null && client.Connected)
                 {
                     client.Close();
-                    Console.WriteLine("Tcp Communication stopped");
+                    Log.Information("Tcp Communication stopped");
                 }
 
                 client = null;
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Error stopping Tcp communication: {e.Message}");
+                Log.Error($"Error stopping Tcp communication: {e.Message}");
             }
         }
     }

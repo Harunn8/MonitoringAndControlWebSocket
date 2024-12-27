@@ -5,12 +5,20 @@ using System.Threading.Tasks;
 using Application.Interfaces;
 using Models;
 using SnmpSharpNet;
+using MCSMqttBus.Producer;
+using Serilog;
 
 namespace Infrastructure.Services
 {
     public class SnmpService : ISnmpService
     {
         private bool _isRunning;
+        private readonly MqttProducer _mqttProducer;
+
+        public SnmpService(MqttProducer mqttProducer)
+        {
+            _mqttProducer = mqttProducer;
+        }
 
         public async Task StartContinuousCommunicationAsync(
             string ipAddress,
@@ -45,18 +53,21 @@ namespace Infrastructure.Services
                         foreach (Vb vb in response.Pdu.VbList)
                         {
                             onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value} ");
+                            _mqttProducer.PublishMessage("telemetry",$"{vb.Oid},{vb.Value}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
+                            Console.WriteLine($"{vb.Oid}: {vb.Value}");
                         }
                     }
                     else
                     {
-                        onMessageReceived?.Invoke("Simülatörden veri alınamadı. OID'leri ve simülatör ayarlarını kontrol edin.");
-                        Console.WriteLine("SNMP sonucu null veya hata durumu döndü. OID'leri veya IP adresini doğrulayın.");
+                        onMessageReceived?.Invoke("SNMP result returned null or error status. Verify OIDs or IP address");
+                        Log.Warning("SNMP result returned null or error status. Verify OIDs or IP address");
+                        
                     }
                 }
                 catch (Exception ex)
                 {
-                    onMessageReceived?.Invoke($"SNMP sorgusu sırasında hata oluştu: {ex.Message}");
-                    Console.WriteLine($"SNMP sorgusu sırasında hata oluştu: {ex}");
+                    onMessageReceived?.Invoke($"Error occurred during SNMP query: {ex.Message}");
+                    Log.Error($"Error occurred during SNMP query: {ex}");
                 }
 
                 await Task.Delay(500);
