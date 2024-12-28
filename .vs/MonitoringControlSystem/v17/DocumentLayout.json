@@ -1,247 +1,209 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\",
+  "WorkspaceRootPath": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\websockethandlersnmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\websockethandlersnmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\contextseedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\contextseedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\devicemappingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\devicemappingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\oidmappingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\oidmappingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\devicedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\devicedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\devicedataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\devicedataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\snmpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\snmpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\websocketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\websocketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\contextseedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\contextseedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\websocketcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\websocketcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\mcsmqttbus\\connection\\mqttconneciton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|solutionrelative:mcsmqttbus\\connection\\mqttconneciton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\mcsmqttbus\\connection\\base\\imqttconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|solutionrelative:mcsmqttbus\\connection\\base\\imqttconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D548BBAB-8A65-47CE-8379-D6CE213A60C6}|Interfaces\\Interfaces.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\interfaces\\isnmpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D548BBAB-8A65-47CE-8379-D6CE213A60C6}|Interfaces\\Interfaces.csproj|solutionrelative:interfaces\\isnmpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\mcsmqttbus\\producer\\mqttproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|solutionrelative:mcsmqttbus\\producer\\mqttproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\snmpparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\snmpparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\websockethandlertcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\websockethandlertcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\websockethandlertcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\devicemappingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\devicemappingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\devicedataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\devicedataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\snmpparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\snmpparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\devicedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\devicedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\websockethandlersnmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\websockethandlersnmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\oidmappingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\oidmappingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\services\\tcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\websocketcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\websocketcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\services\\tcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03DA9991-13CB-4CC8-A33F-BE225DF9F208}|Services\\Services.csproj|solutionrelative:services\\tcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\logs\\log20241227.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\logs\\log20241227.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\mcsmqttbus\\connection\\mqttconneciton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|solutionrelative:mcsmqttbus\\connection\\mqttconneciton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\tcpdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\controllers\\controllers\\tcpdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA612C70-E8B5-4846-A323-1D1AE649D78E}|Controllers\\Controllers.csproj|solutionrelative:controllers\\controllers\\tcpdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun.kirtay\\source\\repos\\monitoringandcontrolwebsocket\\models\\tcpdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\mcsmqttbus\\producer\\mqttproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|solutionrelative:mcsmqttbus\\producer\\mqttproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\mcsmqttbus\\connection\\base\\imqttconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42B53FA8-0C16-4887-8E2E-E748EA15451A}|MCSMqttBus\\MCSMqttBus.csproj|solutionrelative:mcsmqttbus\\connection\\base\\imqttconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D548BBAB-8A65-47CE-8379-D6CE213A60C6}|Interfaces\\Interfaces.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\interfaces\\isnmpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D548BBAB-8A65-47CE-8379-D6CE213A60C6}|Interfaces\\Interfaces.csproj|solutionrelative:interfaces\\isnmpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|c:\\users\\harun\\source\\repos\\monitoringandcontrolwebsocket\\models\\tcpdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC2DE3C9-603F-4CBA-AED3-0EDDE9105C3F}|Models\\Models.csproj|solutionrelative:models\\tcpdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 192,
       "DocumentGroups": [
         {
           "DockedWidth": 2065,
-          "SelectedChildIndex": 32,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ContextSeedService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\ContextSeedService.cs",
-              "RelativeDocumentMoniker": "Services\\ContextSeedService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\ContextSeedService.cs",
-              "RelativeToolTip": "Services\\ContextSeedService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAhwDoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T13:00:41.738Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "WebSocketController.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Controllers\\WebSocketController.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketController.cs",
-              "RelativeToolTip": "Controllers\\Controllers\\WebSocketController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T10:34:16.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SnmpService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\SnmpService.cs",
-              "RelativeDocumentMoniker": "Services\\SnmpService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\SnmpService.cs",
-              "RelativeToolTip": "Services\\SnmpService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T09:38:44.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 5,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Controllers\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Properties\\launchSettings.json",
               "RelativeToolTip": "Controllers\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-27T20:59:22.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeviceMappingService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceMappingService.cs",
-              "RelativeDocumentMoniker": "Services\\DeviceMappingService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceMappingService.cs",
-              "RelativeToolTip": "Services\\DeviceMappingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T15:00:48.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OidMappingRequest.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\OidMappingRequest.cs",
-              "RelativeDocumentMoniker": "Models\\OidMappingRequest.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\OidMappingRequest.cs",
-              "RelativeToolTip": "Models\\OidMappingRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T14:58:51.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T20:58:35.472Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ContextSeedService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\ContextSeedService.cs",
+              "RelativeDocumentMoniker": "Services\\ContextSeedService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\ContextSeedService.cs",
+              "RelativeToolTip": "Services\\ContextSeedService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T20:52:01.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DeviceMappingService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceMappingService.cs",
+              "RelativeDocumentMoniker": "Services\\DeviceMappingService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceMappingService.cs",
+              "RelativeToolTip": "Services\\DeviceMappingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T15:00:48.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OidMappingRequest.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\OidMappingRequest.cs",
+              "RelativeDocumentMoniker": "Models\\OidMappingRequest.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\OidMappingRequest.cs",
+              "RelativeToolTip": "Models\\OidMappingRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T14:58:51.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Device.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Device.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Device.cs",
               "RelativeDocumentMoniker": "Models\\Device.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Device.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\Device.cs",
               "RelativeToolTip": "Models\\Device.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA4wBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T14:41:34.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 18,
               "Title": "MongoDBSettings.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\MongoDBSettings.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\MongoDBSettings.cs",
               "RelativeDocumentMoniker": "Models\\MongoDBSettings.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\MongoDBSettings.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\MongoDBSettings.cs",
               "RelativeToolTip": "Models\\MongoDBSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -249,36 +211,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 6,
               "Title": "LoginService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\LoginService.cs",
               "RelativeDocumentMoniker": "Services\\LoginService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\LoginService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\LoginService.cs",
               "RelativeToolTip": "Services\\LoginService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAiwBcAAAAJAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T12:55:17.356Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "WebSocketCommand.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\WebSocketCommand.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\WebSocketCommand.cs",
               "RelativeDocumentMoniker": "Models\\WebSocketCommand.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\WebSocketCommand.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\WebSocketCommand.cs",
               "RelativeToolTip": "Models\\WebSocketCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T12:46:26.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T12:46:26.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 22,
+              "Title": "log20241227.txt",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\logs\\log20241227.txt",
+              "RelativeDocumentMoniker": "Controllers\\logs\\log20241227.txt",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\logs\\log20241227.txt",
+              "RelativeToolTip": "Controllers\\logs\\log20241227.txt",
+              "ViewState": "AgIAADAAAAAAAAAAAAAewDoAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-27T12:39:39.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\Controllers\\UserController.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -286,75 +259,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\UserService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\UserService.cs",
               "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwBwAAAAIAAAAAAAAAA==",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAEwBwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T11:31:14.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T11:31:14.863Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Program.cs",
               "RelativeDocumentMoniker": "Controllers\\Program.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Program.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Program.cs",
               "RelativeToolTip": "Controllers\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAhwA0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T14:44:50.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MqttProducer.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Producer\\MqttProducer.cs",
-              "RelativeDocumentMoniker": "MCSMqttBus\\Producer\\MqttProducer.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Producer\\MqttProducer.cs",
-              "RelativeToolTip": "MCSMqttBus\\Producer\\MqttProducer.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAnwBYAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T14:07:29.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MqttConneciton.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\MqttConneciton.cs",
-              "RelativeDocumentMoniker": "MCSMqttBus\\Connection\\MqttConneciton.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\MqttConneciton.cs",
-              "RelativeToolTip": "MCSMqttBus\\Connection\\MqttConneciton.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T14:07:20.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IMqttConnection.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
-              "RelativeDocumentMoniker": "MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
-              "RelativeToolTip": "MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T14:07:14.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 26,
+              "Title": "MqttProducer.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Producer\\MqttProducer.cs",
+              "RelativeDocumentMoniker": "MCSMqttBus\\Producer\\MqttProducer.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Producer\\MqttProducer.cs",
+              "RelativeToolTip": "MCSMqttBus\\Producer\\MqttProducer.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAMwBYAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T14:07:29.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MqttConneciton.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\MqttConneciton.cs",
+              "RelativeDocumentMoniker": "MCSMqttBus\\Connection\\MqttConneciton.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\MqttConneciton.cs",
+              "RelativeToolTip": "MCSMqttBus\\Connection\\MqttConneciton.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T14:07:20.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IMqttConnection.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
+              "RelativeDocumentMoniker": "MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
+              "RelativeToolTip": "MCSMqttBus\\Connection\\Base\\IMqttConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T14:07:14.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -362,62 +331,60 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "ISnmpService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\ISnmpService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\ISnmpService.cs",
               "RelativeDocumentMoniker": "Interfaces\\ISnmpService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\ISnmpService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Interfaces\\ISnmpService.cs",
               "RelativeToolTip": "Interfaces\\ISnmpService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:51:07.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T14:51:07.813Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\appsettings.json",
               "RelativeDocumentMoniker": "Controllers\\appsettings.json",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\appsettings.json",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\appsettings.json",
               "RelativeToolTip": "Controllers\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-13T12:49:20.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 13,
               "Title": "SnmpParserService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\SnmpParserService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\SnmpParserService.cs",
               "RelativeDocumentMoniker": "Services\\SnmpParserService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\SnmpParserService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\SnmpParserService.cs",
               "RelativeToolTip": "Services\\SnmpParserService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAmwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:48:43.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T14:48:43.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Startup.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Startup.cs",
               "RelativeDocumentMoniker": "Controllers\\Startup.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Startup.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Startup.cs",
               "RelativeToolTip": "Controllers\\Startup.cs",
-              "ViewState": "AgIAALYAAAAAAAAAAAAhwMMAAAAUAAAAAAAAAA==",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAMwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T15:46:48.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "TcpDevice.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\TcpDevice.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\TcpDevice.cs",
               "RelativeDocumentMoniker": "Models\\TcpDevice.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\TcpDevice.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\TcpDevice.cs",
               "RelativeToolTip": "Models\\TcpDevice.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAWwBoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -425,37 +392,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DeviceService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceService.cs",
-              "RelativeDocumentMoniker": "Services\\DeviceService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceService.cs",
-              "RelativeToolTip": "Services\\DeviceService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAUwC8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:00:29.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "DeviceController.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\DeviceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Controllers\\DeviceController.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\DeviceController.cs",
-              "RelativeToolTip": "Controllers\\Controllers\\DeviceController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAIwEwAAAB2AAAAAAAAAA==",
+              "Title": "DeviceService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceService.cs",
+              "RelativeDocumentMoniker": "Services\\DeviceService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceService.cs",
+              "RelativeToolTip": "Services\\DeviceService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:00:18.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T15:00:29.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 11,
+              "Title": "DeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\DeviceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Controllers\\DeviceController.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\DeviceController.cs",
+              "RelativeToolTip": "Controllers\\Controllers\\DeviceController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:00:18.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\Controllers\\LoginController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -463,11 +428,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 25,
               "Title": "TcpDeviceController.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\TcpDeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\TcpDeviceController.cs",
               "RelativeDocumentMoniker": "Controllers\\Controllers\\TcpDeviceController.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\TcpDeviceController.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\TcpDeviceController.cs",
               "RelativeToolTip": "Controllers\\Controllers\\TcpDeviceController.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAcwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -475,37 +440,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "DeviceData.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\DeviceData.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\DeviceData.cs",
               "RelativeDocumentMoniker": "Models\\DeviceData.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Models\\DeviceData.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Models\\DeviceData.cs",
               "RelativeToolTip": "Models\\DeviceData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T14:50:46.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T14:50:46.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "DeviceDataService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceDataService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceDataService.cs",
               "RelativeDocumentMoniker": "Services\\DeviceDataService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceDataService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\DeviceDataService.cs",
               "RelativeToolTip": "Services\\DeviceDataService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAywCwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T14:50:43.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T14:50:43.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 8,
               "Title": "WebSocketHandlerTcp.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerTcp.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerTcp.cs",
               "RelativeDocumentMoniker": "Controllers\\Controllers\\WebSocketHandlerTcp.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerTcp.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerTcp.cs",
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketHandlerTcp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -513,29 +476,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 21,
               "Title": "TcpService.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\TcpService.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\TcpService.cs",
               "RelativeDocumentMoniker": "Services\\TcpService.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Services\\TcpService.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Services\\TcpService.cs",
               "RelativeToolTip": "Services\\TcpService.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAewEEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T15:04:00.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T15:04:00.514Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 15,
               "Title": "WebSocketHandlerSnmp.cs",
-              "DocumentMoniker": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
+              "DocumentMoniker": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
               "RelativeDocumentMoniker": "Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
-              "ToolTip": "C:\\Users\\harun.kirtay\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
+              "ToolTip": "C:\\Users\\harun\\source\\repos\\MonitoringAndControlWebSocket\\Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
               "RelativeToolTip": "Controllers\\Controllers\\WebSocketHandlerSnmp.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAIA3wHAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAvwHAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:48.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:56:48.808Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         },

@@ -42,7 +42,12 @@ namespace Services
                      DeviceName = "Acu-Limitless",
                      IpAddress = "10.0.90.230",
                      Port = 5002,
-                     //OidList = new List<string> {"1.2.3.1","1.2.3.2","1.2.3.3" ,"1.2.3.4"}
+                     OidList = new List<OidMapping>
+                     {
+                         new OidMapping {Oid = "1.2.3.1", ParameterName = "Acu-Process Speed"},
+                         new OidMapping {Oid = "1.2.3.2", ParameterName = "Acu Nominal Status Read Speed"}
+                     }
+                    
                  },
                  new Device
                  {
@@ -50,7 +55,11 @@ namespace Services
                      DeviceName = "NTP Server",
                      IpAddress = "10.0.90.230",
                      Port = 5003,
-                     //OidList = new List<string> {"1.3.6.1.128912.1.5.7","1.3.6.1.128912.1.7.5.1.1.2","1.3.6.1.128912.1.5.5.1.7.1.5"}
+                     OidList = new List<OidMapping>
+                     {
+                         new OidMapping {Oid = "1.3.3.1", ParameterName = "NTP-Status"},
+                         new OidMapping {Oid = "1.3.3.2", ParameterName = "NTP-Fan Status"}
+                     }                 
                  }
              };
 

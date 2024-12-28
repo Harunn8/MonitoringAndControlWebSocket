@@ -11,7 +11,6 @@ using Newtonsoft.Json;
 using Services;
 using MCSMqttBus.Producer;
 using Serilog;
-using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace Presentation.Controllers
@@ -122,7 +121,6 @@ namespace Presentation.Controllers
 
             try
             {
-                // OidMapping nesnelerinden sadece Oid değerlerini al
                 var oidListAsString = oidList.Select(mapping => mapping.Oid).ToList();
 
                 _snmpService.StartContinuousCommunicationAsync(ipAddress, result.Port, oidListAsString, async (data) =>
@@ -131,7 +129,7 @@ namespace Presentation.Controllers
                     {
                         var jsonMessage = JsonConvert.SerializeObject(new
                         {
-                            // JSON içerik eklenebilir
+                           
                         });
                         await SendMessage(webSocket, data);
                     }

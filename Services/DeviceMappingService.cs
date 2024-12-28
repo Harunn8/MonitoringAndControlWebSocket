@@ -22,7 +22,6 @@ namespace Services
 
             foreach (var oidMapping in device.OidList)
             {
-                // Eğer OID, parameterInputs'ta varsa, eşleştir
                 if (parameterInputs.TryGetValue(oidMapping.Oid, out var parameterName))
                 {
                     mappings.Add(new OidMapping
@@ -33,7 +32,6 @@ namespace Services
                 }
                 else
                 {
-                    // Varsayılan parametre atanabilir
                     mappings.Add(new OidMapping
                     {
                         Oid = oidMapping.Oid,
@@ -47,7 +45,6 @@ namespace Services
 
         public async Task SaveMappingsAsync(string deviceId, List<OidMapping> mappings)
         {
-            // Veritabanındaki cihazı güncelle
             var update = Builders<Device>.Update.Set(device => device.OidList, mappings);
 
             await _deviceCollection.UpdateOneAsync(

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Models;
 using System.Threading.Tasks;
 using Services;
-using Infrastructure.Services;
 using System;
 using Application.Interfaces;
 
@@ -83,7 +81,6 @@ namespace Controllers.Controllers
 
             try
             {
-                // SNMP Set komutunu çağırın
                 await _snmpService.SendSnmpSetCommandAsync(ipAddress, port, oid, value);
 
                 return Ok();

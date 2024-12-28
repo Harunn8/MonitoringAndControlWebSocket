@@ -100,10 +100,8 @@ namespace Controllers.Controllers
 
                 await _tcpService.StartCommunicationAsync(device.IpAddress, device.Port, tcpFormat, async (data) =>
                 {
-                    // Veritabanına kaydet
                     await _deviceDataService.AddDeviceData(device.Id, "TCP", data);
 
-                    // WebSocket üzerinden veri gönder
                     if (webSocket.State == WebSocketState.Open)
                     {
                         await SendMessage(webSocket, JsonConvert.SerializeObject(new { Device = device.DeviceName, Data = data }));
