@@ -40,9 +40,9 @@ namespace Services
             await _device.DeleteOneAsync(id);
         }
 
-        public async Task<Device> GetDeviceByIp(string ipAddress)
+        public async Task<Device> GetDeviceByIp(string ipAddress,int port)
         {
-            return await _device.Find(device => device.IpAddress == ipAddress).FirstOrDefaultAsync();
+            return await _device.Find(device => device.IpAddress == ipAddress && device.Port == port).FirstOrDefaultAsync();
         }
     }
 }

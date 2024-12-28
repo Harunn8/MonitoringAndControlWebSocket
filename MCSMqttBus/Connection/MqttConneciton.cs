@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MQTTnet.Client;
 using MQTTnet.Client.Options;
 using MCSMqttBus.Connection.Base;
@@ -55,7 +51,7 @@ namespace MCSMqttBus.Connection
                     _mqttClient.ReconnectAsync();
                 });
                 _mqttClient.ConnectAsync(_mqttOptions).Wait();
-                Log.Information("Successfully connected to MQTT server");
+                Log.Information("Mqtt connection was establish");
             }
             catch (Exception ex) 
             {
@@ -72,7 +68,5 @@ namespace MCSMqttBus.Connection
             }
             return _mqttClient;
         }
-
-      
     }
 }

@@ -2,6 +2,9 @@
 using Models;
 using System.Threading.Tasks;
 using Services;
+using Infrastructure.Services;
+using System;
+using Application.Interfaces;
 
 namespace Controllers.Controllers
 {
@@ -10,10 +13,12 @@ namespace Controllers.Controllers
     public class DeviceController : ControllerBase
     {
         private readonly DeviceService _deviceService;
+        private readonly ISnmpService _snmpService;
 
-        public DeviceController(DeviceService deviceService)
+        public DeviceController(DeviceService deviceService, ISnmpService snmpService)
         {
             _deviceService = deviceService;
+            _snmpService = snmpService;
         }
 
         [HttpGet]
@@ -66,6 +71,27 @@ namespace Controllers.Controllers
 
             await _deviceService.DeleteDevice(id);
             return Ok(new { message = "Device deleted successfully!" });
+        }
+
+        [HttpPost("sendCommand")]
+        public async Task<IActionResult> SendSnmpSetCommandAsync(string ipAddress, int port, string oid, string value)
+        {
+            if (string.IsNullOrEmpty(ipAddress) || string.IsNullOrEmpty(oid) || string.IsNullOrEmpty(value))
+            {
+                return BadRequest("IP Address, OID ve Value parametreleri zorunludur.");
+            }
+
+            try
+            {
+                // SNMP Set komutunu çağırın
+                await _snmpService.SendSnmpSetCommandAsync(ipAddress, port, oid, value);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
         }
     }
 }

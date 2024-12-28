@@ -5433,40 +5433,46 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\harun\\.nuget\\packages\\": {}
+    "C:\\Users\\harun.kirtay\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
-      "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\obj\\",
+      "projectPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\Services.csproj",
+      "packagesPath": "C:\\Users\\harun.kirtay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\harun.kirtay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
-              "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj"
+            "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj": {
+              "projectPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Interfaces\\Interfaces.csproj"
             },
-            "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj": {
-              "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj"
+            "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj": {
+              "projectPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\MCSMqttBus\\MCSMqttBus.csproj"
             },
-            "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\harun\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj"
+            "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\harun.kirtay\\Source\\Repos\\MonitoringAndControlWebSocket\\Models\\Models.csproj"
             }
           }
         }
@@ -5480,7 +5486,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net5.0": {
@@ -5531,7 +5538,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

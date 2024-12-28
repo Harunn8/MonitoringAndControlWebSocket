@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MCSMqttBus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eeb67f2ce8c261a420f61d8a1d14da622c18ad4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e4e541412c5e8915527064c2e7daedfe3dc6a43")]
 [assembly: System.Reflection.AssemblyProductAttribute("MCSMqttBus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MCSMqttBus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

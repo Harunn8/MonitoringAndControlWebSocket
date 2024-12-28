@@ -85,16 +85,33 @@ namespace Infrastructure.Services
         {
             try
             {
+                UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), port, 1000, 1);
+                
                 Pdu pdu = new Pdu(PduType.Set);
-                pdu.VbList.Add(new Vb(new Oid(oid), new OctetString("private")));
+                pdu.VbList.Add(new Vb(new Oid(oid), new OctetString(value)));
 
-                //AgentParameters agentParams = new AgentParameters(
+                AgentParameters agentParameters = new AgentParameters(new OctetString("private"))
+                {
+                    Version = SnmpVersion.Ver2
+                };
 
+                SnmpV2Packet response = (SnmpV2Packet)target.Request(pdu, agentParameters);
 
+                if (response != null && response.Pdu.ErrorStatus == 0)
+                {
+                    _mqttProducer.PublishMessage("telemetry", $"{oid},{value} command send was successfully", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
+                    Log.Information($"Command was send successfully to {oid},{value}");
+                }
+
+                else
+                {
+                    _mqttProducer.PublishMessage("telemetry", $"Error! This command can not sended be successfully", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
+                    Log.Information("Error! This command can not sended be successfully");
+                }
             }
-            catch
+            catch(Exception ex) 
             {
-
+                Log.Information("Error :", ex.Message);
             }
         }
     }

@@ -11,6 +11,8 @@ using Newtonsoft.Json;
 using Services;
 using MCSMqttBus.Producer;
 using Serilog;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Presentation.Controllers
 {
@@ -103,7 +105,13 @@ namespace Presentation.Controllers
                 return;
             }
 
-            var result = _deviceService.GetDeviceByIp(ipAddress).Result;
+            if(!parameters.TryGetValue("port", out var portString) || !int.TryParse(portString, out var port))
+            {
+                SendMessage(webSocket, "Port is missing").Wait();
+                return;
+            }
+
+            var result = _deviceService.GetDeviceByIp(ipAddress,port).Result;
             if (result == null)
             {
                 return;
@@ -114,13 +122,16 @@ namespace Presentation.Controllers
 
             try
             {
-                _snmpService.StartContinuousCommunicationAsync(ipAddress,result.Port, oidList, async (data) =>
+                // OidMapping nesnelerinden sadece Oid değerlerini al
+                var oidListAsString = oidList.Select(mapping => mapping.Oid).ToList();
+
+                _snmpService.StartContinuousCommunicationAsync(ipAddress, result.Port, oidListAsString, async (data) =>
                 {
                     if (webSocket.State == WebSocketState.Open)
                     {
                         var jsonMessage = JsonConvert.SerializeObject(new
                         {
-                            
+                            // JSON içerik eklenebilir
                         });
                         await SendMessage(webSocket, data);
                     }
@@ -129,9 +140,10 @@ namespace Presentation.Controllers
             catch (Exception ex)
             {
                 Log.Error($"Error starting communication: {ex.Message}");
-                SendMessage(webSocket, $"Error starting communication: {ex.Message}").Wait();
+                SendMessage(webSocket, $"Error starting communication: {ex.Message}");
             }
-        }
+
+            }
 
         private void StopCommunication()
         {

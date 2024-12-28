@@ -66,7 +66,6 @@ namespace Presentation
             Log.Information("Web Socket preparing...");
             
             Log.Information("MongoDB conneciton preparing is started");
-            Log.Information("MongoDB conneciton preparing is started");
             var mongoDbSettings = Configuration.GetSection("MongoDbSettings").Get<MongoDBSettings>();
             services.AddSingleton<IMongoClient>(sp =>
             {
@@ -182,9 +181,7 @@ namespace Presentation
             {
                 var seedService = scope.ServiceProvider.GetRequiredService<ContextSeedService>();
                 seedService.UserSeedAsync().Wait();
-                seedService.DeviceSeedAsync().Wait();
-                Log.Information("Database was empty, 'Seed Service' was run");
-                 
+                seedService.DeviceSeedAsync().Wait();                 
             }
 
             app.UseEndpoints(endpoints =>
