@@ -1,0 +1,6 @@
+# Build klasörlerini ve geçici dosyalarý görmezden gel
+bin/
+obj/
+*.log
+*.user
+*.vs/
