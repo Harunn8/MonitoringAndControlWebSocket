@@ -1,0 +1,199 @@
+2025-01-13 23:08:25.342 +03:00 [INF] Logger is configured and started
+2025-01-13 23:08:25.400 +03:00 [INF] Mqtt Connection preparing...
+2025-01-13 23:08:25.437 +03:00 [INF] Web Socket preparing...
+2025-01-13 23:08:25.438 +03:00 [INF] MongoDB conneciton preparing is started
+2025-01-13 23:08:25.473 +03:00 [INF] MongoDB connection was establish
+2025-01-13 23:08:25.474 +03:00 [INF] Program started
+2025-01-13 23:08:26.181 +03:00 [INF] Mqtt connection was establish
+2025-01-13 23:09:00.914 +03:00 [INF] Web Socket was open
+2025-01-13 23:09:03.191 +03:00 [INF] Web Socket was open
+2025-01-13 23:09:06.134 +03:00 [INF] Web Socket was open
+2025-01-13 23:09:11.788 +03:00 [INF] Web Socket was open
+2025-01-13 23:11:41.770 +03:00 [INF] Web Socket was open
+2025-01-13 23:11:44.307 +03:00 [INF] Web Socket was open
+2025-01-13 23:11:46.634 +03:00 [INF] Web Socket was open
+2025-01-13 23:11:49.264 +03:00 [INF] Web Socket was open
+2025-01-13 23:11:51.792 +03:00 [INF] Web Socket was open
+2025-01-13 23:11:54.052 +03:00 [INF] Web Socket was open
+2025-01-13 23:12:05.241 +03:00 [INF] Web Socket was open
+2025-01-13 23:16:48.325 +03:00 [INF] Logger is configured and started
+2025-01-13 23:16:48.358 +03:00 [INF] Mqtt Connection preparing...
+2025-01-13 23:16:48.382 +03:00 [INF] Web Socket preparing...
+2025-01-13 23:16:48.383 +03:00 [INF] MongoDB conneciton preparing is started
+2025-01-13 23:16:48.407 +03:00 [INF] MongoDB connection was establish
+2025-01-13 23:16:48.408 +03:00 [INF] Program started
+2025-01-13 23:16:48.757 +03:00 [INF] Mqtt connection was establish
+2025-01-13 23:17:08.011 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:03.217 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:04.724 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:06.878 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:22:09.416 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:22:11.951 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:22:17.497 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:20.552 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:22.192 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:25.632 +03:00 [INF] Web Socket was open
+2025-01-13 23:22:29.191 +03:00 [INF] Web Socket was open
+2025-01-13 23:23:46.958 +03:00 [INF] Web Socket was open
+2025-01-13 23:24:08.923 +03:00 [INF] Web Socket was open
+2025-01-13 23:30:07.929 +03:00 [INF] Web Socket was open
+2025-01-13 23:30:20.840 +03:00 [INF] Web Socket was open
+2025-01-13 23:30:42.440 +03:00 [INF] Web Socket was open
+2025-01-13 23:31:08.287 +03:00 [INF] Web Socket was open
+2025-01-13 23:31:10.250 +03:00 [INF] Web Socket was open
+2025-01-13 23:31:19.393 +03:00 [INF] Web Socket was open
+2025-01-13 23:31:21.438 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:31:23.970 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:32:26.749 +03:00 [INF] Web Socket was open
+2025-01-13 23:35:08.926 +03:00 [INF] Web Socket was open
+2025-01-13 23:36:50.808 +03:00 [INF] Web Socket was open
+2025-01-13 23:36:57.215 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:13.514 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:42.049 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:43.507 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:46.848 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:47.468 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:47.681 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:48.088 +03:00 [INF] Web Socket was open
+2025-01-13 23:37:54.627 +03:00 [INF] Web Socket was open
+2025-01-13 23:38:02.907 +03:00 [INF] Web Socket was open
+2025-01-13 23:38:13.953 +03:00 [INF] Web Socket was open
+2025-01-13 23:38:18.185 +03:00 [INF] Web Socket was open
+2025-01-13 23:38:20.003 +03:00 [INF] Web Socket was open
+2025-01-13 23:38:22.038 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:38:22.040 +03:00 [INF] Web Socket was open
+2025-01-13 23:38:24.070 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:38:24.585 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:38:26.602 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:38:27.137 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:38:29.165 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:20.533 +03:00 [INF] Web Socket was open
+2025-01-13 23:39:28.343 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:30.878 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:33.402 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:35.931 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:38.471 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:40.999 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:43.531 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:46.081 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:48.626 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:51.153 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:53.701 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:56.241 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:39:58.780 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:01.316 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:03.848 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:06.389 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:08.940 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:11.470 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:14.011 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:16.540 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:19.075 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:21.595 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:24.123 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2025-01-13 23:40:26.664 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
