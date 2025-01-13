@@ -122,3 +122,27 @@
 2024-12-29 00:33:49.894 +03:00 [INF] Program started
 2024-12-29 00:33:50.196 +03:00 [INF] Mqtt connection was establish
 2024-12-29 00:33:58.452 +03:00 [INF] Web Socket was open
+2024-12-29 22:54:42.906 +03:00 [INF] Logger is configured and started
+2024-12-29 22:54:42.952 +03:00 [INF] Mqtt Connection preparing...
+2024-12-29 22:54:42.990 +03:00 [INF] Web Socket preparing...
+2024-12-29 22:54:42.991 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-29 22:54:43.015 +03:00 [INF] MongoDB connection was establish
+2024-12-29 22:54:43.016 +03:00 [INF] Program started
+2024-12-29 22:54:43.569 +03:00 [INF] Mqtt connection was establish
+2024-12-29 22:54:58.431 +03:00 [INF] Web Socket was open
+2024-12-29 22:56:00.560 +03:00 [INF] Web Socket was open
+2024-12-29 22:56:04.521 +03:00 [INF] Web Socket was open
+2024-12-29 22:56:11.989 +03:00 [INF] Web Socket was open
+2024-12-29 22:56:27.684 +03:00 [INF] Web Socket was open
+2024-12-29 22:56:30.028 +03:00 [INF] Web Socket was open
+2024-12-29 22:57:32.088 +03:00 [INF] Web Socket was open
+2024-12-29 22:57:34.200 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2024-12-29 22:57:36.736 +03:00 [ERR] Error occurred during SNMP query: SnmpSharpNet.SnmpException: Request has reached maximum retries.
+   at SnmpSharpNet.UdpTransport.Request(IPAddress peer, Int32 port, Byte[] buffer, Int32 bufferLength, Int32 timeout, Int32 retries)
+   at SnmpSharpNet.UdpTarget.Request(Pdu pdu, IAgentParameters agentParameters)
+   at Infrastructure.Services.SnmpService.StartContinuousCommunicationAsync(String ipAddress, Int32 port, List`1 oidList, Action`1 onMessageReceived, CancellationToken cancellationToken) in C:\Users\harun\source\repos\MonitoringAndControlWebSocket\Services\SnmpService.cs:line 49
+2024-12-29 22:57:44.350 +03:00 [INF] Web Socket was open
+2024-12-29 22:58:27.163 +03:00 [INF] Web Socket was open

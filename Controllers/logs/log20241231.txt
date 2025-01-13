@@ -1,0 +1,26 @@
+2024-12-31 02:16:22.258 +03:00 [INF] Logger is configured and started
+2024-12-31 02:16:22.558 +03:00 [INF] Mqtt Connection preparing...
+2024-12-31 02:16:23.380 +03:00 [INF] Web Socket preparing...
+2024-12-31 02:16:23.382 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-31 02:16:23.724 +03:00 [INF] MongoDB connection was establish
+2024-12-31 02:16:23.726 +03:00 [INF] Program started
+2024-12-31 02:16:24.365 +03:00 [INF] Mqtt connection was establish
+2024-12-31 02:20:26.185 +03:00 [INF] Web Socket was open
+2024-12-31 02:20:34.396 +03:00 [INF] Web Socket was open
+2024-12-31 02:20:35.049 +03:00 [INF] Web Socket was open
+2024-12-31 02:20:50.110 +03:00 [INF] Connected to TCP Device at 10.0.90.230:5003
+2024-12-31 02:21:07.987 +03:00 [INF] Disconnected from MQTT server. Reconnecting in 5 seconds...
+2024-12-31 20:51:35.142 +03:00 [INF] Logger is configured and started
+2024-12-31 20:51:35.191 +03:00 [INF] Mqtt Connection preparing...
+2024-12-31 20:51:35.220 +03:00 [INF] Web Socket preparing...
+2024-12-31 20:51:35.221 +03:00 [INF] MongoDB conneciton preparing is started
+2024-12-31 20:51:35.245 +03:00 [INF] MongoDB connection was establish
+2024-12-31 20:51:35.245 +03:00 [INF] Program started
+2024-12-31 20:51:35.733 +03:00 [INF] Mqtt connection was establish
+2024-12-31 20:52:13.448 +03:00 [INF] Web Socket was open
+2024-12-31 20:52:24.791 +03:00 [INF] Web Socket was open
+2024-12-31 20:52:27.485 +03:00 [INF] Web Socket was open
+2024-12-31 20:52:44.639 +03:00 [INF] Web Socket was open
+2024-12-31 20:52:47.979 +03:00 [INF] Web Socket was open
+2024-12-31 20:56:16.033 +03:00 [INF] Web Socket was open
+2024-12-31 20:56:16.037 +03:00 [INF] Web Socket was open

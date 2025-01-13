@@ -108,5 +108,10 @@ namespace Services
                 Log.Error($"Error stopping Tcp communication: {e.Message}");
             }
         }
+
+        public async Task<TcpDevice> GetTcpDeviceByIdAndPort(string id, int port)
+        {
+            return await _tcpDevice.Find(device => device.Id == id && device.Port == port).FirstOrDefaultAsync();
+        }
     }
 }

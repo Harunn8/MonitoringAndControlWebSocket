@@ -4,7 +4,6 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Interfaces;
 using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -84,6 +83,12 @@ namespace Controllers.Controllers
             if (!parameters.TryGetValue("ipAddress", out var ipAddress))
             {
                 await SendMessage(webSocket, "IP Address is missing");
+                return;
+            }
+
+            if (!parameters.TryGetValue("port", out var port))
+            {
+                await SendMessage(webSocket, "Port is missing");
                 return;
             }
 

@@ -22,5 +22,14 @@ namespace Models
 
         [BsonElement("tcpFormat")]
         public List<string> TcpFormat { get; set; }
+
+        [BsonElement("tcpData")]
+        public List<TcpData> TcpData {  get; set; }
+    }
+
+    public class TcpData
+    {
+        public string Request { get; set; }
+        public string ParameterName { get; set; }
     }
 }

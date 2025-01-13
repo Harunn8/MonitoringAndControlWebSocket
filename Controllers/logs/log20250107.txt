@@ -1,0 +1,33 @@
+2025-01-07 17:52:10.039 +03:00 [INF] Logger is configured and started
+2025-01-07 17:52:10.123 +03:00 [INF] Mqtt Connection preparing...
+2025-01-07 17:52:10.175 +03:00 [INF] Web Socket preparing...
+2025-01-07 17:52:10.176 +03:00 [INF] MongoDB conneciton preparing is started
+2025-01-07 17:52:10.224 +03:00 [INF] MongoDB connection was establish
+2025-01-07 17:52:10.225 +03:00 [INF] Program started
+2025-01-07 17:52:11.035 +03:00 [INF] Mqtt connection was establish
+2025-01-07 17:53:20.881 +03:00 [INF] Web Socket was open
+2025-01-07 17:53:23.998 +03:00 [INF] Web Socket was open
+2025-01-07 17:53:26.336 +03:00 [INF] Web Socket was open
+2025-01-07 17:53:36.102 +03:00 [INF] Web Socket was open
+2025-01-07 17:56:02.207 +03:00 [INF] Web Socket was open
+2025-01-07 17:56:03.320 +03:00 [INF] Web Socket was open
+2025-01-07 17:56:04.479 +03:00 [INF] Web Socket was open
+2025-01-07 17:56:09.826 +03:00 [INF] Web Socket was open
+2025-01-07 17:56:22.230 +03:00 [INF] Logger is configured and started
+2025-01-07 17:56:22.259 +03:00 [INF] Mqtt Connection preparing...
+2025-01-07 17:56:22.275 +03:00 [INF] Web Socket preparing...
+2025-01-07 17:56:22.276 +03:00 [INF] MongoDB conneciton preparing is started
+2025-01-07 17:56:22.291 +03:00 [INF] MongoDB connection was establish
+2025-01-07 17:56:22.291 +03:00 [INF] Program started
+2025-01-07 17:56:22.599 +03:00 [INF] Mqtt connection was establish
+2025-01-07 17:56:39.656 +03:00 [INF] Web Socket was open
+2025-01-07 17:57:17.985 +03:00 [INF] Web Socket was open
+2025-01-07 17:57:18.827 +03:00 [INF] Web Socket was open
+2025-01-07 18:04:11.745 +03:00 [INF] Web Socket was open
+2025-01-07 18:56:55.856 +03:00 [INF] Web Socket was open
+2025-01-07 18:57:02.575 +03:00 [INF] Web Socket was open
+2025-01-07 18:57:14.645 +03:00 [INF] Web Socket was open
+2025-01-07 18:59:12.709 +03:00 [INF] Web Socket was open
+2025-01-07 18:59:13.565 +03:00 [INF] Web Socket was open
+2025-01-07 18:59:20.817 +03:00 [INF] Web Socket was open
+2025-01-07 19:02:02.447 +03:00 [INF] Web Socket was open

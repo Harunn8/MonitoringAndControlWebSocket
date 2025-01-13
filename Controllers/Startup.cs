@@ -106,15 +106,15 @@ namespace Presentation
             services.AddControllers();
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowSpecificOrigins",
+                options.AddPolicy("AllowAllOrigins",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000","http://10.0.20.69:3000")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials();
+                        builder.AllowAnyOrigin()
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
                     });
             });
+
 
             services.AddSwaggerGen(c =>
             {
@@ -172,7 +172,7 @@ namespace Presentation
 
             app.UseRouting();
 
-            app.UseCors("AllowSpecificOrigins");
+            app.UseCors("AllowAllOrigins");
 
             app.UseAuthentication();
             app.UseAuthorization();
