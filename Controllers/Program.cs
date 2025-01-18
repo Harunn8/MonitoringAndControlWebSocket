@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using MCSMqttBus.Producer;
 using System;
+
 namespace Presentation
 {
     public class Program
