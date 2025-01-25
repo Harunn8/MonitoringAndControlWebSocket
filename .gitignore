@@ -1,23 +1,75 @@
-# Visual Studio için
+# Visual Studio
 .vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Derleme Çýktýlarý
+# Rider ve Resharper
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# Build Klasörleri
 bin/
 obj/
+ref/
+debug/
+release/
 
-# Giriþ/Çýkýþ ve Log Dosyalarý
-logs/
+# Publish ve Paket Klasörleri
+*.publish/
+publish/
+out/
+artifacts/
+wwwroot/
+dist/
+
+# Paket Yönetimi
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Log Dosyalarý
 *.log
-!keep.log
+logs/
 
-# Debug ve Ýþlem Dosyalarý
-*.pid
-*.cache
+# Geçici ve Yedekleme Dosyalarý
 *.tmp
+*.cache
+*.bak
+*.swp
+*.pid
+*.tlog
+*.ide
 
-# Daðýtýlmamasý Gereken Dosyalar
-*.env
+# Git'in izlememesi gereken dosyalar
+!.gitignore
+
+# Config ve Auto-Generated Files
+appsettings*.json
+secrets.json
+*.generated.cs
+GeneratedMSBuildEditorConfig.editorconfig
+
+# Assembly ve Derleme Dosyalarý
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.obj
+*.idb
+*.ilk
+*.aps
+
+# NuGet ve Restore
+*.nupkg
+*.snupkg
+.nuget/
+.nugetpackages/
+*.nuget.cache
+project.nuget.cache
+project.assets.json
