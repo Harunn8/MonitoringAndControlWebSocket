@@ -1,0 +1,23 @@
+# Visual Studio için
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Derleme Çýktýlarý
+bin/
+obj/
+
+# Giriþ/Çýkýþ ve Log Dosyalarý
+logs/
+*.log
+!keep.log
+
+# Debug ve Ýþlem Dosyalarý
+*.pid
+*.cache
+*.tmp
+
+# Daðýtýlmamasý Gereken Dosyalar
+*.env
