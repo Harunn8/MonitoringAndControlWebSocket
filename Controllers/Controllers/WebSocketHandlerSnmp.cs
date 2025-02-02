@@ -29,7 +29,7 @@ namespace Presentation.Controllers
             _mqttProducer = mqttProducer;
         }
 
-        public async Task HandleAsync(HttpContext context, WebSocket webSocket)
+        public async Task HandleAsyncSnmp(HttpContext context, WebSocket webSocket)
         {
             if (webSocket == null)
             {

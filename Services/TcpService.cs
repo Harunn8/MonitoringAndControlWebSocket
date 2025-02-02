@@ -9,6 +9,7 @@ using MongoDB.Driver;
 using Models;
 using MCSMqttBus.Producer;
 using Serilog;
+using MongoDB.Driver;
 
 namespace Services
 {
@@ -71,9 +72,10 @@ namespace Services
                 await stream.WriteAsync(message, 0, message.Length, cancellationToken);
 
                 var buffer = new byte[1024];
-                while (!cancellationToken.IsCancellationRequested)
+                while (!cancellationToken.IsCancellationRequested && stream.CanRead)
                 {
-                    var byteCount = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken);
+                    var byteCount = 6;
+                         
                     if (byteCount > 0)
                     {
                         var data = Encoding.UTF8.GetString(buffer, 0, byteCount);
@@ -109,9 +111,10 @@ namespace Services
             }
         }
 
-        public async Task<TcpDevice> GetTcpDeviceByIdAndPort(string id, int port)
+        public async Task<TcpDevice> GetTcpDeviceByIpAddressAndPort(string id, int port)
         {
-            return await _tcpDevice.Find(device => device.Id == id && device.Port == port).FirstOrDefaultAsync();
+            return await _tcpDevice.Find(device => device.IpAddress == id && device.Port == port).FirstOrDefaultAsync();
         }
+       
     }
 }

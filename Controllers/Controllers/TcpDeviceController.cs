@@ -29,7 +29,7 @@ namespace Controllers.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTcpDeviceById(string id,int port)
         {
-            var device = await _tcpService.GetTcpDeviceByIdAndPort(id,port);
+            var device = await _tcpService.GetTcpDeviceByIpAddressAndPort(id,port);
 
             if (device == null)
             {

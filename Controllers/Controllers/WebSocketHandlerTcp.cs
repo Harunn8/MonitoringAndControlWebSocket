@@ -25,7 +25,7 @@ namespace Controllers.Controllers
             _deviceDataService = deviceDataService;
         }
 
-        public async Task HandleAsync(HttpContext context, WebSocket webSocket)
+        public async Task HandleAsyncTcp(HttpContext context, WebSocket webSocket)
         {
             if (webSocket == null)
             {
@@ -92,7 +92,7 @@ namespace Controllers.Controllers
                 return;
             }
 
-            var device = await _tcpService.GetTcpDeviceByIp(ipAddress);
+            var device = await _tcpService.GetTcpDeviceByIpAddressAndPort(ipAddress,Convert.ToInt32(port));
             if (device == null)
             {
                 await SendMessage(webSocket, "Device not found");

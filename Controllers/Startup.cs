@@ -152,7 +152,7 @@ namespace Presentation
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandlerSnmp webSocketHandler)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebSocketHandlerSnmp webSocketHandlerSnmp, WebSocketHandlerTcp webSocketHandlerTcp)
         {
             if (env.IsDevelopment())
             {
@@ -187,12 +187,29 @@ namespace Presentation
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.Map("/ws", async context =>
+                endpoints.Map("/ws/snmp", async context =>
                 {
                     if (context.WebSockets.IsWebSocketRequest)
                     {
                         var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-                        await webSocketHandler.HandleAsync(context, webSocket);
+                        await webSocketHandlerSnmp.HandleAsyncSnmp(context, webSocket);
+                    }
+                    else
+                    {
+                        context.Response.StatusCode = 400;
+                    }
+                });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.Map("/ws/tcp", async context =>
+                {
+                    if (context.WebSockets.IsWebSocketRequest)
+                    {
+                        var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+                        await webSocketHandlerTcp.HandleAsyncTcp(context, webSocket);
                     }
                     else
                     {
