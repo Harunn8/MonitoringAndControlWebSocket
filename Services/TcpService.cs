@@ -58,6 +58,8 @@ namespace Services
 
         public async Task StartCommunicationAsync(string ipAddress, int port, string tcpFormat, Action<string> onDataReceived, CancellationToken cancellationToken)
         {
+
+            //TO DO : Tek bir kere sorgu yapıyor düzeltilmeli.
             try
             {
                 using var client = new TcpClient();
@@ -74,11 +76,15 @@ namespace Services
                 var buffer = new byte[1024];
                 while (!cancellationToken.IsCancellationRequested && stream.CanRead)
                 {
-                    var byteCount = 6;
-                         
+                    var byteCount = await stream.ReadAsync(buffer, 0, buffer.Length);
+
+                    byte[] bufferThatFitsData = new byte[byteCount];
+                    Array.Copy(buffer, 0, bufferThatFitsData, 0, byteCount);
+
                     if (byteCount > 0)
                     {
-                        var data = Encoding.UTF8.GetString(buffer, 0, byteCount);
+                        var data = Encoding.UTF8.GetString(bufferThatFitsData, 0, byteCount);
+                        Log.Information($"Received data: {data}");
                         onDataReceived?.Invoke(data);
                     }
                 }
