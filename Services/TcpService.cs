@@ -18,6 +18,7 @@ namespace Services
         private readonly IMongoCollection<TcpDevice> _tcpDevice;
         private CancellationTokenSource _cancellationTokenSource;
         private readonly MqttProducer _mqttProducer;
+        private bool _isRunning;
 
         public TcpService(IMongoDatabase database, MqttProducer mqttProducer)
         {
@@ -62,6 +63,7 @@ namespace Services
             //TO DO : Tek bir kere sorgu yapıyor düzeltilmeli.
             try
             {
+                _isRunning = true;
                 using var client = new TcpClient();
                 await client.ConnectAsync(ipAddress, port);
 
@@ -74,7 +76,7 @@ namespace Services
                 await stream.WriteAsync(message, 0, message.Length, cancellationToken);
 
                 var buffer = new byte[1024];
-                while (!cancellationToken.IsCancellationRequested && stream.CanRead)
+                while (!cancellationToken.IsCancellationRequested && stream.CanRead && _isRunning)
                 {
                     var byteCount = await stream.ReadAsync(buffer, 0, buffer.Length);
 
@@ -100,6 +102,7 @@ namespace Services
         {
             try
             {
+                _isRunning = false;
                 _cancellationTokenSource?.Cancel();
                 _cancellationTokenSource?.Dispose();
 
