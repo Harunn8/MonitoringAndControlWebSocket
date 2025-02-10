@@ -92,7 +92,7 @@ namespace Controllers.Controllers
                 return;
             }
 
-            var device = await _tcpService.GetTcpDeviceByIpAddressAndPort(ipAddress,Convert.ToInt32(port));
+            var device = await _tcpService.GetTcpDeviceByIpAddressAndPort(ipAddress, Convert.ToInt32(port));
             if (device == null)
             {
                 await SendMessage(webSocket, "Device not found");
@@ -103,13 +103,13 @@ namespace Controllers.Controllers
             {
                 string tcpFormat = device.TcpFormat != null ? string.Join(",", device.TcpFormat) : string.Empty;
 
-                await _tcpService.StartCommunicationAsync(device.IpAddress, device.Port, tcpFormat, async (data) =>
+                await _tcpService.StartCommunicationAsync(device.IpAddress, device.Port, tcpFormat, async (parsedData) =>
                 {
-                    await _deviceDataService.AddDeviceData(device.Id, "TCP", data);
+                    await _deviceDataService.AddDeviceData(device.Id, "TCP", JsonConvert.SerializeObject(parsedData));
 
                     if (webSocket.State == WebSocketState.Open)
                     {
-                        await SendMessage(webSocket, JsonConvert.SerializeObject(new { Device = device.DeviceName, Data = data }));
+                        await SendMessage(webSocket, JsonConvert.SerializeObject(new { Device = device.DeviceName, Data = parsedData }));
                     }
                 }, cancellationToken);
             }
@@ -117,8 +117,8 @@ namespace Controllers.Controllers
             {
                 Console.WriteLine($"Error starting TCP communication: {e.Message}");
             }
-
         }
+
 
         private void StopTcpCommunication()
         {

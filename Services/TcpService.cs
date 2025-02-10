@@ -10,6 +10,7 @@ using Models;
 using MCSMqttBus.Producer;
 using Serilog;
 using MongoDB.Driver;
+using MQTTnet.Protocol;
 
 namespace Services
 {
@@ -57,46 +58,53 @@ namespace Services
             return await _tcpDevice.Find(device => device.IpAddress == ipAddress).FirstOrDefaultAsync();
         }
 
-        public async Task StartCommunicationAsync(string ipAddress, int port, string tcpFormat, Action<string> onDataReceived, CancellationToken cancellationToken)
+        public async Task StartCommunicationAsync(string ipAddress, int port, string tcpFormat, Action<Dictionary<string, string>> onDataReceived, CancellationToken cancellationToken)
         {
-
-            //TO DO : Tek bir kere sorgu yapıyor düzeltilmeli.
             try
             {
+                var device = await GetTcpDeviceByIpAddressAndPort(ipAddress, port);
+
+                Log.Information($"Connecting {device.DeviceName}");
+                _mqttProducer.PublishMessage("telemetry", $"Connecting to {device.DeviceName}", MqttQualityOfServiceLevel.AtMostOnce);
+
                 _isRunning = true;
-                using var client = new TcpClient();
-                await client.ConnectAsync(ipAddress, port);
-
-                Log.Information($"Connected to TCP Device at {ipAddress}:{port}");
-                _mqttProducer.PublishMessage("telemetry", $"Connected to Tcp Device: {ipAddress}:{port}", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
-
-                using var stream = client.GetStream();
-
-                var message = Encoding.UTF8.GetBytes(tcpFormat);
-                await stream.WriteAsync(message, 0, message.Length, cancellationToken);
-
-                var buffer = new byte[1024];
-                while (!cancellationToken.IsCancellationRequested && stream.CanRead && _isRunning)
+                while (!cancellationToken.IsCancellationRequested && _isRunning)
                 {
-                    var byteCount = await stream.ReadAsync(buffer, 0, buffer.Length);
+                    using var client = new TcpClient();
+                    await client.ConnectAsync(ipAddress, port);
 
-                    byte[] bufferThatFitsData = new byte[byteCount];
-                    Array.Copy(buffer, 0, bufferThatFitsData, 0, byteCount);
+                    using var stream = client.GetStream();
+
+                    var message = Encoding.UTF8.GetBytes(tcpFormat);
+                    await stream.WriteAsync(message, 0, message.Length, cancellationToken);
+
+                    var buffer = new byte[1024];
+                    var byteCount = await stream.ReadAsync(buffer, 0, buffer.Length);
 
                     if (byteCount > 0)
                     {
-                        var data = Encoding.UTF8.GetString(bufferThatFitsData, 0, byteCount);
-                        Log.Information($"Received data: {data}");
-                        onDataReceived?.Invoke(data);
+                        var data = Encoding.UTF8.GetString(buffer, 0, byteCount);
+                        Log.Information($"Raw Data: {data}");
+
+                        Dictionary<string, string> parsedData = ParseTcpData(data, device.TcpData);
+
+                        Log.Information($"Parsed Data: {string.Join(", ", parsedData.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}");
+
+                        _mqttProducer.PublishMessage("telemetry", $"Parsed Data: {string.Join(", ", parsedData.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}", MqttQualityOfServiceLevel.AtMostOnce);
+
+                        onDataReceived?.Invoke(parsedData);
                     }
+                    client.Close();
+                    await Task.Delay(200);
                 }
             }
             catch (Exception e)
             {
                 Log.Error($"Error during TCP communication: {e.Message}");
-                _mqttProducer.PublishMessage("telemetry", $"Error during TCP communication: {e.Message}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
+                _mqttProducer.PublishMessage("telemetry", $"Error during TCP communication: {e.Message}", MqttQualityOfServiceLevel.AtMostOnce);
             }
         }
+
 
         public void StopCommunication(TcpClient client)
         {
@@ -109,14 +117,14 @@ namespace Services
                 if (client != null && client.Connected)
                 {
                     client.Close();
-                    Log.Information("Tcp Communication stopped");
+                    Log.Information("Communication Stopped");
                 }
 
                 client = null;
             }
             catch (Exception e)
             {
-                Log.Error($"Error stopping Tcp communication: {e.Message}");
+                Log.Error($"Error Stopping Communication: {e.Message}");
             }
         }
 
@@ -124,6 +132,29 @@ namespace Services
         {
             return await _tcpDevice.Find(device => device.IpAddress == id && device.Port == port).FirstOrDefaultAsync();
         }
-       
+
+        public static Dictionary<string, string> ParseTcpData(string rawData, List<TcpData> tcpDataList)
+        {
+            if (string.IsNullOrWhiteSpace(rawData) || tcpDataList == null || tcpDataList.Count == 0)
+                return new Dictionary<string, string>();
+
+            string[] parsedValues = rawData.Split(',').Select(s => s.Trim()).ToArray();
+
+            Dictionary<string, string> result = new Dictionary<string, string>();
+
+            for (int i = 0; i < parsedValues.Length && i < tcpDataList.Count; i++)
+            {
+                string parameterName = tcpDataList[i].ParameterName;
+                string value = parsedValues[i];
+
+                if (!string.IsNullOrEmpty(parameterName))
+                {
+                    result[parameterName] = value;
+                }
+            }
+
+            return result;
+        }
+
     }
 }
