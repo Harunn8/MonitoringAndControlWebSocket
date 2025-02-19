@@ -50,7 +50,7 @@ namespace Services
 
         public async Task DeleteTcpDevice(string id)
         {
-            await _tcpDevice.DeleteOneAsync(id);
+            await _tcpDevice.DeleteOneAsync(d=>d.Id==id);
         }
 
         public async Task<TcpDevice> GetTcpDeviceByIp(string ipAddress)

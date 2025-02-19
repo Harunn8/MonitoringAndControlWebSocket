@@ -47,7 +47,7 @@ namespace Controllers.Controllers
             }
 
             await _tcpService.AddTcpDevice(tcpDevice);
-            return CreatedAtAction(nameof(GetTcpDeviceById), new { id = tcpDevice.Id }, tcpDevice);
+            return Ok(tcpDevice);
         }
 
         [HttpPut("UpdateTcpDevice")]
@@ -67,13 +67,14 @@ namespace Controllers.Controllers
         public async Task<IActionResult> DeleteTcpDevice(string id)
         {
             var device = _tcpService.GetTcpDeviceById(id);
-            if (device  == null)
+            if (device == null)
             {
                 return BadRequest("Device not found");
             }
 
             await _tcpService.DeleteTcpDevice(id);
-            return Ok(device);
+
+            return Ok();
         }
 
         [HttpPost("StartTcpCommunication")]
