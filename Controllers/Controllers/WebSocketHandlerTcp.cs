@@ -109,7 +109,7 @@ namespace Controllers.Controllers
 
                     if (webSocket.State == WebSocketState.Open)
                     {
-                        await SendMessage(webSocket, JsonConvert.SerializeObject(new { Device = device.DeviceName, Data = parsedData }));
+                        await SendMessage(webSocket, JsonConvert.SerializeObject(new { Device = device.DeviceName, Data = parsedData, device.Id}));
                     }
                 }, cancellationToken);
             }

@@ -84,7 +84,6 @@ namespace Services
                     if (byteCount > 0)
                     {
                         var data = Encoding.UTF8.GetString(buffer, 0, byteCount);
-                        Log.Information($"Raw Data: {data}");
 
                         Dictionary<string, string> parsedData = ParseTcpData(data, device.TcpData);
 
