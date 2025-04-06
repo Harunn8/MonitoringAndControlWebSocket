@@ -11,12 +11,12 @@ namespace Services
 
         public DeviceService(IMongoDatabase database)
         {
-            _device = database.GetCollection<Device>("Device");
+            _device = database.GetCollection<Device>("Devices");
         }
 
         public async Task<List<Device>> GetDeviceAsync()
         {
-            return await _device.Find(device => true).ToListAsync();
+            return await _device.Find(device => device.DeviceType == "SNMP").ToListAsync();
         }
 
         public async Task<Device> GetDeviceById(string id)
@@ -41,7 +41,7 @@ namespace Services
 
         public async Task<Device> GetDeviceByIp(string ipAddress,int port)
         {
-            return await _device.Find(device => device.IpAddress == ipAddress && device.Port == port).FirstOrDefaultAsync();
+            return await _device.Find(device => device.IpAddress == ipAddress && device.Port == port && device.DeviceType == "SNMP").FirstOrDefaultAsync();
         }
     }
 }

@@ -23,14 +23,14 @@ namespace Services
 
         public TcpService(IMongoDatabase database, MqttProducer mqttProducer)
         {
-            _tcpDevice = database.GetCollection<TcpDevice>("TcpDevice");
+            _tcpDevice = database.GetCollection<TcpDevice>("Devices");
             _cancellationTokenSource = new CancellationTokenSource();
             _mqttProducer = mqttProducer;
         }
 
         public async Task<List<TcpDevice>> GetTcpDeviceAsync()
         {
-            return await _tcpDevice.Find(device => true).ToListAsync();
+            return await _tcpDevice.Find(device => device.DeviceType == "TCP").ToListAsync();
         }
 
         public async Task<TcpDevice> GetTcpDeviceById(string id)
@@ -55,7 +55,7 @@ namespace Services
 
         public async Task<TcpDevice> GetTcpDeviceByIp(string ipAddress)
         {
-            return await _tcpDevice.Find(device => device.IpAddress == ipAddress).FirstOrDefaultAsync();
+            return await _tcpDevice.Find(device => device.IpAddress == ipAddress && device.DeviceType == "TCP").FirstOrDefaultAsync();
         }
 
         public async Task StartCommunicationAsync(string ipAddress, int port, string tcpFormat, Action<Dictionary<string, string>> onDataReceived, CancellationToken cancellationToken)

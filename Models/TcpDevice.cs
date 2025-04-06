@@ -25,10 +25,16 @@ namespace Models
 
         [BsonElement("tcpData")]
         public List<TcpData> TcpData {  get; set; }
+
+        [BsonElement("deviceType")]
+        public string DeviceType { get; set; }
     }
 
     public class TcpData
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string ParameterId { get; set; }
         public string Request { get; set; }
         public string ParameterName { get; set; }
     }
