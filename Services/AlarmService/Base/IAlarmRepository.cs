@@ -21,6 +21,6 @@ namespace Services.AlarmService.Base
         public Task<AlarmResponse> GetAlarmByDeviceId(string deviceId);
         public Task<AlarmResponse> GetAlarmsBySnmpDevice(string snmpDeviceId);
         public Task<AlarmResponse> GetAlarmsByTcpDevice(string tcpDeviceId);
-        public Task<List<AlarmModel>> CheckConditions(string deviceId, string value, string condition, string threshold);
+        public bool CheckConditions(string parameterValue, string condition, string threshold);
     }
 }

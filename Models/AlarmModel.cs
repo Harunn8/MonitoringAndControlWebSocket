@@ -51,6 +51,8 @@ namespace Models
         [BsonElement("AlarmStatus")]
         public AlarmType AlarmStatus { get; set; }
 
+        [BsonElement("ParameterId")]
+        public string ParameterId { get; set; }
     }
 
     public enum AlarmType

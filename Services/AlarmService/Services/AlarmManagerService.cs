@@ -1,149 +1,142 @@
-﻿using Models;
-using Services.AlarmService.Responses;
-using Services.AlarmService.Services.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure.Services;
+using Models;
+using Services.AlarmService.Responses;
+using Services.AlarmService.Services.Base;
+using MCSMqttBus.Producer;
+using Services;
+using Serilog;
 using MongoDB.Driver;
 using AutoMapper;
-using MQTTnet;
-using MCSMqttBus.Producer;
-using Infrastructure.Services;
-using Serilog;
-using System.Globalization;
 
 namespace Services.AlarmService.Services
 {
     public class AlarmManagerService : IAlarmManagerService
     {
-        private readonly IMongoCollection<AlarmModel> _database;
-        private readonly IMapper _mapper;
-        private readonly DeviceService _snmpDeviceService;
-        private readonly TcpService _tcpDeviceService;
         private readonly MqttProducer _mqttProducer;
+        private readonly IMongoCollection<AlarmModel> _alarm;
+        private readonly IMapper _mapper;
+        
 
-        public AlarmManagerService(IMongoDatabase database, IMapper mapper, DeviceService snmpDeviceService, TcpService tcpDeviceService, MqttProducer mqttProducer)
+        public AlarmManagerService(MqttProducer mqttProducer, IMongoDatabase database, IMapper mapper)
         {
-            _database = database.GetCollection<AlarmModel>("Alarms");
-            _mapper = mapper;
-            _snmpDeviceService = snmpDeviceService;
-            _tcpDeviceService = tcpDeviceService;
             _mqttProducer = mqttProducer;
+            _alarm = database.GetCollection<AlarmModel>("Alarms");
+            _mapper = mapper;
         }
 
-        public async Task<List<AlarmModel>> CheckConditions(string deviceId, string value)
+        public bool CheckConditions(string parameterValue, string condition, string threshold)
         {
-            var alarms = await GetAllAlarms();
+            var currentValue = double.TryParse(parameterValue.Trim(), out var a);
+            var currentThreshold = double.TryParse(condition.Trim(), out var b);
 
-            if(!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var currentVaal))
+            if (condition.Trim().Equals("!=")) return threshold != parameterValue.Trim();
+            if (condition.Trim().Equals("==")) return threshold == parameterValue.Trim();
+            if (!currentValue || !currentThreshold) return false;
+
+            return condition switch
             {
-                return new List<AlarmModel>();
-            }
+                ">=" => a >= b,
+                ">" => a > b,
+                "<=" => a <= b,
+                "<" => a < b,
+                _ => false
+            };
 
-            var matchedAlarms = new List<AlarmModel>();
-
-            foreach(var alarm in alarms.Where(a => a.DeviceId == deviceId))
-            {
-               if(!double.TryParse(alarm.AlarmThreshold, NumberStyles.Any, CultureInfo.InvariantCulture, out var alarmThreshold))
-                {
-                    continue;
-                }
-
-                bool conditionMet = alarm.AlarmCondition switch
-                {
-                    ">" => currentVaal > alarmThreshold,
-                    "<" => currentVaal < alarmThreshold,
-                    ">=" => currentVaal >= alarmThreshold,
-                    "<=" => currentVaal <= alarmThreshold,
-                    "==" => currentVaal == alarmThreshold,
-                    "!=" => currentVaal != alarmThreshold,
-                    _ => false
-                };
-
-                if(conditionMet) 
-                {
-                    var alarmResponse = _mapper.Map<AlarmModel>(alarm);
-                    matchedAlarms.Add(alarmResponse);
-                }
-            }
-
-            return matchedAlarms;
         }
 
         public async Task CreateAlarm(AlarmModel alarm)
         {
-            await _database.InsertOneAsync(alarm);
+            await _alarm.InsertOneAsync(alarm);
         }
 
         public async Task DeleteAlarm(string id)
         {
-            await _database.DeleteOneAsync(alarm => alarm.Id == id);
+            if (id == null)
+            {
+                return;
+            }
+
+            await _alarm.DeleteOneAsync(id);
         }
 
-        public async Task<bool> ExecuteAlarm(AlarmModel alarm, string currentValue)
+        public async Task<bool> ExecuteAlarm(AlarmModel alarmModel, string currentValue)
         {
-            var matchedAlarms = await CheckConditions(alarm.DeviceId, currentValue);
+            if (!string.IsNullOrEmpty(alarmModel.AlarmCondition) && !string.IsNullOrEmpty(alarmModel.AlarmThreshold))
+            {
+                var result = CheckConditions(currentValue, alarmModel.AlarmCondition, alarmModel.AlarmThreshold);
+                return result;
+            }
+
+            return false;
         }
 
         public async Task<AlarmResponse> GetAlarmByDeviceId(string deviceId)
         {
-            var device = await _database.FindAsync(d => d.DeviceId == deviceId).Result.ToListAsync();
-            return _mapper.Map<AlarmResponse>(device);
+            var device =  _alarm.FindAsync(d => d.DeviceId == deviceId).Result.FirstOrDefault();
+            var deviceResponse = _mapper.Map<AlarmResponse>(device);
+            return deviceResponse;
         }
 
         public async Task<AlarmResponse> GetAlarmById(string id)
         {
-            var alarm = await _database.FindAsync(a => a.Id == id).Result.FirstOrDefaultAsync();
-            if (alarm == null)
-            {
-                return null;
-            }
-            return _mapper.Map<AlarmResponse>(alarm);
+            var alarm = await _alarm.FindAsync(id).Result.FirstOrDefaultAsync();
+            var alarmResponse = _mapper.Map<AlarmResponse>(alarm);
+            return alarmResponse;
         }
 
-        public async Task<AlarmResponse> GetAlarmsBySnmpDevice(string snmpDeviceId)
+
+
+        // Gerek olmayabilir denenecek
+        public Task<AlarmResponse> GetAlarmsBySnmpDevice(string snmpDeviceId)
         {
-            var snmpDevice = await _snmpDeviceService.GetDeviceById(snmpDeviceId);
-            if (snmpDevice == null)
-            {
-                return null;
-            }
-            var alarms = await _database.FindAsync(a => a.DeviceId == snmpDevice.Id).Result.ToListAsync();
-            return _mapper.Map<AlarmResponse>(alarms);
+            throw new NotImplementedException();
         }
 
-        public async Task<AlarmResponse> GetAlarmsByTcpDevice(string tcpDeviceId)
+        public Task<AlarmResponse> GetAlarmsByTcpDevice(string tcpDeviceId)
         {
-            var tcpDevice = _tcpDeviceService.GetTcpDeviceById(tcpDeviceId);
-            if (tcpDevice == null)
-            {
-                return null;
-            }
-            var alarms = await _database.FindAsync(a => a.DeviceId == tcpDevice.Result.Id).Result.ToListAsync();
-            return _mapper.Map<AlarmResponse>(alarms);
+            throw new NotImplementedException();
         }
 
         public async Task<List<AlarmResponse>> GetAllAlarms()
         {
-            var alarms = await _database.FindAsync(_ => true).Result.ToListAsync();
-            return _mapper.Map<List<AlarmResponse>>(alarms);
+           var alarm = await _alarm.Find(a => true).ToListAsync();
+           var alarmResponse = _mapper.Map<List<AlarmResponse>>(alarm);
+           return alarmResponse;
+
         }
 
-        public Task<bool> SetActiveAlarm(string id, bool isActive)
+        public async Task<bool> SetActiveAlarm(string id, bool isActive)
         {
-            throw new NotImplementedException();
+            var alarm = await GetAlarmById(id);
+            if (alarm != null && alarm.IsAlarmActive == false)
+            {
+                alarm.IsAlarmActive = true;
+                alarm.IsAlarmFixed = false;
+                return true;
+            }
+            return false;
         }
 
-        public Task<bool> SetFixedAlarm(string id, bool isFixed)
+        public async Task<bool> SetFixedAlarm(string id, bool isFixed)
         {
-            throw new NotImplementedException();
+            var alarm = await GetAlarmById(id);
+            if (alarm != null && alarm.IsAlarmFixed == false)
+            {
+                alarm.IsAlarmFixed = true;
+                alarm.IsAlarmActive = false;
+                return true;
+            }
+            return false;
         }
 
         public async Task UpdateAlarm(string id, AlarmModel alarm)
         {
-            await _database.ReplaceOneAsync(a => a.Id == id, alarm);
+            await _alarm.ReplaceOneAsync(id, alarm);
         }
     }
 }

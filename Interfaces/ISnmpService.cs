@@ -14,6 +14,8 @@ namespace Application.Interfaces
             Action<string> onMessageReceived,
             CancellationToken cancellationToken);
 
+        public Task GetSnmpDeviceByIpAndPort(string ipAddress, int port);
+
         void StopContinuousCommunication();
 
         Task SendSnmpSetCommandAsync(string ipAddress, int port, string oid, string value);

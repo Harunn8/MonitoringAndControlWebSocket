@@ -6,7 +6,10 @@ using Application.Interfaces;
 using Models;
 using SnmpSharpNet;
 using MCSMqttBus.Producer;
+using MongoDB.Driver;
 using Serilog;
+using Services.AlarmService;
+using Services.AlarmService.Services;
 
 namespace Infrastructure.Services
 {
@@ -14,10 +17,16 @@ namespace Infrastructure.Services
     {
         private bool _isRunning;
         private readonly MqttProducer _mqttProducer;
+        private readonly AlarmManagerService _alarmManager;
+        private readonly IMongoCollection<AlarmModel> _alarmCollection;
+        private readonly IMongoCollection<Device> _deviceCollection;
 
-        public SnmpService(MqttProducer mqttProducer)
+        public SnmpService(MqttProducer mqttProducer, AlarmManagerService alarmManeger, IMongoDatabase database, IMongoDatabase databaseTwo)
         {
             _mqttProducer = mqttProducer;
+            _alarmManager = alarmManeger;
+            _alarmCollection = database.GetCollection<AlarmModel>("Alarms");
+            _deviceCollection = databaseTwo.GetCollection<Device>("Devices");
         }
 
         public async Task StartContinuousCommunicationAsync(
@@ -28,6 +37,8 @@ namespace Infrastructure.Services
             CancellationToken cancellationToken)
         {
             _isRunning = true;
+
+            var device = await _deviceCollection.FindAsync(d => d.IpAddress == ipAddress && d.Port == port).Result.FirstOrDefaultAsync();
 
             UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), port, 1000, 1);
 
@@ -52,6 +63,10 @@ namespace Infrastructure.Services
                     {
                         foreach (Vb vb in response.Pdu.VbList)
                         {
+                            string oid = vb.Oid.ToString();
+                            string value = vb.Value.ToString().Trim();
+
+                            var alarms = await _alarmCollection.FindAsync(a => a.DeviceType == "SNMP" && a.DeviceId == device.Id);
                             onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value} ");
                             _mqttProducer.PublishMessage("telemetry",$"{vb.Oid},{vb.Value}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
                             Console.WriteLine($"{vb.Oid}: {vb.Value}");
@@ -113,6 +128,11 @@ namespace Infrastructure.Services
             {
                 Log.Information("Error :", ex.Message);
             }
+        }
+
+        public Task GetSnmpDeviceByIpAndPort(string ipAddress, int port)
+        {
+            throw new NotImplementedException();
         }
     }
 }

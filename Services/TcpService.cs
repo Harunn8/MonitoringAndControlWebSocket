@@ -11,6 +11,7 @@ using MCSMqttBus.Producer;
 using Serilog;
 using MongoDB.Driver;
 using MQTTnet.Protocol;
+using Services.AlarmService.Services;
 
 namespace Services
 {
@@ -19,13 +20,15 @@ namespace Services
         private readonly IMongoCollection<TcpDevice> _tcpDevice;
         private CancellationTokenSource _cancellationTokenSource;
         private readonly MqttProducer _mqttProducer;
+        private readonly AlarmManagerService _alarmService;
         private bool _isRunning;
 
-        public TcpService(IMongoDatabase database, MqttProducer mqttProducer)
+        public TcpService(IMongoDatabase database, MqttProducer mqttProducer, AlarmManagerService alarmManager)
         {
             _tcpDevice = database.GetCollection<TcpDevice>("Devices");
             _cancellationTokenSource = new CancellationTokenSource();
             _mqttProducer = mqttProducer;
+            _alarmService = alarmManager;
         }
 
         public async Task<List<TcpDevice>> GetTcpDeviceAsync()
