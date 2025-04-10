@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using System;
+using Application.Interfaces;
 using Presentation.Controllers;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
@@ -24,6 +25,8 @@ using MCSMqttBus.Connection;
 using MCSMqttBus.Producer;
 using MQTTnet;
 using Models;
+using Services.AlarmService.Services;
+using AutoMapper;
 
 namespace Presentation
 {
@@ -60,7 +63,7 @@ namespace Presentation
             services.AddSingleton<IMqttConnection>(_ => new MqttConneciton(mqttOptions, new MqttFactory().CreateMqttClient()));
             services.AddSingleton<MqttProducer>();
 
-            services.AddSingleton<ISnmpService, SnmpService>();
+            services.AddScoped<ISnmpService, SnmpService>();
             services.AddTransient<WebSocketHandlerSnmp>();
             services.AddTransient<WebSocketHandlerTcp>();
             Log.Information("Web Socket preparing...");
@@ -81,12 +84,14 @@ namespace Presentation
             services.AddScoped<ContextSeedService>();
             Log.Information("Program started");
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<DeviceService>();
             services.AddScoped<SnmpParserService>();
             services.AddScoped<TcpService>();
             services.AddScoped<UserService>();
             services.AddScoped<LoginService>();
             services.AddScoped<DeviceDataService>();
+            services.AddScoped<AlarmManagerService>();
 
             services.AddAuthentication(options =>
             {

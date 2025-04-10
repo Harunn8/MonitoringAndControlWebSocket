@@ -18,7 +18,7 @@ namespace Services.AlarmService.Base
         public Task<bool> SetActiveAlarm(string id, bool isActive);
         public Task<bool> SetFixedAlarm(string id, bool isFixed);
         public Task<bool> ExecuteAlarm(AlarmModel alarm, string currentValue);
-        public Task<AlarmResponse> GetAlarmByDeviceId(string deviceId);
+        public Task<List<AlarmResponse>> GetAlarmByDeviceId(string deviceId);
         public Task<AlarmResponse> GetAlarmsBySnmpDevice(string snmpDeviceId);
         public Task<AlarmResponse> GetAlarmsByTcpDevice(string tcpDeviceId);
         public bool CheckConditions(string parameterValue, string condition, string threshold);

@@ -75,10 +75,10 @@ namespace Services.AlarmService.Services
             return false;
         }
 
-        public async Task<AlarmResponse> GetAlarmByDeviceId(string deviceId)
+        public async Task<List<AlarmResponse>> GetAlarmByDeviceId(string deviceId)
         {
             var device =  _alarm.FindAsync(d => d.DeviceId == deviceId).Result.FirstOrDefault();
-            var deviceResponse = _mapper.Map<AlarmResponse>(device);
+            var deviceResponse = _mapper.Map<List<AlarmResponse>>(device);
             return deviceResponse;
         }
 

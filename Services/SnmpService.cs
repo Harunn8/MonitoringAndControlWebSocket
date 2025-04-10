@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using Models;
 using SnmpSharpNet;
 using MCSMqttBus.Producer;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
+using MQTTnet.Protocol;
 using Serilog;
 using Services.AlarmService;
 using Services.AlarmService.Services;
+using JsonConvert = Newtonsoft.Json.JsonConvert;
 
 namespace Infrastructure.Services
 {
@@ -66,7 +70,50 @@ namespace Infrastructure.Services
                             string oid = vb.Oid.ToString();
                             string value = vb.Value.ToString().Trim();
 
-                            var alarms = await _alarmCollection.FindAsync(a => a.DeviceType == "SNMP" && a.DeviceId == device.Id);
+                            var deviceInfo = await _deviceCollection.FindAsync(d => d.DeviceType == "SNMP" && d.IpAddress == ipAddress && d.Port == port).Result.FirstOrDefaultAsync();
+
+                            if (deviceInfo == null ||deviceInfo.OidList == null)
+                            {
+                                continue;
+                            }
+
+                            var parameter = deviceInfo.OidList.FirstOrDefault(p => p.Oid == oid);
+                            if (parameter == null)
+                            {
+                                continue;
+                            }
+
+                            string parameterId = parameter.ParameterId;
+
+                            var alarms = await _alarmCollection.FindAsync(a => a.DeviceId == deviceInfo.Id && a.ParameterId == parameterId).Result.ToListAsync();
+
+                            foreach (var alarm in alarms)
+                            {
+                                bool isTriggered = await _alarmManager.ExecuteAlarm(alarm, value);
+                                if (isTriggered)
+                                {
+                                    var newAlarm = new AlarmModel
+                                    {
+                                        DeviceId = deviceInfo.Id,
+                                        DeviceType = deviceInfo.DeviceType,
+                                        ParameterId = alarm.ParameterId,
+                                        AlarmName = alarm.AlarmName,
+                                        AlarmDescription = alarm.AlarmDescription,
+                                        AlarmCondition = alarm.AlarmCondition,
+                                        AlarmThreshold = alarm.AlarmThreshold,
+                                        Severity = alarm.Severity,
+                                        IsAlarmActive = true,
+                                        IsAlarmFixed = false,
+                                        IsMasked = false,
+                                        AlarmCreateTime = DateTime.Now
+                                    };
+
+                                    await _alarmManager.CreateAlarm(newAlarm);
+                                    var payload = JsonConvert.SerializeObject(newAlarm);
+                                    _mqttProducer.PublishMessage($"alarm/notify",$"{deviceInfo.DeviceName}/{newAlarm.AlarmName}/{newAlarm.Severity}",MqttQualityOfServiceLevel.AtMostOnce);
+                                }
+                            }
+
                             onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value} ");
                             _mqttProducer.PublishMessage("telemetry",$"{vb.Oid},{vb.Value}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
                             Console.WriteLine($"{vb.Oid}: {vb.Value}");
