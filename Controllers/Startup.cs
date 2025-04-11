@@ -186,7 +186,9 @@ namespace Presentation
             {
                 var seedService = scope.ServiceProvider.GetRequiredService<ContextSeedService>();
                 seedService.UserSeedAsync().Wait();
-                seedService.DeviceSeedAsync().Wait();                 
+                seedService.SnmpDeviceSeedAsync().Wait();
+                seedService.TcpDeviceSeedAsync().Wait();
+                seedService.AlarmSeedAsync().Wait();
             }
 
             app.UseEndpoints(endpoints =>

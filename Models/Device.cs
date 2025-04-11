@@ -23,9 +23,6 @@ public class Device
 
     [BsonElement("deviceType")]
     public string DeviceType { get; set; }
-
-    [BsonElement("Alarms")]
-    public AlarmModel Alarms { get; set; }
 }
 public class OidMapping
 {

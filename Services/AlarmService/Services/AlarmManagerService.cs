@@ -77,7 +77,7 @@ namespace Services.AlarmService.Services
 
         public async Task<List<AlarmResponse>> GetAlarmByDeviceId(string deviceId)
         {
-            var device =  _alarm.FindAsync(d => d.DeviceId == deviceId).Result.FirstOrDefault();
+            var device =  _alarm.FindAsync(d => d.DeviceId == deviceId).Result.ToListAsync();
             var deviceResponse = _mapper.Map<List<AlarmResponse>>(device);
             return deviceResponse;
         }

@@ -11,6 +11,7 @@ using MCSMqttBus.Producer;
 using Serilog;
 using MongoDB.Driver;
 using MQTTnet.Protocol;
+using Newtonsoft.Json;
 using Services.AlarmService.Services;
 
 namespace Services
@@ -21,14 +22,16 @@ namespace Services
         private CancellationTokenSource _cancellationTokenSource;
         private readonly MqttProducer _mqttProducer;
         private readonly AlarmManagerService _alarmService;
+        private readonly IMongoCollection<AlarmModel> _alarmModel;
         private bool _isRunning;
 
-        public TcpService(IMongoDatabase database, MqttProducer mqttProducer, AlarmManagerService alarmManager)
+        public TcpService(IMongoDatabase database, MqttProducer mqttProducer, AlarmManagerService alarmManager, IMongoDatabase databaseTwo)
         {
             _tcpDevice = database.GetCollection<TcpDevice>("Devices");
             _cancellationTokenSource = new CancellationTokenSource();
             _mqttProducer = mqttProducer;
             _alarmService = alarmManager;
+            _alarmModel = databaseTwo.GetCollection<AlarmModel>("Alarms");
         }
 
         public async Task<List<TcpDevice>> GetTcpDeviceAsync()
@@ -88,13 +91,52 @@ namespace Services
                     {
                         var data = Encoding.UTF8.GetString(buffer, 0, byteCount);
 
-                        Dictionary<string, string> parsedData = ParseTcpData(data, device.TcpData);
+                        var  parsedData = ParseTcpData(data, device.TcpData);
 
-                        Log.Information($"Parsed Data: {string.Join(", ", parsedData.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}");
+                        //Log.Information($"Parsed Data: {string.Join(", ", parsedData.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}");
 
-                        _mqttProducer.PublishMessage("telemetry", $"Parsed Data: {string.Join(", ", parsedData.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}", MqttQualityOfServiceLevel.AtMostOnce);
+                        _mqttProducer.PublishMessage("telemetry", $"Parsed Data: {string.Join(", ", parsedData.Select(kvp => $"{kvp.ParameterName}: {kvp.Value}"))}", MqttQualityOfServiceLevel.AtMostOnce);
 
-                        onDataReceived?.Invoke(parsedData);
+                        foreach (var item in parsedData)
+                        {
+                            var parameterId = item.ParameterId;
+                            var parameterName = item.ParameterName;
+                            var value = item.Value;
+
+                            var alarms = await _alarmModel.FindAsync(a => a.DeviceType == "TCP" && a.DeviceId == device.Id && a.ParameterId == parameterId).Result.ToListAsync();
+
+                            foreach (var alarm in alarms)
+                            {
+                                bool isTriggered = await _alarmService.ExecuteAlarm(alarm, value);
+
+                                if (isTriggered)
+                                {
+                                    var newAlarm = new AlarmModel()
+                                    {
+                                        DeviceId = alarm.DeviceId,
+                                        DeviceType = alarm.DeviceType,
+                                        ParameterId = parameterId,
+                                        AlarmName = alarm.AlarmName,
+                                        AlarmDescription = alarm.AlarmDescription,
+                                        AlarmCondition = alarm.AlarmCondition,
+                                        AlarmThreshold = alarm.AlarmThreshold,
+                                        Severity = alarm.Severity,
+                                        IsAlarmActive = true,
+                                        IsAlarmFixed = false,
+                                        IsMasked = false,
+                                        AlarmCreateTime = DateTime.Now
+                                    };
+
+                                    await _alarmService.CreateAlarm(newAlarm);
+
+                                    var payload = JsonConvert.SerializeObject(newAlarm);
+                                    _mqttProducer.PublishMessage("alarm/notify", $"Alarm from {device.DeviceName}/{newAlarm.AlarmDescription}/{newAlarm.AlarmCreateTime}",MqttQualityOfServiceLevel.AtMostOnce);
+                                }
+                            }
+                        }
+
+                        var simpleDict = parsedData.ToDictionary(x => x.ParameterName, x => x.Value);
+                        onDataReceived?.Invoke(simpleDict);
                     }
                     client.Close();
                     await Task.Delay(200);
@@ -135,28 +177,22 @@ namespace Services
             return await _tcpDevice.Find(device => device.IpAddress == id && device.Port == port).FirstOrDefaultAsync();
         }
 
-        public static Dictionary<string, string> ParseTcpData(string rawData, List<TcpData> tcpDataList)
+        public static List<(string ParameterId, string ParameterName, string Value)> ParseTcpData(string rawData, List<TcpData> tcpDataList)
         {
+            var result = new List<(string, string, string)>();
             if (string.IsNullOrWhiteSpace(rawData) || tcpDataList == null || tcpDataList.Count == 0)
-                return new Dictionary<string, string>();
+                return result;
 
             string[] parsedValues = rawData.Split(',').Select(s => s.Trim()).ToArray();
 
-            Dictionary<string, string> result = new Dictionary<string, string>();
-
             for (int i = 0; i < parsedValues.Length && i < tcpDataList.Count; i++)
             {
-                string parameterName = tcpDataList[i].ParameterName;
-                string value = parsedValues[i];
-
-                if (!string.IsNullOrEmpty(parameterName))
-                {
-                    result[parameterName] = value;
-                }
+                result.Add((tcpDataList[i].ParameterId, tcpDataList[i].ParameterName, parsedValues[i]));
             }
 
             return result;
         }
+
 
     }
 }
