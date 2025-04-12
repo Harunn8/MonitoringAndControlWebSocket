@@ -104,6 +104,10 @@ namespace Services
 
         public async Task AlarmSeedAsync()
         {
+            var device = _deviceCollection.Find(d => d.DeviceName == "Acu-Snmp").FirstOrDefault();
+            var ntpDevice = _deviceCollection.Find(d => d.DeviceName == "NTP Server").FirstOrDefault();
+            var acuTcp = _tcpDevice.Find(d => d.DeviceName == "ACU TCP").FirstOrDefault();
+
             var alarm = new List<AlarmModel>
             {
                 new AlarmModel
@@ -113,32 +117,32 @@ namespace Services
                     AlarmDescription = "Overload Acu Process Speed please check device",
                     Severity = 5,
                     AlarmCreateTime = DateTime.Now,
-                    DeviceId = "67f92ed7df07ee5362c7fa09",
+                    DeviceId = device.Id,
                     IsAlarmActive = true,
                     IsAlarmFixed = false,
                     IsMasked = false,
-                    AlarmCondition = "<",
+                    AlarmCondition = "==",
                     AlarmThreshold = "50",
                     DeviceType = "SNMP",
-                    AlarmStatus = AlarmType.Active,
-                    ParameterId = "67f92ed7df07ee5362c7fa0a"
+                    //AlarmStatus = AlarmType.Active,
+                    ParameterId = device.OidList[0].ParameterId
                 },
                 new AlarmModel
                 {
                     Id = ObjectId.GenerateNewId().ToString(),
-                    AlarmName = "Failed Acu Nominal Status Process Speed",
-                    AlarmDescription = "ACU Nominal Mode is Deactive",
-                    Severity = 5,
+                    AlarmName = "Test Alarm",
+                    AlarmDescription = "Test Alarm",
+                    Severity = 2,
                     AlarmCreateTime = DateTime.Now,
-                    DeviceId = "67f92ed7df07ee5362c7fa09",
-                    IsAlarmActive = true,
-                    IsAlarmFixed = false,
+                    DeviceId = device.Id,
+                    IsAlarmActive = false,
+                    IsAlarmFixed = true,
                     IsMasked = false,
-                    AlarmCondition = "!=",
-                    AlarmThreshold = "2",
+                    AlarmCondition = "==",
+                    AlarmThreshold = "60",
                     DeviceType = "SNMP",
-                    AlarmStatus = AlarmType.Active,
-                    ParameterId = "67f92ed7df07ee5362c7fa0b"
+                    //AlarmStatus = AlarmType.Active,
+                    ParameterId = device.OidList[1].ParameterId
                 },
                 new AlarmModel
                 {
@@ -147,15 +151,15 @@ namespace Services
                     AlarmDescription = "Please check NTP Server device",
                     Severity = 5,
                     AlarmCreateTime = DateTime.Now,
-                    DeviceId = "67f92ed7df07ee5362c7fa0c",
+                    DeviceId = ntpDevice.Id,
                     IsAlarmActive = true,
                     IsAlarmFixed = false,
                     IsMasked = false,
                     AlarmCondition = "!=",
                     AlarmThreshold = "99",
                     DeviceType = "SNMP",
-                    AlarmStatus = AlarmType.Active,
-                    ParameterId = "67f92ed7df07ee5362c7fa0d"
+                    //AlarmStatus = AlarmType.Active,
+                    ParameterId = ntpDevice.OidList[0].ParameterId
                 },
                 new AlarmModel
                 {
@@ -164,15 +168,15 @@ namespace Services
                     AlarmDescription = "Please Press Emergency Button",
                     Severity = 5,
                     AlarmCreateTime = DateTime.Now,
-                    DeviceId = "67f92ed8df07ee5362c7fa0f",
+                    DeviceId = acuTcp.Id,
                     IsAlarmActive = true,
                     IsAlarmFixed = false,
                     IsMasked = false,
                     AlarmCondition = ">=",
                     AlarmThreshold = "45",
                     DeviceType = "TCP",
-                    AlarmStatus = AlarmType.Active,
-                    ParameterId = "67f92ed8df07ee5362c7fa13"
+                    //AlarmStatus = AlarmType.Active,
+                    ParameterId = acuTcp.TcpData[3].ParameterId
                 }
             };
             if (await _alarmModel.CountDocumentsAsync(_ => true) == 0)

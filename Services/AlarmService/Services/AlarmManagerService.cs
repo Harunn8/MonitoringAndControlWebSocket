@@ -69,6 +69,20 @@ namespace Services.AlarmService.Services
             if (!string.IsNullOrEmpty(alarmModel.AlarmCondition) && !string.IsNullOrEmpty(alarmModel.AlarmThreshold))
             {
                 var result = CheckConditions(currentValue, alarmModel.AlarmCondition, alarmModel.AlarmThreshold);
+
+                if(result == false)
+                {
+                    alarmModel.IsAlarmActive = false;
+                    alarmModel.IsAlarmFixed = true;
+                    await _alarm.ReplaceOneAsync(x => x.Id == alarmModel.Id, alarmModel);
+                }
+                else
+                {
+                    alarmModel.IsAlarmActive = true;
+                    alarmModel.IsAlarmFixed = false;
+                    await _alarm.ReplaceOneAsync(x => x.Id == alarmModel.Id, alarmModel);
+                }
+
                 return result;
             }
 
@@ -77,19 +91,17 @@ namespace Services.AlarmService.Services
 
         public async Task<List<AlarmResponse>> GetAlarmByDeviceId(string deviceId)
         {
-            var device =  _alarm.FindAsync(d => d.DeviceId == deviceId).Result.ToListAsync();
+            var device =  await _alarm.Find(d => d.DeviceId == deviceId).ToListAsync();
             var deviceResponse = _mapper.Map<List<AlarmResponse>>(device);
             return deviceResponse;
         }
 
         public async Task<AlarmResponse> GetAlarmById(string id)
         {
-            var alarm = await _alarm.FindAsync(id).Result.FirstOrDefaultAsync();
+            var alarm = await _alarm.Find(id).FirstOrDefaultAsync();
             var alarmResponse = _mapper.Map<AlarmResponse>(alarm);
             return alarmResponse;
         }
-
-
 
         // Gerek olmayabilir denenecek
         public Task<AlarmResponse> GetAlarmsBySnmpDevice(string snmpDeviceId)
@@ -136,7 +148,50 @@ namespace Services.AlarmService.Services
 
         public async Task UpdateAlarm(string id, AlarmModel alarm)
         {
-            await _alarm.ReplaceOneAsync(id, alarm);
+            var filter = Builders<AlarmModel>.Filter.Eq(x => x.Id, id);
+            await _alarm.ReplaceOneAsync(filter, alarm);
+        }
+
+        public async Task<List<AlarmResponse>> GetAllActiveAlarm()
+        {
+            var entities = await _alarm.Find(a => a.IsAlarmActive == true).ToListAsync();
+            var alarmResponse = _mapper.Map<List<AlarmResponse>>(entities);
+            return alarmResponse;
+        }
+
+        public Task<List<AlarmResponse>> GetActiveAlarmByAlarmId(string alarmId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AlarmResponse>> GetActiveAlarmByDeviceId(string deviceId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AlarmResponse>> GetActiveAlarmByParameterId(string parameterId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AlarmResponse>> GetAllHistoricalAlarm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AlarmResponse>> GetHistoricalAlarmByAlarmId(string alarmId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AlarmResponse>> GetHistoricalAlarmByDeviceId(string deviceId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AlarmResponse>> GetHistoricalAlarmByParameterId(string parameterId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

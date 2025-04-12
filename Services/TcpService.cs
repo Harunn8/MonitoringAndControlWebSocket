@@ -103,11 +103,22 @@ namespace Services
                             var parameterName = item.ParameterName;
                             var value = item.Value;
 
-                            var alarms = await _alarmModel.FindAsync(a => a.DeviceType == "TCP" && a.DeviceId == device.Id && a.ParameterId == parameterId).Result.ToListAsync();
+                            var alarms = await _alarmModel.Find(a => a.DeviceType == "TCP" && a.DeviceId == device.Id && a.ParameterId == parameterId).ToListAsync();
 
                             foreach (var alarm in alarms)
                             {
                                 bool isTriggered = await _alarmService.ExecuteAlarm(alarm, value);
+
+                                var alarmId = await _alarmModel.Find(a => a.Id == alarm.Id).FirstOrDefaultAsync();
+
+                                if(alarmId.ParameterId.Equals(alarm.ParameterId))
+                                {
+                                    alarm.IsAlarmActive = true;
+                                    alarm.IsAlarmFixed = false;
+                                    alarm.AlarmCreateTime = DateTime.Now;
+                                    await _alarmService.UpdateAlarm(alarm.Id, alarm);
+                                    break;
+                                }
 
                                 if (isTriggered)
                                 {
@@ -131,8 +142,11 @@ namespace Services
 
                                     var payload = JsonConvert.SerializeObject(newAlarm);
                                     _mqttProducer.PublishMessage("alarm/notify", $"Alarm from {device.DeviceName}/{newAlarm.AlarmDescription}/{newAlarm.AlarmCreateTime}",MqttQualityOfServiceLevel.AtMostOnce);
+                                    break;
                                 }
                             }
+
+                            Console.WriteLine(value);
                         }
 
                         var simpleDict = parsedData.ToDictionary(x => x.ParameterName, x => x.Value);

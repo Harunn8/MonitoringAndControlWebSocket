@@ -22,5 +22,13 @@ namespace Services.AlarmService.Base
         public Task<AlarmResponse> GetAlarmsBySnmpDevice(string snmpDeviceId);
         public Task<AlarmResponse> GetAlarmsByTcpDevice(string tcpDeviceId);
         public bool CheckConditions(string parameterValue, string condition, string threshold);
+        public Task<List<AlarmResponse>> GetAllActiveAlarm();  // FE kullanımı için(sürekli sorgu)
+        public Task<List<AlarmResponse>> GetActiveAlarmByAlarmId(string alarmId);
+        public Task<List<AlarmResponse>> GetActiveAlarmByDeviceId(string deviceId);
+        public Task<List<AlarmResponse>> GetActiveAlarmByParameterId(string parameterId);
+        public Task<List<AlarmResponse>> GetAllHistoricalAlarm(); // FE kullanımı için(sürekli sorgu)
+        public Task<List<AlarmResponse>> GetHistoricalAlarmByAlarmId(string alarmId);
+        public Task<List<AlarmResponse>> GetHistoricalAlarmByDeviceId(string deviceId);
+        public Task<List<AlarmResponse>> GetHistoricalAlarmByParameterId(string parameterId);
     }
 }

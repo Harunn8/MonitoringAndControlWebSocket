@@ -42,7 +42,7 @@ namespace Controllers.Controllers
         [HttpGet("GetAlarmsByDeviceId")]
         public async Task<IActionResult> GetAlarmByDeviceId(string deviceId)
         {
-            var deviceAlarm = _alarmManager.GetAlarmByDeviceId(deviceId);
+            var deviceAlarm = await _alarmManager.GetAlarmByDeviceId(deviceId);
 
             if (deviceAlarm == null)
             {
@@ -55,9 +55,9 @@ namespace Controllers.Controllers
         [HttpPost("AddAlarm")]
         public async Task<IActionResult> CreateAlarm(AlarmModel alarmModel)
         {
-            var alarm = _alarmManager.CreateAlarm(alarmModel);
+            await _alarmManager.CreateAlarm(alarmModel);
 
-            return Ok(alarm);
+            return Ok("Device Added");
         }
 
         [HttpPut("SetActiveAlarm")]
@@ -118,6 +118,5 @@ namespace Controllers.Controllers
             await _alarmManager.DeleteAlarm(id);
             return Ok("Alarm deleted");
         }
-
     }
 }

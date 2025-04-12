@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services.AlarmService.Responses
 {
-    public class AlarmResponse
+    public class AlarmResponse 
     {
         public string Id { get; set; }
         public string AlarmName { get; set; }

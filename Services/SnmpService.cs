@@ -14,6 +14,7 @@ using Serilog;
 using Services.AlarmService;
 using Services.AlarmService.Services;
 using JsonConvert = Newtonsoft.Json.JsonConvert;
+using MongoDB.Bson;
 
 namespace Infrastructure.Services
 {
@@ -42,7 +43,7 @@ namespace Infrastructure.Services
         {
             _isRunning = true;
 
-            var device = await _deviceCollection.FindAsync(d => d.IpAddress == ipAddress && d.Port == port).Result.FirstOrDefaultAsync();
+            var device = await _deviceCollection.Find(d => d.IpAddress == ipAddress && d.Port == port).FirstOrDefaultAsync();
 
             UdpTarget target = new UdpTarget(new System.Net.IPAddress(System.Net.IPAddress.Parse(ipAddress).GetAddressBytes()), port, 1000, 1);
 
@@ -70,11 +71,11 @@ namespace Infrastructure.Services
                             string oid = vb.Oid.ToString();
                             string value = vb.Value.ToString().Trim();
 
-                            var deviceInfo = await _deviceCollection.FindAsync(d => d.DeviceType == "SNMP" && d.IpAddress == ipAddress && d.Port == port).Result.FirstOrDefaultAsync();
+                            var deviceInfo = await _deviceCollection.Find(d => d.DeviceType == "SNMP" && d.IpAddress == ipAddress && d.Port == port).FirstOrDefaultAsync();
 
                             if (deviceInfo == null ||deviceInfo.OidList == null)
                             {
-                                continue;
+                                break;
                             }
 
                             var parameter = deviceInfo.OidList.FirstOrDefault(p => p.Oid == oid);
@@ -85,32 +86,52 @@ namespace Infrastructure.Services
 
                             string parameterId = parameter.ParameterId;
 
-                            var alarms = await _alarmCollection.FindAsync(a => a.DeviceId == deviceInfo.Id && a.ParameterId == parameterId).Result.ToListAsync();
+                            var alarms = await _alarmCollection.Find(a => a.DeviceId == deviceInfo.Id && a.ParameterId == parameterId).ToListAsync();
 
                             foreach (var alarm in alarms)
                             {
                                 bool isTriggered = await _alarmManager.ExecuteAlarm(alarm, value);
                                 if (isTriggered)
                                 {
-                                    var newAlarm = new AlarmModel
-                                    {
-                                        DeviceId = deviceInfo.Id,
-                                        DeviceType = deviceInfo.DeviceType,
-                                        ParameterId = alarm.ParameterId,
-                                        AlarmName = alarm.AlarmName,
-                                        AlarmDescription = alarm.AlarmDescription,
-                                        AlarmCondition = alarm.AlarmCondition,
-                                        AlarmThreshold = alarm.AlarmThreshold,
-                                        Severity = alarm.Severity,
-                                        IsAlarmActive = true,
-                                        IsAlarmFixed = false,
-                                        IsMasked = false,
-                                        AlarmCreateTime = DateTime.Now
-                                    };
+                                    //var objectId = ObjectId.Parse(alarm.ParameterId);
+                                    var alarmParameters = _alarmCollection.Find(a => a.ParameterId == alarm.ParameterId).FirstOrDefault();
+                                    var alarmParameterId = alarmParameters.ParameterId;
 
-                                    await _alarmManager.CreateAlarm(newAlarm);
-                                    var payload = JsonConvert.SerializeObject(newAlarm);
-                                    _mqttProducer.PublishMessage($"alarm/notify",$"{deviceInfo.DeviceName}/{newAlarm.AlarmName}/{newAlarm.Severity}",MqttQualityOfServiceLevel.AtMostOnce);
+                                    if(alarmParameterId.Equals(alarm.ParameterId))
+                                    {
+                                        alarm.IsAlarmActive = true;
+                                        alarm.IsAlarmFixed = false;
+                                        alarm.AlarmCreateTime = DateTime.Now;
+                                        await _alarmManager.UpdateAlarm(alarm.Id, alarm);
+                                        _mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{alarm.AlarmName}/{alarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
+                                        Console.WriteLine("ALARM");
+                                        break;
+                                    }
+
+                                    else
+                                    {
+                                        var newAlarm = new AlarmModel
+                                        {
+                                            DeviceId = deviceInfo.Id,
+                                            DeviceType = deviceInfo.DeviceType,
+                                            ParameterId = alarm.ParameterId,
+                                            AlarmName = alarm.AlarmName,
+                                            AlarmDescription = alarm.AlarmDescription,
+                                            AlarmCondition = alarm.AlarmCondition,
+                                            AlarmThreshold = alarm.AlarmThreshold,
+                                            Severity = alarm.Severity,
+                                            IsAlarmActive = true,
+                                            IsAlarmFixed = false,
+                                            IsMasked = false,
+                                            AlarmCreateTime = DateTime.Now
+                                        };
+
+                                        await _alarmManager.CreateAlarm(newAlarm);
+                                        var payload = JsonConvert.SerializeObject(newAlarm);
+                                        _mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{newAlarm.AlarmName}/{newAlarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
+                                        Console.WriteLine("ALARM");
+                                        break;
+                                    }
                                 }
                             }
 
