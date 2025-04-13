@@ -12,6 +12,7 @@ using Services;
 using Serilog;
 using MongoDB.Driver;
 using AutoMapper;
+using MongoDB.Bson;
 
 namespace Services.AlarmService.Services
 {
@@ -19,13 +20,17 @@ namespace Services.AlarmService.Services
     {
         private readonly MqttProducer _mqttProducer;
         private readonly IMongoCollection<AlarmModel> _alarm;
+        private readonly IMongoCollection<ActiveAlarms> _activeAlarm;
+        private readonly IMongoCollection<HistoricalAlarm> _historicalAlarm;
         private readonly IMapper _mapper;
         
 
-        public AlarmManagerService(MqttProducer mqttProducer, IMongoDatabase database, IMapper mapper)
+        public AlarmManagerService(MqttProducer mqttProducer, IMongoDatabase database, IMongoDatabase activeAlarm, IMongoDatabase historicalAlarm,IMapper mapper)
         {
             _mqttProducer = mqttProducer;
             _alarm = database.GetCollection<AlarmModel>("Alarms");
+            _activeAlarm = database.GetCollection<ActiveAlarms>("ActiveAlarm");
+            _historicalAlarm = database.GetCollection<HistoricalAlarm>("HistoricalAlarm");
             _mapper = mapper;
         }
 
@@ -78,9 +83,24 @@ namespace Services.AlarmService.Services
                 }
                 else
                 {
-                    alarmModel.IsAlarmActive = true;
-                    alarmModel.IsAlarmFixed = false;
-                    await _alarm.ReplaceOneAsync(x => x.Id == alarmModel.Id, alarmModel);
+                    var activeAlarm = new ActiveAlarms
+                    {
+                        Id = BsonObjectId.GenerateNewId().ToString(),
+                        AlarmName = alarmModel.AlarmName,
+                        AlarmCondition = alarmModel.AlarmCondition,
+                        AlarmThreshold = alarmModel.AlarmThreshold,
+                        AlarmCreateTime = DateTime.UtcNow,
+                        AlarmDescription = alarmModel.AlarmDescription,
+                        AlarmStatus = alarmModel.AlarmStatus,
+                        IsAlarmActive = true,
+                        IsAlarmFixed = false,
+                        IsMasked = false,
+                        Severity = alarmModel.Severity,
+                        DeviceId = alarmModel.DeviceId,
+                        DeviceType = alarmModel.DeviceType
+                    };
+
+                    await _activeAlarm.InsertOneAsync(activeAlarm);
                 }
 
                 return result;
