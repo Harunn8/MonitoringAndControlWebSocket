@@ -83,9 +83,19 @@ namespace Services.AlarmService.Services
                 }
                 else
                 {
+                    var existingAlarm = await _activeAlarm.Find(x => x.Id == alarmModel.Id).FirstOrDefaultAsync();
+
+                    if (existingAlarm != null)
+                    {
+                        var updatedAlarm = new ActiveAlarms
+                        {
+
+                        };
+                    }
+
                     var activeAlarm = new ActiveAlarms
                     {
-                        Id = BsonObjectId.GenerateNewId().ToString(),
+                        Id = alarmModel.Id,
                         AlarmName = alarmModel.AlarmName,
                         AlarmCondition = alarmModel.AlarmCondition,
                         AlarmThreshold = alarmModel.AlarmThreshold,
