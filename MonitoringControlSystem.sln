@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{DA09C772-A9C
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application Test", "Application Test\Application Test.csproj", "{0D19BE38-FE11-46D0-B325-34B9275C62AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{42B53FA8-0C16-4887-8E2E-E748EA15451A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42B53FA8-0C16-4887-8E2E-E748EA15451A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42B53FA8-0C16-4887-8E2E-E748EA15451A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D19BE38-FE11-46D0-B325-34B9275C62AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D19BE38-FE11-46D0-B325-34B9275C62AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D19BE38-FE11-46D0-B325-34B9275C62AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D19BE38-FE11-46D0-B325-34B9275C62AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{03DA9991-13CB-4CC8-A33F-BE225DF9F208} = {813646FB-48AC-4A34-8667-648C1BA1358E}
 		{DCE402F9-DC57-40F2-A9FC-34634425A22C} = {BE4A5ED8-D95A-41FC-A0E1-2A2365C072D9}
 		{42B53FA8-0C16-4887-8E2E-E748EA15451A} = {DCE402F9-DC57-40F2-A9FC-34634425A22C}
+		{0D19BE38-FE11-46D0-B325-34B9275C62AE} = {813646FB-48AC-4A34-8667-648C1BA1358E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A86AF424-97DA-406E-B059-A91791F632B0}

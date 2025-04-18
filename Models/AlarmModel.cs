@@ -53,6 +53,8 @@ namespace Models
 
         [BsonElement("ParameterId")]
         public string ParameterId { get; set; }
+        [BsonElement("UpdateDate")]
+        public DateTime UpdatedDate { get; set; }
     }
 
     public enum AlarmType

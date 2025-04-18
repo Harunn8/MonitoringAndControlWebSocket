@@ -99,10 +99,10 @@ namespace Infrastructure.Services
 
                                     if(alarmParameterId.Equals(alarm.ParameterId))
                                     {
-                                        alarm.IsAlarmActive = true;
-                                        alarm.IsAlarmFixed = false;
-                                        alarm.AlarmCreateTime = DateTime.Now;
-                                        await _alarmManager.UpdateAlarm(alarm.Id, alarm);
+                                        //alarm.IsAlarmActive = true;
+                                        //alarm.IsAlarmFixed = false;
+                                        //alarm.AlarmCreateTime = DateTime.Now;
+                                        //await _alarmManager.UpdateAlarm(alarm.Id, alarm);
                                         _mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{alarm.AlarmName}/{alarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
                                         Console.WriteLine("ALARM");
                                         break;
@@ -110,25 +110,25 @@ namespace Infrastructure.Services
 
                                     else
                                     {
-                                        var newAlarm = new AlarmModel
-                                        {
-                                            DeviceId = deviceInfo.Id,
-                                            DeviceType = deviceInfo.DeviceType,
-                                            ParameterId = alarm.ParameterId,
-                                            AlarmName = alarm.AlarmName,
-                                            AlarmDescription = alarm.AlarmDescription,
-                                            AlarmCondition = alarm.AlarmCondition,
-                                            AlarmThreshold = alarm.AlarmThreshold,
-                                            Severity = alarm.Severity,
-                                            IsAlarmActive = true,
-                                            IsAlarmFixed = false,
-                                            IsMasked = false,
-                                            AlarmCreateTime = DateTime.Now
-                                        };
+                                        //var newAlarm = new AlarmModel
+                                        //{
+                                        //    DeviceId = deviceInfo.Id,
+                                        //    DeviceType = deviceInfo.DeviceType,
+                                        //    ParameterId = alarm.ParameterId,
+                                        //    AlarmName = alarm.AlarmName,
+                                        //    AlarmDescription = alarm.AlarmDescription,
+                                        //    AlarmCondition = alarm.AlarmCondition,
+                                        //    AlarmThreshold = alarm.AlarmThreshold,
+                                        //    Severity = alarm.Severity,
+                                        //    IsAlarmActive = true,
+                                        //    IsAlarmFixed = false,
+                                        //    IsMasked = false,
+                                        //    AlarmCreateTime = DateTime.Now
+                                        //};
 
-                                        await _alarmManager.CreateAlarm(newAlarm);
-                                        var payload = JsonConvert.SerializeObject(newAlarm);
-                                        _mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{newAlarm.AlarmName}/{newAlarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
+                                        //await _alarmManager.CreateAlarm(newAlarm);
+                                        //var payload = JsonConvert.SerializeObject(newAlarm);
+                                        //_mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{newAlarm.AlarmName}/{newAlarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
                                         Console.WriteLine("ALARM");
                                         break;
                                     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Infrastructure.Services;
 using Models;
 using Services.AlarmService.Responses;
@@ -13,6 +14,7 @@ using Serilog;
 using MongoDB.Driver;
 using AutoMapper;
 using MongoDB.Bson;
+using MQTTnet.Protocol;
 
 namespace Services.AlarmService.Services
 {
@@ -75,42 +77,88 @@ namespace Services.AlarmService.Services
             {
                 var result = CheckConditions(currentValue, alarmModel.AlarmCondition, alarmModel.AlarmThreshold);
 
+                // Eğer alarm koşulu sağlanmadıysa (active durumundan passive olmuş olabilir) ActiveAlarm içerisinde bulunan alarmı fixler ve collection içerisinden siler
+                // Burada şayet herhangi bir alarm hiç koşulu sağlamadıysa historical alarm içerisine düşmesi isActive == true olarak filtrelendiği için engellenmiştir.
+                //Sadece fixleme ve alarm üretme üzerine çalışan metodtur
+
                 if(result == false)
                 {
-                    alarmModel.IsAlarmActive = false;
-                    alarmModel.IsAlarmFixed = true;
-                    await _alarm.ReplaceOneAsync(x => x.Id == alarmModel.Id, alarmModel);
-                }
-                else
-                {
-                    var existingAlarm = await _activeAlarm.Find(x => x.Id == alarmModel.Id).FirstOrDefaultAsync();
+                    var updatedHistoricalAlarm = _mapper.Map<HistoricalAlarm>(alarmModel);
 
-                    if (existingAlarm != null)
+                    var existingHistoricalAlarm = await _historicalAlarm.FindAsync(x => x.Id == alarmModel.Id).Result.FirstOrDefaultAsync();
+                    
+                    if (existingHistoricalAlarm != null && existingHistoricalAlarm.IsAlarmActive == true)
                     {
-                        var updatedAlarm = new ActiveAlarms
-                        {
+                        updatedHistoricalAlarm.IsAlarmActive =  false;
+                        updatedHistoricalAlarm.IsAlarmFixed = true;
+                        updatedHistoricalAlarm.IsMasked = false;
+                        updatedHistoricalAlarm.UpdatedDate = DateTime.UtcNow;
 
-                        };
+                        await _historicalAlarm.ReplaceOneAsync(updatedHistoricalAlarm.Id, updatedHistoricalAlarm);
+                        await _activeAlarm.DeleteOneAsync(updatedHistoricalAlarm.Id);
+
+                        _mqttProducer.PublishMessage("alarm/notify",$"{updatedHistoricalAlarm.AlarmName} \n /{updatedHistoricalAlarm.AlarmDescription} Fixed", MqttQualityOfServiceLevel.AtMostOnce);
                     }
 
-                    var activeAlarm = new ActiveAlarms
+                    else
                     {
-                        Id = alarmModel.Id,
-                        AlarmName = alarmModel.AlarmName,
-                        AlarmCondition = alarmModel.AlarmCondition,
-                        AlarmThreshold = alarmModel.AlarmThreshold,
-                        AlarmCreateTime = DateTime.UtcNow,
-                        AlarmDescription = alarmModel.AlarmDescription,
-                        AlarmStatus = alarmModel.AlarmStatus,
-                        IsAlarmActive = true,
-                        IsAlarmFixed = false,
-                        IsMasked = false,
-                        Severity = alarmModel.Severity,
-                        DeviceId = alarmModel.DeviceId,
-                        DeviceType = alarmModel.DeviceType
-                    };
+                        updatedHistoricalAlarm.Id = BsonObjectId.GenerateNewId().ToString();
+                        updatedHistoricalAlarm.IsAlarmActive = false;
+                        updatedHistoricalAlarm.IsAlarmFixed = true;
+                        updatedHistoricalAlarm.IsMasked = false;
+                        updatedHistoricalAlarm.AlarmCreateTime = DateTime.UtcNow;
+                        updatedHistoricalAlarm.DeviceType = alarmModel.DeviceType;
+                        updatedHistoricalAlarm.AlarmDescription = alarmModel.AlarmDescription;
+                        updatedHistoricalAlarm.AlarmCondition = alarmModel.AlarmCondition;
+                        updatedHistoricalAlarm.AlarmThreshold = alarmModel.AlarmThreshold;
+                        updatedHistoricalAlarm.Severity = alarmModel.Severity;
+                        updatedHistoricalAlarm.FixedDate = DateTime.UtcNow;
+                        updatedHistoricalAlarm.DeviceId = alarmModel.DeviceId;
+                        updatedHistoricalAlarm.ParameterId = alarmModel.ParameterId;
 
-                    await _activeAlarm.InsertOneAsync(activeAlarm);
+                        await _historicalAlarm.InsertOneAsync(updatedHistoricalAlarm);
+
+                        _mqttProducer.PublishMessage("alarm/notify", $"{updatedHistoricalAlarm.AlarmName} \n /{updatedHistoricalAlarm.AlarmDescription} Fixed", MqttQualityOfServiceLevel.AtMostOnce);
+                    }
+                }
+
+                // Fixlenen alarm'ı active, alarms collection'ı üzerinden ilk kez oluşturulacak alarmı da üretecek kısımdır
+                // Result true olduğunda otomatik olarak içeri girecektir
+                else
+                {
+                    var updatedActiveAlarm = _mapper.Map<ActiveAlarms>(alarmModel);
+
+                    var existingActiveAlarm = await _activeAlarm.FindAsync(x => x.Id == updatedActiveAlarm.Id).Result.FirstOrDefaultAsync();
+                    
+                    if (existingActiveAlarm != null && existingActiveAlarm.IsAlarmFixed == true)
+                    {
+                        updatedActiveAlarm.IsAlarmActive = false;
+                        updatedActiveAlarm.IsAlarmFixed = true;
+                        updatedActiveAlarm.IsMasked = false;
+                        updatedActiveAlarm.UpdatedDate = DateTime.UtcNow;
+
+                        await _activeAlarm.ReplaceOneAsync(updatedActiveAlarm.Id, updatedActiveAlarm);
+                    }
+
+                    // Daha önce alarm oluşturulmadıysa alarmı kaydet
+                    else
+                    {
+                        updatedActiveAlarm.Id = BsonObjectId.GenerateNewId().ToString();
+                        updatedActiveAlarm.IsAlarmActive = false;
+                        updatedActiveAlarm.IsAlarmFixed = true;
+                        updatedActiveAlarm.IsMasked = false;
+                        updatedActiveAlarm.AlarmCreateTime = DateTime.UtcNow;
+                        updatedActiveAlarm.DeviceType = alarmModel.DeviceType;
+                        updatedActiveAlarm.AlarmDescription = alarmModel.AlarmDescription;
+                        updatedActiveAlarm.AlarmCondition = alarmModel.AlarmCondition;
+                        updatedActiveAlarm.AlarmThreshold = alarmModel.AlarmThreshold;
+                        updatedActiveAlarm.Severity = alarmModel.Severity;
+                        updatedActiveAlarm.FixedDate = DateTime.UtcNow;
+                        updatedActiveAlarm.DeviceId = alarmModel.DeviceId;
+                        updatedActiveAlarm.ParameterId = alarmModel.ParameterId;
+
+                        await _activeAlarm.InsertOneAsync(updatedActiveAlarm);
+                    }
                 }
 
                 return result;
