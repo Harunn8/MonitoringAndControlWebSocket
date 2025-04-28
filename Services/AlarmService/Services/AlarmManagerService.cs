@@ -117,8 +117,6 @@ namespace Services.AlarmService.Services
                         updatedHistoricalAlarm.ParameterId = alarmModel.ParameterId;
 
                         await _historicalAlarm.InsertOneAsync(updatedHistoricalAlarm);
-
-                        _mqttProducer.PublishMessage("alarm/notify", $"{updatedHistoricalAlarm.AlarmName} \n /{updatedHistoricalAlarm.AlarmDescription} Fixed", MqttQualityOfServiceLevel.AtMostOnce);
                     }
                 }
 

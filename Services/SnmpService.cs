@@ -104,6 +104,7 @@ namespace Infrastructure.Services
                                         //alarm.AlarmCreateTime = DateTime.Now;
                                         //await _alarmManager.UpdateAlarm(alarm.Id, alarm);
                                         _mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{alarm.AlarmName}/{alarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
+                                        onMessageReceived?.Invoke($"{deviceInfo.DeviceName}/{alarm.AlarmName}/{alarm.Severity}");
                                         Console.WriteLine("ALARM");
                                         break;
                                     }
@@ -128,7 +129,7 @@ namespace Infrastructure.Services
 
                                         //await _alarmManager.CreateAlarm(newAlarm);
                                         //var payload = JsonConvert.SerializeObject(newAlarm);
-                                        //_mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{newAlarm.AlarmName}/{newAlarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
+                                        _mqttProducer.PublishMessage($"alarm/notify", $"{deviceInfo.DeviceName}/{alarm.AlarmName}/{alarm.Severity}", MqttQualityOfServiceLevel.AtMostOnce);
                                         Console.WriteLine("ALARM");
                                         break;
                                     }
