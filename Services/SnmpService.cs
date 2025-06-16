@@ -15,6 +15,7 @@ using Services.AlarmService;
 using Services.AlarmService.Services;
 using JsonConvert = Newtonsoft.Json.JsonConvert;
 using MongoDB.Bson;
+using Redis.Services.Base;
 
 namespace Infrastructure.Services
 {
@@ -25,13 +26,15 @@ namespace Infrastructure.Services
         private readonly AlarmManagerService _alarmManager;
         private readonly IMongoCollection<AlarmModel> _alarmCollection;
         private readonly IMongoCollection<Device> _deviceCollection;
+        private readonly IRedisHelper _redis;
 
-        public SnmpService(MqttProducer mqttProducer, AlarmManagerService alarmManeger, IMongoDatabase database, IMongoDatabase databaseTwo)
+        public SnmpService(MqttProducer mqttProducer, AlarmManagerService alarmManeger, IMongoDatabase database, IMongoDatabase databaseTwo, IRedisHelper redis)
         {
             _mqttProducer = mqttProducer;
             _alarmManager = alarmManeger;
             _alarmCollection = database.GetCollection<AlarmModel>("Alarms");
             _deviceCollection = databaseTwo.GetCollection<Device>("Devices");
+            _redis = redis;
         }
 
         public async Task StartContinuousCommunicationAsync(
@@ -138,7 +141,10 @@ namespace Infrastructure.Services
 
                             onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value} ");
                             _mqttProducer.PublishMessage("telemetry",$"{vb.Oid},{vb.Value}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
-                            Console.WriteLine($"{vb.Oid}: {vb.Value}");
+                            await _redis.SetAsync($"{deviceInfo.Id}", value);
+                            Console.WriteLine($"{value} Set Edildi");
+                            var deger = await _redis.GetAsync(deviceInfo.Id);
+                            Console.WriteLine($"Redisten gelen değer ----> {deger}");
                         }
                     }
                     else
