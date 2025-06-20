@@ -50,17 +50,14 @@ namespace Services
         {
             var user = await _user.Find(user => user.UserName == userName).FirstOrDefaultAsync();
 
-            if(user != null)
-            {
-                user.Password= Decrypt(user.Password);
-            }
-
-            if(user.Password != password)
+            if(user == null || user.Password != password)
             {
                 return null;
+                //user.Password= Decrypt(user.Password);
             }
 
             return user;
+
         }
 
         public static string Encrypt(string plainText)

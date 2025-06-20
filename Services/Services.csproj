@@ -19,6 +19,7 @@
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\MCSMqttBus\MCSMqttBus.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\src\Common\Redis\Redis.csproj" />
   </ItemGroup>
 
 </Project>

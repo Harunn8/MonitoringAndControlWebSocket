@@ -27,6 +27,11 @@ using MQTTnet;
 using Models;
 using Services.AlarmService.Services;
 using AutoMapper;
+using Redis.Services.Base;
+using Redis.Services;
+using Redis.Settings;
+using StackExchange.Redis;
+using Microsoft.Extensions.Options;
 using Services.RuleEngine.Services;
 using Microsoft.EntityFrameworkCore;
 using Services.RuleAPI.Services;
@@ -101,6 +106,26 @@ namespace Presentation
             services.AddScoped<LoginService>();
             services.AddScoped<DeviceDataService>();
             services.AddScoped<AlarmManagerService>();
+            
+            var redisConfiguration = Configuration
+                .GetSection("RedisSettings")
+                .Get<RedisSettings>();
+
+            var redisConnectionString = $"{redisConfiguration.Host}:{redisConfiguration.Port}";
+
+            services.AddSingleton<IConnectionMultiplexer>(
+                ConnectionMultiplexer.Connect(redisConnectionString)
+            );
+
+            services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
+
+            services.AddSingleton(sp => sp.GetRequiredService<IOptions<RedisSettings>>().Value);
+
+            services.AddSingleton<IRedisHelper, RedisHelper>();
+
+            Serilog.Log.Information($"Redis connection established at {redisConfiguration.Host}");
+
+
             services.AddScoped<IPolicyScriptService,PolicyScriptService>();
 
             services.AddAuthentication(options =>
