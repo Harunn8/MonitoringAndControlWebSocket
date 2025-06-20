@@ -235,39 +235,53 @@ namespace Services.AlarmService.Services
             return alarmResponse;
         }
 
-        public Task<List<AlarmResponse>> GetActiveAlarmByAlarmId(string alarmId)
+        public async Task<AlarmResponse> GetActiveAlarmByAlarmId(string alarmId)
         {
-            throw new NotImplementedException();
+           var entity = await _activeAlarm.FindAsync(x => x.Id == alarmId).Result.ToListAsync();
+           var activeAlarm = _mapper.Map<AlarmResponse>(entity);
+           return activeAlarm;
         }
 
-        public Task<List<AlarmResponse>> GetActiveAlarmByDeviceId(string deviceId)
+        public async Task<AlarmResponse> GetActiveAlarmByDeviceId(string deviceId)
         {
-            throw new NotImplementedException();
+            var device = await _activeAlarm.Find(d => d.DeviceId == deviceId).ToListAsync();
+            var response = _mapper.Map<AlarmResponse>(device);
+            return response;
         }
 
-        public Task<List<AlarmResponse>> GetActiveAlarmByParameterId(string parameterId)
+        public async Task<List<AlarmResponse>> GetActiveAlarmByParameterId(string parameterId)
         {
-            throw new NotImplementedException();
+            var parameter = await _activeAlarm.FindAsync(d => d.ParameterId == parameterId).Result.ToListAsync();
+            var response = _mapper.Map<List<AlarmResponse>>(parameter);
+            return response;
         }
 
-        public Task<List<AlarmResponse>> GetAllHistoricalAlarm()
+        public async Task<List<AlarmResponse>> GetAllHistoricalAlarm()
         {
-            throw new NotImplementedException();
+            var historicalAlarm = await _historicalAlarm.FindAsync(x => x.IsAlarmFixed == true).Result.ToListAsync();
+            var response = _mapper.Map<List<AlarmResponse>>(historicalAlarm);
+            return response;
         }
 
-        public Task<List<AlarmResponse>> GetHistoricalAlarmByAlarmId(string alarmId)
+        public async Task<List<AlarmResponse>> GetHistoricalAlarmByAlarmId(string alarmId)
         {
-            throw new NotImplementedException();
+            var alarm = await _historicalAlarm.FindAsync(x => x.Id == alarmId).Result.ToListAsync();
+            var historicalAlarm = _mapper.Map<List<AlarmResponse>>(alarm);
+            return historicalAlarm;
         }
 
-        public Task<List<AlarmResponse>> GetHistoricalAlarmByDeviceId(string deviceId)
+        public async Task<List<AlarmResponse>> GetHistoricalAlarmByDeviceId(string deviceId)
         {
-            throw new NotImplementedException();
+            var device = await _historicalAlarm.FindAsync(d => d.DeviceId == deviceId).Result.ToListAsync();
+            var response = _mapper.Map<List<AlarmResponse>>(device);
+            return response;
         }
 
-        public Task<List<AlarmResponse>> GetHistoricalAlarmByParameterId(string parameterId)
+        public async Task<List<AlarmResponse>> GetHistoricalAlarmByParameterId(string parameterId)
         {
-            throw new NotImplementedException();
+            var parameter = await _historicalAlarm.FindAsync(d => d.ParameterId == parameterId).Result.ToListAsync();
+            var response = _mapper.Map<List<AlarmResponse>>(parameter);
+            return response;
         }
     }
 }

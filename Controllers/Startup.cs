@@ -27,6 +27,10 @@ using MQTTnet;
 using Models;
 using Services.AlarmService.Services;
 using AutoMapper;
+using Services.RuleEngine.Services;
+using Microsoft.EntityFrameworkCore;
+using Services.RuleAPI.Services;
+using Services.RuleEngine.Services.Base;
 
 namespace Presentation
 {
@@ -82,6 +86,11 @@ namespace Presentation
             });
             Log.Information("MongoDB connection was establish");
             services.AddScoped<ContextSeedService>();
+            
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("Postgres")));
+
+
             Log.Information("Program started");
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -92,6 +101,7 @@ namespace Presentation
             services.AddScoped<LoginService>();
             services.AddScoped<DeviceDataService>();
             services.AddScoped<AlarmManagerService>();
+            services.AddScoped<IPolicyScriptService,PolicyScriptService>();
 
             services.AddAuthentication(options =>
             {
