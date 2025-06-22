@@ -60,6 +60,7 @@ namespace Services.RuleAPI.Services
             {
                 return false;
             }
+            _mqtt.PublishMessage("policyScript/start", $"{policy.Id},{policy.ScriptName},{policy.Script}", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
             return true;
         }
         // True ise  controller üzerinden ilgili script mqtt ile business tarafına iletilir

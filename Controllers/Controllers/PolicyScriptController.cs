@@ -6,6 +6,7 @@ using Services.RuleAPI.Services;
 using MCSMqttBus.Producer;
 using System;
 using AutoMapper.Configuration.Conventions;
+using Services.RuleEngine.Services.Base;
 
 namespace Controllers.Controllers
 {
@@ -13,10 +14,10 @@ namespace Controllers.Controllers
     [Route("api/[controller]")]
     public class PolicyScriptController : ControllerBase
     {
-        private readonly PolicyScriptService _policyService;
+        private readonly IPolicyScriptService _policyService;
         private readonly MqttProducer _mqtt;
 
-        public PolicyScriptController(PolicyScriptService policyService, MqttProducer mqtt)
+        public PolicyScriptController(IPolicyScriptService policyService, MqttProducer mqtt)
         {
             _policyService = policyService;
             _mqtt = mqtt;
@@ -99,8 +100,6 @@ namespace Controllers.Controllers
             {
                 return BadRequest("This process not running");
             }
-
-            _mqtt.PublishMessage("policyScript/start",$"{id}", MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
             return Ok();
         }
 

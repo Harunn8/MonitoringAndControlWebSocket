@@ -106,6 +106,7 @@ namespace Presentation
             services.AddScoped<LoginService>();
             services.AddScoped<DeviceDataService>();
             services.AddScoped<AlarmManagerService>();
+            services.AddScoped<IPolicyScriptService, PolicyScriptService>();
             
             var redisConfiguration = Configuration
                 .GetSection("RedisSettings")

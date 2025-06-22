@@ -141,9 +141,9 @@ namespace Infrastructure.Services
 
                             onMessageReceived?.Invoke($"OID {vb.Oid}: {vb.Value} ");
                             _mqttProducer.PublishMessage("telemetry",$"{vb.Oid},{vb.Value}",MQTTnet.Protocol.MqttQualityOfServiceLevel.AtMostOnce);
-                            await _redis.SetAsync($"{deviceInfo.Id}", value);
+                            await _redis.SetAsync($"{parameterId}", value);
                             Console.WriteLine($"{value} Set Edildi");
-                            var deger = await _redis.GetAsync(deviceInfo.Id);
+                            var deger = await _redis.GetAsync(parameterId);
                             Console.WriteLine($"Redisten gelen değer ----> {deger}");
                         }
                     }
