@@ -12,6 +12,9 @@ namespace Models
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options){}
 
         public DbSet<ScriptModels> Scripts { get; set; }
+        public DbSet<SnmpDevice> Devices { get; set; }
+        public DbSet<TcpDeviceV2> TcpDevices { get; set; }
+        public DbSet<UserV2> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
