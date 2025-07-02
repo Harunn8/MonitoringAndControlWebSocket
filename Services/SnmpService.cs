@@ -13,7 +13,7 @@ using MQTTnet.Protocol;
 using Serilog;
 using Services.AlarmService;
 using Services.AlarmService.Services;
-using JsonConvert = Newtonsoft.Json.JsonConvert;
+using JsonConvert = Newtonsoft.Json.JsonConvert;        
 using MongoDB.Bson;
 using Redis.Services.Base;
 

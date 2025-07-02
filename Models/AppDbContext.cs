@@ -25,7 +25,6 @@ namespace Models
             modelBuilder.Entity<ScriptModels>().Property(s => s.Script).IsRequired();
             modelBuilder.Entity<ScriptModels>().Property(s => s.CreatedDate).IsRequired();
             modelBuilder.Entity<ScriptModels>().Property(s => s.UpdatedDate).IsRequired();
-            modelBuilder.Entity<ScriptModels>().Property(s => s.StartAt).IsRequired();
         }
     }
 }
